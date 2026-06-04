@@ -128,10 +128,6 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-height: 360px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(123, 97, 255, 0.2) transparent;
   padding-right: 4px;
 }
 
@@ -213,6 +209,22 @@
 }
 
 .quiz-char-btn:disabled { cursor: default; }
+
+.quiz-char-btn.eliminated {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.quiz-char-btn.eliminated .quiz-char-bubble {
+  opacity: 0.2;
+  filter: grayscale(1);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+}
+
+.quiz-char-btn.eliminated .quiz-char-label {
+  opacity: 0.2;
+}
 
 .quiz-char-bubble {
   width: 48px;

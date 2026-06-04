@@ -2,14 +2,20 @@ import { useMemo, useState, useCallback } from "react";
 import { useGraphStore } from "../../stores/graphStore";
 import { useAuthStore } from "../../stores/authStore";
 import { useUiStore } from "../../stores/uiStore";
+import type { Character } from "../../types";
 import "./QuizModal.css";
 
-interface QuizChar {
-  id: number;
-  name: string;
-  image?: string;
-  seiyuuName: string;
-  correctCharIds: number[]; // canvas character IDs that share this VA
+interface QuizQuestion {
+  quizChar: {
+    id: number;
+    name: string;
+    image: string;
+    seiyuuName: string;
+  };
+  animeTitle: string;
+  animeCover?: string;
+  options: Character[];
+  correctCharId: number;
 }
 
 type Feedback = "idle" | "correct" | "wrong";
@@ -19,68 +25,106 @@ export default function QuizModal() {
   const { characters: canvasChars, anime: canvasAnime, addAnime } = useGraphStore();
   const { user } = useAuthStore();
 
-  // Build quiz questions
-  const quizChars: QuizChar[] = useMemo(() => {
+  // One question per (quiz_char × canvas_anime) pair sharing a VA
+  const questions: QuizQuestion[] = useMemo(() => {
     if (!quizAnime) return [];
-    // Map seiyuuId → canvas character IDs
-    const vaToCharIds = new Map<number, number[]>();
+
+    const vaToCanvasChars = new Map<number, Character[]>();
     for (const c of canvasChars) {
       if (!c.seiyuuId) continue;
-      const ids = vaToCharIds.get(c.seiyuuId) ?? [];
-      ids.push(c.anilistCharacterId);
-      vaToCharIds.set(c.seiyuuId, ids);
+      const arr = vaToCanvasChars.get(c.seiyuuId) ?? [];
+      arr.push(c);
+      vaToCanvasChars.set(c.seiyuuId, arr);
     }
-    return quizAnime.characters
-      .filter((c) => c.seiyuuId && vaToCharIds.has(c.seiyuuId!))
-      .map((c) => ({
-        id: c.id,
-        name: c.name,
-        image: c.image,
-        seiyuuName: c.seiyuuName ?? "Unknown VA",
-        correctCharIds: vaToCharIds.get(c.seiyuuId!) ?? [],
-      }));
-  }, [quizAnime, canvasChars]);
 
-  // Canvas characters grouped by anime
-  const charsByAnime = useMemo(() =>
-    canvasAnime
-      .map((a) => ({
-        anime: a,
-        chars: canvasChars.filter((c) => c.anilistAnimeId === a.anilistId),
-      }))
-      .filter((g) => g.chars.length > 0),
-    [canvasAnime, canvasChars]
-  );
+    const animeMap = new Map(canvasAnime.map((a) => [a.anilistId, a]));
+    const charsByAnime = new Map<number, Character[]>();
+    for (const c of canvasChars) {
+      const arr = charsByAnime.get(c.anilistAnimeId) ?? [];
+      arr.push(c);
+      charsByAnime.set(c.anilistAnimeId, arr);
+    }
+
+    const result: QuizQuestion[] = [];
+
+    for (const qChar of quizAnime.characters) {
+      if (!qChar.seiyuuId) continue;
+      const canvasMatches = vaToCanvasChars.get(qChar.seiyuuId);
+      if (!canvasMatches) continue;
+
+      // One question per canvas anime that has a matching VA character
+      const seenAnime = new Set<number>();
+      for (const cc of canvasMatches) {
+        if (seenAnime.has(cc.anilistAnimeId)) continue;
+        seenAnime.add(cc.anilistAnimeId);
+
+        const anime = animeMap.get(cc.anilistAnimeId);
+        const options = charsByAnime.get(cc.anilistAnimeId);
+        if (!anime || !options || options.length === 0) continue;
+
+        result.push({
+          quizChar: {
+            id: qChar.id,
+            name: qChar.name,
+            image: qChar.image,
+            seiyuuName: qChar.seiyuuName ?? "Unknown VA",
+          },
+          animeTitle: anime.title ?? "Unknown",
+          animeCover: anime.coverImage,
+          options,
+          correctCharId: cc.anilistCharacterId,
+        });
+      }
+    }
+
+    return result;
+  }, [quizAnime, canvasChars, canvasAnime]);
 
   const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<number | null>(null); // charId
+  const [selected, setSelected] = useState<number | null>(null);
   const [feedback, setFeedback] = useState<Feedback>("idle");
+  const [disabledIds, setDisabledIds] = useState<Set<number>>(new Set());
   const [done, setDone] = useState(false);
   const [adding, setAdding] = useState(false);
 
-  const currentChar = quizChars[current];
+  const currentQ = questions[current];
 
   const handleConfirm = useCallback(() => {
-    if (selected == null || feedback !== "idle" || !currentChar) return;
-    if (currentChar.correctCharIds.includes(selected)) {
+    if (selected == null || feedback !== "idle" || !currentQ) return;
+
+    if (selected === currentQ.correctCharId) {
       setFeedback("correct");
       setTimeout(() => {
-        if (current + 1 >= quizChars.length) {
+        if (current + 1 >= questions.length) {
           setDone(true);
         } else {
           setCurrent((c) => c + 1);
           setSelected(null);
           setFeedback("idle");
+          setDisabledIds(new Set());
         }
       }, 900);
     } else {
+      // Eliminate 2 random wrong options (not correct, not already disabled, not just selected)
+      const candidates = currentQ.options.filter(
+        (c) =>
+          c.anilistCharacterId !== currentQ.correctCharId &&
+          !disabledIds.has(c.anilistCharacterId) &&
+          c.anilistCharacterId !== selected
+      );
+      const toDisable = candidates
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2)
+        .map((c) => c.anilistCharacterId);
+
       setFeedback("wrong");
+      setDisabledIds((prev) => new Set([...prev, ...toDisable]));
       setTimeout(() => {
         setSelected(null);
         setFeedback("idle");
-      }, 1000);
+      }, 800);
     }
-  }, [selected, feedback, current, quizChars, currentChar]);
+  }, [selected, feedback, current, questions, currentQ, disabledIds]);
 
   const handleAddToCanvas = async () => {
     if (!quizAnime) return;
@@ -94,7 +138,7 @@ export default function QuizModal() {
 
   if (!quizAnime) return null;
 
-  if (quizChars.length === 0) {
+  if (questions.length === 0) {
     return (
       <div className="quiz-overlay">
         <div className="quiz-box quiz-no-connections">
@@ -115,7 +159,7 @@ export default function QuizModal() {
         <div className="quiz-box quiz-complete">
           <div className="quiz-complete-icon">🎉</div>
           <h2>Quiz Complete!</h2>
-          <p>You identified all <strong>{quizChars.length}</strong> shared voice actor connections.</p>
+          <p>You identified all <strong>{questions.length}</strong> shared voice actor connections.</p>
           <p className="quiz-anime-name">{quizAnime.title} is ready to join your graph.</p>
           <button className="btn-add-final" onClick={handleAddToCanvas} disabled={adding}>
             {adding ? <span className="mini-spinner" /> : "➕ Add to canvas"}
@@ -133,70 +177,82 @@ export default function QuizModal() {
 
         {/* Progress */}
         <div className="quiz-progress-bar">
-          <div className="quiz-progress-fill" style={{ width: `${(current / quizChars.length) * 100}%` }} />
+          <div
+            className="quiz-progress-fill"
+            style={{ width: `${(current / questions.length) * 100}%` }}
+          />
         </div>
-        <div className="quiz-progress-label">{current + 1} / {quizChars.length}</div>
+        <div className="quiz-progress-label">{current + 1} / {questions.length}</div>
 
-        {/* Quiz character */}
+        {/* Quiz character card */}
         <div className={`quiz-char-card${feedback === "wrong" ? " shake" : ""}`}>
-          {currentChar.image && (
-            <img src={currentChar.image} alt={currentChar.name} className="quiz-char-img" />
+          {currentQ.quizChar.image && (
+            <img src={currentQ.quizChar.image} alt={currentQ.quizChar.name} className="quiz-char-img" />
           )}
-          <div className="quiz-char-name">{currentChar.name}</div>
+          <div className="quiz-char-name">{currentQ.quizChar.name}</div>
           <div className="quiz-question">
-            Which character on your canvas shares the same voice actor?
+            In <strong>{currentQ.animeTitle}</strong>, which character shares the same voice actor?
           </div>
         </div>
 
         {/* Feedback */}
         {feedback === "correct" && (
           <div className="quiz-feedback quiz-feedback-correct">
-            ✓ Correct! — CV: {currentChar.seiyuuName}
+            ✓ Correct! — CV: {currentQ.quizChar.seiyuuName}
           </div>
         )}
         {feedback === "wrong" && (
           <div className="quiz-feedback quiz-feedback-wrong">
-            ✗ Wrong — try again!
+            ✗ Wrong — 2 options eliminated!
           </div>
         )}
 
-        {/* Canvas characters grouped by anime */}
-        <div className="quiz-anime-groups">
-          {charsByAnime.map(({ anime, chars }) => (
-            <div key={anime.anilistId} className="quiz-anime-section">
-              <div className="quiz-anime-header">
-                {anime.coverImage && (
-                  <img src={anime.coverImage} alt={anime.title ?? ""} className="quiz-anime-mini-cover" />
-                )}
-                <span className="quiz-anime-title">{anime.title ?? "Unknown"}</span>
-              </div>
-              <div className="quiz-char-grid">
-                {chars.map((char) => {
-                  const isSelected = selected === char.anilistCharacterId;
-                  const isCorrect  = feedback === "correct" && currentChar.correctCharIds.includes(char.anilistCharacterId);
-                  const isWrong    = feedback === "wrong" && isSelected;
-                  return (
-                    <button
-                      key={char.anilistCharacterId}
-                      className={`quiz-char-btn${isSelected ? " selected" : ""}${isCorrect ? " correct" : ""}${isWrong ? " wrong" : ""}`}
-                      onClick={() => feedback === "idle" && setSelected(char.anilistCharacterId)}
-                      disabled={feedback !== "idle"}
-                      title={char.characterName}
-                    >
-                      <div className="quiz-char-bubble">
-                        {char.characterImage ? (
-                          <img src={char.characterImage} alt={char.characterName} />
-                        ) : (
-                          <div className="quiz-char-initial">{char.characterName[0]}</div>
-                        )}
-                      </div>
-                      <span className="quiz-char-label">{char.characterName}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
+        {/* Answer grid — all characters from the target anime */}
+        <div className="quiz-anime-section">
+          <div className="quiz-anime-header">
+            {currentQ.animeCover && (
+              <img src={currentQ.animeCover} alt={currentQ.animeTitle} className="quiz-anime-mini-cover" />
+            )}
+            <span className="quiz-anime-title">{currentQ.animeTitle}</span>
+          </div>
+          <div className="quiz-char-grid">
+            {currentQ.options.map((char) => {
+              const isSelected = selected === char.anilistCharacterId;
+              const isEliminated = disabledIds.has(char.anilistCharacterId);
+              const isCorrect =
+                feedback === "correct" && char.anilistCharacterId === currentQ.correctCharId;
+              const isWrong = feedback === "wrong" && isSelected;
+              return (
+                <button
+                  key={char.anilistCharacterId}
+                  className={[
+                    "quiz-char-btn",
+                    isSelected ? "selected" : "",
+                    isCorrect ? "correct" : "",
+                    isWrong ? "wrong" : "",
+                    isEliminated ? "eliminated" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  onClick={() =>
+                    !isEliminated && feedback === "idle" &&
+                    setSelected(char.anilistCharacterId)
+                  }
+                  disabled={isEliminated || feedback !== "idle"}
+                  title={char.characterName}
+                >
+                  <div className="quiz-char-bubble">
+                    {char.characterImage ? (
+                      <img src={char.characterImage} alt={char.characterName} />
+                    ) : (
+                      <div className="quiz-char-initial">{char.characterName[0]}</div>
+                    )}
+                  </div>
+                  <span className="quiz-char-label">{char.characterName}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <button
