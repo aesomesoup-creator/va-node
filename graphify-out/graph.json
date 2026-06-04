@@ -202,10 +202,19 @@
       "norm_label": "react-dom"
     },
     {
-      "label": "zustand",
+      "label": "serve",
       "file_type": "code",
       "source_file": "client/package.json",
       "source_location": "L15",
+      "id": "client_package_dependencies_serve",
+      "community": 3,
+      "norm_label": "serve"
+    },
+    {
+      "label": "zustand",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L16",
       "id": "client_package_dependencies_zustand",
       "community": 3,
       "norm_label": "zustand"
@@ -214,7 +223,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "client_package_devdependencies",
       "community": 3,
       "norm_label": "devdependencies"
@@ -223,7 +232,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "client_package_devdependencies_types_react",
       "community": 3,
       "norm_label": "@types/react"
@@ -232,7 +241,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "client_package_devdependencies_types_react_dom",
       "community": 3,
       "norm_label": "@types/react-dom"
@@ -241,7 +250,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "client_package_devdependencies_vitejs_plugin_react",
       "community": 3,
       "norm_label": "@vitejs/plugin-react"
@@ -250,7 +259,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "client_package_devdependencies_typescript",
       "community": 3,
       "norm_label": "typescript"
@@ -259,7 +268,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "client_package_devdependencies_vite",
       "community": 3,
       "norm_label": "vite"
@@ -328,10 +337,28 @@
       "norm_label": "client.ts"
     },
     {
+      "label": "getOrCreateGuestId()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L10",
+      "id": "api_client_getorcreateguestid",
+      "community": 4,
+      "norm_label": "getorcreateguestid()"
+    },
+    {
+      "label": "clearGuestId()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L18",
+      "id": "api_client_clearguestid",
+      "community": 4,
+      "norm_label": "clearguestid()"
+    },
+    {
       "label": "api",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L4",
+      "source_location": "L22",
       "id": "api_client_api",
       "community": 4,
       "norm_label": "api"
@@ -340,7 +367,7 @@
       "label": "getMe()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L10",
+      "source_location": "L34",
       "id": "api_client_getme",
       "community": 4,
       "norm_label": "getme()"
@@ -349,7 +376,7 @@
       "label": "loginAsGuest()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L13",
+      "source_location": "L37",
       "id": "api_client_loginasguest",
       "community": 4,
       "norm_label": "loginasguest()"
@@ -358,7 +385,7 @@
       "label": "logout()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L16",
+      "source_location": "L40",
       "id": "api_client_logout",
       "community": 4,
       "norm_label": "logout()"
@@ -367,7 +394,7 @@
       "label": "searchAnime()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L19",
+      "source_location": "L43",
       "id": "api_client_searchanime",
       "community": 4,
       "norm_label": "searchanime()"
@@ -376,7 +403,7 @@
       "label": "getMyAnime()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L22",
+      "source_location": "L46",
       "id": "api_client_getmyanime",
       "community": 4,
       "norm_label": "getmyanime()"
@@ -385,7 +412,7 @@
       "label": "getAnimeCharacters()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L25",
+      "source_location": "L49",
       "id": "api_client_getanimecharacters",
       "community": 5,
       "norm_label": "getanimecharacters()"
@@ -394,7 +421,7 @@
       "label": "addAnime()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L28",
+      "source_location": "L52",
       "id": "api_client_addanime",
       "community": 4,
       "norm_label": "addanime()"
@@ -403,7 +430,7 @@
       "label": "removeAnime()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L31",
+      "source_location": "L55",
       "id": "api_client_removeanime",
       "community": 4,
       "norm_label": "removeanime()"
@@ -412,7 +439,7 @@
       "label": "updateAnimePosition()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L34",
+      "source_location": "L58",
       "id": "api_client_updateanimeposition",
       "community": 4,
       "norm_label": "updateanimeposition()"
@@ -421,7 +448,7 @@
       "label": "getGraph()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L38",
+      "source_location": "L62",
       "id": "api_client_getgraph",
       "community": 4,
       "norm_label": "getgraph()"
@@ -430,7 +457,7 @@
       "label": "adminGetAnime()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L42",
+      "source_location": "L66",
       "id": "api_client_admingetanime",
       "community": 4,
       "norm_label": "admingetanime()"
@@ -439,7 +466,7 @@
       "label": "adminGetCharacters()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L45",
+      "source_location": "L69",
       "id": "api_client_admingetcharacters",
       "community": 4,
       "norm_label": "admingetcharacters()"
@@ -448,7 +475,7 @@
       "label": "adminGetUsers()",
       "file_type": "code",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L48",
+      "source_location": "L72",
       "id": "api_client_admingetusers",
       "community": 4,
       "norm_label": "admingetusers()"
@@ -517,42 +544,6 @@
       "norm_label": "loginmodal()"
     },
     {
-      "label": "AnimeBubble.tsx",
-      "file_type": "code",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L1",
-      "id": "canvas_animebubble",
-      "community": 5,
-      "norm_label": "animebubble.tsx"
-    },
-    {
-      "label": "BUBBLE_COLORS",
-      "file_type": "code",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L15",
-      "id": "canvas_animebubble_bubble_colors",
-      "community": 5,
-      "norm_label": "bubble_colors"
-    },
-    {
-      "label": "Props",
-      "file_type": "code",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L26",
-      "id": "canvas_animebubble_props",
-      "community": 5,
-      "norm_label": "props"
-    },
-    {
-      "label": "AnimeBubble()",
-      "file_type": "code",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L35",
-      "id": "canvas_animebubble_animebubble",
-      "community": 2,
-      "norm_label": "animebubble()"
-    },
-    {
       "label": "AnimeDetailPanel.tsx",
       "file_type": "code",
       "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
@@ -578,6 +569,51 @@
       "id": "canvas_animedetailpanel_animedetailpanel",
       "community": 5,
       "norm_label": "animedetailpanel()"
+    },
+    {
+      "label": "AnimeNode.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L1",
+      "id": "canvas_animenode",
+      "community": 5,
+      "norm_label": "animenode.tsx"
+    },
+    {
+      "label": "COLORS",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L6",
+      "id": "canvas_animenode_colors",
+      "community": 5,
+      "norm_label": "colors"
+    },
+    {
+      "label": "getAnimeColor()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L17",
+      "id": "canvas_animenode_getanimecolor",
+      "community": 5,
+      "norm_label": "getanimecolor()"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L21",
+      "id": "canvas_animenode_props",
+      "community": 5,
+      "norm_label": "props"
+    },
+    {
+      "label": "AnimeNode()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L28",
+      "id": "canvas_animenode_animenode",
+      "community": 5,
+      "norm_label": "animenode()"
     },
     {
       "label": "GraphCanvas.tsx",
@@ -607,10 +643,19 @@
       "norm_label": "edgetooltip()"
     },
     {
+      "label": "CharNode()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L34",
+      "id": "canvas_graphcanvas_charnode",
+      "community": 5,
+      "norm_label": "charnode()"
+    },
+    {
       "label": "GraphCanvas()",
       "file_type": "code",
       "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
-      "source_location": "L33",
+      "source_location": "L74",
       "id": "canvas_graphcanvas_graphcanvas",
       "community": 2,
       "norm_label": "graphcanvas()"
@@ -706,19 +751,19 @@
       "norm_label": "graphstore.ts"
     },
     {
-      "label": "charRelativePos()",
+      "label": "charOrbitPos()",
       "file_type": "code",
       "source_file": "client/src/stores/graphStore.ts",
-      "source_location": "L13",
-      "id": "stores_graphstore_charrelativepos",
+      "source_location": "L11",
+      "id": "stores_graphstore_charorbitpos",
       "community": 5,
-      "norm_label": "charrelativepos()"
+      "norm_label": "charorbitpos()"
     },
     {
       "label": "computeEdges()",
       "file_type": "code",
       "source_file": "client/src/stores/graphStore.ts",
-      "source_location": "L23",
+      "source_location": "L21",
       "id": "stores_graphstore_computeedges",
       "community": 5,
       "norm_label": "computeedges()"
@@ -727,7 +772,7 @@
       "label": "GraphState",
       "file_type": "code",
       "source_file": "client/src/stores/graphStore.ts",
-      "source_location": "L59",
+      "source_location": "L50",
       "id": "stores_graphstore_graphstate",
       "community": 5,
       "norm_label": "graphstate"
@@ -736,7 +781,7 @@
       "label": "useGraphStore",
       "file_type": "code",
       "source_file": "client/src/stores/graphStore.ts",
-      "source_location": "L74",
+      "source_location": "L64",
       "id": "stores_graphstore_usegraphstore",
       "community": 2,
       "norm_label": "usegraphstore"
@@ -866,6 +911,15 @@
       "id": "types_index_seiyuuedge",
       "community": 5,
       "norm_label": "seiyuuedge"
+    },
+    {
+      "label": "vite-env.d.ts",
+      "file_type": "code",
+      "source_file": "client/src/vite-env.d.ts",
+      "source_location": "L1",
+      "id": "src_vite_env_d",
+      "community": 17,
+      "norm_label": "vite-env.d.ts"
     },
     {
       "label": "tsconfig.app.json",
@@ -1665,7 +1719,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L1",
       "id": "db_schema",
-      "community": 0,
+      "community": 16,
       "norm_label": "schema.ts"
     },
     {
@@ -1674,7 +1728,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L12",
       "id": "db_schema_users",
-      "community": 0,
+      "community": 16,
       "norm_label": "users"
     },
     {
@@ -1683,7 +1737,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L66",
       "id": "db_schema_useranime",
-      "community": 0,
+      "community": 16,
       "norm_label": "useranime"
     },
     {
@@ -1692,7 +1746,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L44",
       "id": "db_schema_animecharacters",
-      "community": 0,
+      "community": 16,
       "norm_label": "animecharacters"
     },
     {
@@ -1710,7 +1764,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L65",
       "id": "db_schema_newuser",
-      "community": 0,
+      "community": 16,
       "norm_label": "newuser"
     },
     {
@@ -1719,7 +1773,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L67",
       "id": "db_schema_newuseranime",
-      "community": 0,
+      "community": 16,
       "norm_label": "newuseranime"
     },
     {
@@ -1728,7 +1782,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L68",
       "id": "db_schema_animecharacter",
-      "community": 0,
+      "community": 16,
       "norm_label": "animecharacter"
     },
     {
@@ -1737,7 +1791,7 @@
       "source_file": "server/src/db/schema.ts",
       "source_location": "L69",
       "id": "db_schema_newanimecharacter",
-      "community": 0,
+      "community": 16,
       "norm_label": "newanimecharacter"
     },
     {
@@ -1777,10 +1831,19 @@
       "norm_label": "auth.ts"
     },
     {
-      "label": "requireAuth()",
+      "label": "getGuestId()",
       "file_type": "code",
       "source_file": "server/src/middleware/auth.ts",
       "source_location": "L3",
+      "id": "middleware_auth_getguestid",
+      "community": 0,
+      "norm_label": "getguestid()"
+    },
+    {
+      "label": "requireAuth()",
+      "file_type": "code",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L10",
       "id": "middleware_auth_requireauth",
       "community": 0,
       "norm_label": "requireauth()"
@@ -1789,7 +1852,7 @@
       "label": "requireAdmin()",
       "file_type": "code",
       "source_file": "server/src/middleware/auth.ts",
-      "source_location": "L10",
+      "source_location": "L17",
       "id": "middleware_auth_requireadmin",
       "community": 0,
       "norm_label": "requireadmin()"
@@ -1838,6 +1901,15 @@
       "id": "routes_anime_getuserid",
       "community": 0,
       "norm_label": "getuserid()"
+    },
+    {
+      "label": "isGuest()",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L15",
+      "id": "routes_anime_isguest",
+      "community": 0,
+      "norm_label": "isguest()"
     },
     {
       "label": "auth.ts",
@@ -2164,6 +2236,15 @@
       "norm_label": "exclude"
     },
     {
+      "label": "charRelativePos()",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L13",
+      "community": 5,
+      "norm_label": "charrelativepos()",
+      "id": "stores_graphstore_charrelativepos"
+    },
+    {
       "label": "guestStore",
       "file_type": "code",
       "source_file": "server/src/routes/anime.ts",
@@ -2400,6 +2481,16 @@
       "confidence_score": 1.0,
       "source": "client_package_dependencies",
       "target": "client_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_serve",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2653,9 +2744,9 @@
       "source_file": "client/src/api/anilist.ts",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_anilist",
-      "target": "api_anilist_anilistresult",
-      "confidence_score": 1.0
+      "target": "api_anilist_anilistresult"
     },
     {
       "relation": "contains",
@@ -2663,9 +2754,9 @@
       "source_file": "client/src/api/anilist.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_anilist",
-      "target": "api_anilist_gql",
-      "confidence_score": 1.0
+      "target": "api_anilist_gql"
     },
     {
       "relation": "contains",
@@ -2673,9 +2764,9 @@
       "source_file": "client/src/api/anilist.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_anilist",
-      "target": "api_anilist_searchanilist",
-      "confidence_score": 1.0
+      "target": "api_anilist_searchanilist"
     },
     {
       "relation": "imports_from",
@@ -2684,9 +2775,9 @@
       "source_file": "client/src/components/SearchBar/SearchBar.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "searchbar_searchbar",
-      "target": "api_anilist",
-      "confidence_score": 1.0
+      "target": "api_anilist"
     },
     {
       "relation": "imports",
@@ -2695,9 +2786,9 @@
       "source_file": "client/src/components/SearchBar/SearchBar.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "searchbar_searchbar",
-      "target": "api_anilist_anilistresult",
-      "confidence_score": 1.0
+      "target": "api_anilist_anilistresult"
     },
     {
       "relation": "imports",
@@ -2706,9 +2797,9 @@
       "source_file": "client/src/components/SearchBar/SearchBar.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "searchbar_searchbar",
-      "target": "api_anilist_searchanilist",
-      "confidence_score": 1.0
+      "target": "api_anilist_searchanilist"
     },
     {
       "relation": "imports_from",
@@ -2775,11 +2866,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/api/client.ts",
-      "source_location": "L25",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "api_client",
-      "target": "api_client_getanimecharacters",
+      "target": "api_client_clearguestid",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_getanimecharacters"
     },
     {
       "relation": "contains",
@@ -2810,6 +2911,16 @@
       "confidence_score": 1.0,
       "source": "api_client",
       "target": "api_client_getmyanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "api_client",
+      "target": "api_client_getorcreateguestid",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2901,9 +3012,9 @@
       "source_file": "client/src/api/client.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_client",
-      "target": "types_index_character",
-      "confidence_score": 1.0
+      "target": "types_index_character"
     },
     {
       "relation": "imports",
@@ -2934,9 +3045,9 @@
       "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "canvas_animedetailpanel",
-      "target": "api_client",
-      "confidence_score": 1.0
+      "target": "api_client"
     },
     {
       "relation": "imports_from",
@@ -2989,9 +3100,9 @@
       "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "canvas_animedetailpanel",
-      "target": "api_client_getanimecharacters",
-      "confidence_score": 1.0
+      "target": "api_client_getanimecharacters"
     },
     {
       "relation": "imports",
@@ -3267,228 +3378,55 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L25",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "canvas_animebubble_animebubble"
+      "source": "canvas_animedetailpanel",
+      "target": "canvas_animedetailpanel_animedetailpanel"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "canvas_animebubble_bubble_colors"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "canvas_animebubble_props"
+      "source": "canvas_animedetailpanel",
+      "target": "canvas_animedetailpanel_props"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "stores_graphstore"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "stores_graphstore_charrelativepos"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "stores_graphstore_usegraphstore"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "stores_uistore"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
-      "target": "stores_uistore_useuistore"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble",
+      "source": "canvas_animedetailpanel",
       "target": "types_index"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L2",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "canvas_animebubble",
+      "source": "canvas_animedetailpanel",
       "target": "types_index_animeentry"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L2",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "canvas_animebubble",
+      "source": "canvas_animedetailpanel",
       "target": "types_index_character"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_graphcanvas",
-      "target": "canvas_animebubble"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble_props",
-      "target": "types_index_animeentry"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "canvas_animebubble_props",
-      "target": "types_index_character"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "canvas_animebubble_animebubble",
-      "target": "stores_graphstore_usegraphstore"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "canvas_animebubble_animebubble",
-      "target": "stores_uistore_useuistore"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "canvas_animedetailpanel",
-      "target": "canvas_animedetailpanel_animedetailpanel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "canvas_animedetailpanel",
-      "target": "canvas_animedetailpanel_props",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "canvas_animedetailpanel",
-      "target": "types_index",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "canvas_animedetailpanel",
-      "target": "types_index_animeentry",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "canvas_animedetailpanel",
-      "target": "types_index_character",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -3497,9 +3435,9 @@
       "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "canvas_graphcanvas",
-      "target": "canvas_animedetailpanel",
-      "confidence_score": 1.0
+      "target": "canvas_animedetailpanel"
     },
     {
       "relation": "references",
@@ -3508,8 +3446,135 @@
       "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "canvas_animedetailpanel_props",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "canvas_animenode_animenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "canvas_animenode_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "canvas_animenode_getanimecolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "canvas_animenode_props",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "stores_graphstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_animenode",
+      "target": "types_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_animenode",
       "target": "types_index_animeentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_animenode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "canvas_animenode_animenode",
+      "target": "canvas_animenode_getanimecolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_animenode_getanimecolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeNode.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "canvas_animenode_props",
+      "target": "types_index_animeentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_graphcanvas_charnode",
       "confidence_score": 1.0
     },
     {
@@ -3560,6 +3625,17 @@
       "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_graphstore_charorbitpos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "canvas_graphcanvas",
       "target": "stores_graphstore_charrelativepos"
@@ -3607,6 +3683,28 @@
       "confidence_score": 1.0,
       "source": "canvas_graphcanvas",
       "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "types_index_animeentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "types_index_character",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -3755,9 +3853,9 @@
       "source_file": "client/src/components/SearchBar/SearchBar.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "searchbar_searchbar",
-      "target": "stores_authstore",
-      "confidence_score": 1.0
+      "target": "stores_authstore"
     },
     {
       "relation": "imports",
@@ -3766,9 +3864,9 @@
       "source_file": "client/src/components/SearchBar/SearchBar.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "searchbar_searchbar",
-      "target": "stores_authstore_useauthstore",
-      "confidence_score": 1.0
+      "target": "stores_authstore_useauthstore"
     },
     {
       "relation": "imports_from",
@@ -3921,6 +4019,16 @@
       "confidence_score": 1.0,
       "source": "stores_authstore_authstate",
       "target": "types_index_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "stores_graphstore",
+      "target": "stores_graphstore_charorbitpos",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5319,8 +5427,18 @@
       "source_file": "server/src/index.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_index",
-      "target": "src_index_dirname",
+      "target": "src_index_dirname"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "middleware_auth",
+      "target": "middleware_auth_getguestid",
       "confidence_score": 1.0
     },
     {
@@ -5375,6 +5493,61 @@
       "confidence_score": 1.0,
       "source": "routes_graph",
       "target": "middleware_auth"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "middleware_auth_requireauth",
+      "target": "middleware_auth_getguestid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_anime",
+      "target": "middleware_auth_getguestid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "routes_anime_getuserid",
+      "target": "middleware_auth_getguestid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "routes_anime_isguest",
+      "target": "middleware_auth_getguestid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_graph",
+      "target": "middleware_auth_getguestid",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5464,6 +5637,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "server/src/routes/anime.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "routes_anime",
+      "target": "routes_anime_isguest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5510,9 +5693,9 @@
       "source_file": "server/src/routes/anime.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_anime",
-      "target": "stores_gueststore",
-      "confidence_score": 1.0
+      "target": "stores_gueststore"
     },
     {
       "relation": "imports",
@@ -5521,9 +5704,9 @@
       "source_file": "server/src/routes/anime.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_anime",
-      "target": "stores_gueststore_getguestdata",
-      "confidence_score": 1.0
+      "target": "stores_gueststore_getguestdata"
     },
     {
       "relation": "contains",
@@ -5571,9 +5754,9 @@
       "source_file": "server/src/routes/graph.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_graph",
-      "target": "routes_graph_buildseiyuugroups",
-      "confidence_score": 1.0
+      "target": "routes_graph_buildseiyuugroups"
     },
     {
       "relation": "contains",
@@ -5612,9 +5795,9 @@
       "source_file": "server/src/routes/graph.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_graph",
-      "target": "stores_gueststore",
-      "confidence_score": 1.0
+      "target": "stores_gueststore"
     },
     {
       "relation": "imports",
@@ -5623,9 +5806,9 @@
       "source_file": "server/src/routes/graph.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "routes_graph",
-      "target": "stores_gueststore_getguestdata",
-      "confidence_score": 1.0
+      "target": "stores_gueststore_getguestdata"
     },
     {
       "relation": "contains",
@@ -5693,9 +5876,9 @@
       "source_file": "server/src/stores/guestStore.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stores_gueststore",
-      "target": "stores_gueststore_getguestdata",
-      "confidence_score": 1.0
+      "target": "stores_gueststore_getguestdata"
     },
     {
       "relation": "contains",
@@ -5703,9 +5886,9 @@
       "source_file": "server/src/stores/guestStore.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stores_gueststore",
-      "target": "stores_gueststore_guestdata",
-      "confidence_score": 1.0
+      "target": "stores_gueststore_guestdata"
     },
     {
       "relation": "contains",
@@ -5713,9 +5896,9 @@
       "source_file": "server/src/stores/guestStore.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "stores_gueststore",
-      "target": "stores_gueststore_store",
-      "confidence_score": 1.0
+      "target": "stores_gueststore_store"
     },
     {
       "relation": "contains",
@@ -5878,5 +6061,6 @@
       "target": "server_tsconfig_compileroptions_target"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "27b7e945b44aba3854fff27c1f61837f2436641e"
 }

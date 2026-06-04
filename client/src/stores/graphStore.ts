@@ -79,8 +79,10 @@ export const useGraphStore = create<GraphState>((set, get) => ({
   },
 
   addAnime: async (anilistId) => {
-    await api.addAnime(anilistId);
-    await get().loadGraph();
+    const entry = await api.addAnime(anilistId);
+    // Show immediately (optimistic), then reload for seiyuu connections
+    set((s) => ({ anime: [...s.anime, entry] }));
+    get().loadGraph().catch(console.error);
   },
 
   removeAnime: async (anilistId) => {
