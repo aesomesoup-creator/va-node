@@ -63,6 +63,95 @@
   font-weight: 500;
 }
 
+/* ─── Delete section ─── */
+.detail-delete-section {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.btn-delete-anime {
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  border-radius: 10px;
+  color: rgba(255, 107, 122, 0.85);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.btn-delete-anime:hover {
+  background: rgba(255, 71, 87, 0.16);
+  border-color: rgba(255, 71, 87, 0.6);
+  color: #ff6b7a;
+}
+
+.delete-confirm-bubble {
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.35);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideUp 0.15s ease;
+}
+
+.delete-confirm-bubble span {
+  font-size: 13px;
+  color: rgba(226, 244, 255, 0.8);
+  line-height: 1.4;
+}
+
+.delete-confirm-bubble strong {
+  color: #ff8a96;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-confirm-yes {
+  flex: 1;
+  padding: 8px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 71, 87, 0.5);
+  background: rgba(255, 71, 87, 0.18);
+  color: #ff6b7a;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-confirm-yes:hover {
+  background: rgba(255, 71, 87, 0.32);
+  border-color: #ff4757;
+}
+
+.btn-confirm-cancel {
+  flex: 1;
+  padding: 8px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(226, 244, 255, 0.6);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-confirm-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2f4ff;
+}
+
 /* ─── Character list ─── */
 .detail-chars {
   flex: 1;
