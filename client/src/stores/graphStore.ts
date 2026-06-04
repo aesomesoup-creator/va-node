@@ -1,13 +1,13 @@
 import { create } from "zustand";
 import type { AnimeEntry, Character, SeiyuuGroup, SeiyuuEdge } from "../types";
 import * as api from "../api/client";
+import { getAnimeDetail } from "../api/anilist";
 
 // ── Layout constants ─────────────────────────────────────────────────────────
-export const ANIME_RADIUS = 56;  // anime center circle radius
-export const CHAR_RADIUS = 28;   // character orbit circle radius
-export const CHAR_LABEL_H = 26;  // space below char for name
+export const ANIME_RADIUS = 56;
+export const CHAR_RADIUS = 28;
+export const CHAR_LABEL_H = 26;
 
-/** Character position relative to anime center (circular orbit). */
 export function charOrbitPos(index: number, total: number): { x: number; y: number } {
   const minOrbit = Math.max(
     ANIME_RADIUS + CHAR_RADIUS + 24,
@@ -17,7 +17,45 @@ export function charOrbitPos(index: number, total: number): { x: number; y: numb
   return { x: Math.cos(angle) * minOrbit, y: Math.sin(angle) * minOrbit };
 }
 
-// ── Edge computation ─────────────────────────────────────────────────────────
+// ── Guest localStorage persistence ──────────────────────────────────────────
+const LS_ANIME = "vanode_anime";
+const LS_CHARS = "vanode_chars";
+
+function guestLoad(): { anime: AnimeEntry[]; characters: Character[] } {
+  try {
+    return {
+      anime: JSON.parse(localStorage.getItem(LS_ANIME) || "[]"),
+      characters: JSON.parse(localStorage.getItem(LS_CHARS) || "[]"),
+    };
+  } catch { return { anime: [], characters: [] }; }
+}
+
+function guestSave(anime: AnimeEntry[], characters: Character[]) {
+  try {
+    localStorage.setItem(LS_ANIME, JSON.stringify(anime));
+    localStorage.setItem(LS_CHARS, JSON.stringify(characters));
+  } catch {}
+}
+
+// ── Seiyuu group + edge computation ─────────────────────────────────────────
+function buildSeiyuuGroups(characters: Character[]): SeiyuuGroup[] {
+  const map = new Map<number, Character[]>();
+  for (const char of characters) {
+    if (!char.seiyuuId) continue;
+    const list = map.get(char.seiyuuId) ?? [];
+    list.push(char);
+    map.set(char.seiyuuId, list);
+  }
+  return Array.from(map.entries())
+    .filter(([, chars]) => new Set(chars.map((c) => c.anilistAnimeId)).size > 1)
+    .map(([seiyuuId, chars]) => ({
+      seiyuuId,
+      seiyuuName: chars[0].seiyuuName ?? null,
+      seiyuuImage: chars[0].seiyuuImage ?? null,
+      characters: chars,
+    }));
+}
+
 function computeEdges(seiyuuGroups: SeiyuuGroup[]): { connectedIds: Set<number>; edges: SeiyuuEdge[] } {
   const connectedIds = new Set<number>();
   const edges: SeiyuuEdge[] = [];
@@ -54,66 +92,122 @@ interface GraphState {
   edges: SeiyuuEdge[];
   connectedCharIds: Set<number>;
   isLoading: boolean;
-  loadGraph: () => Promise<void>;
-  addAnime: (anilistId: number) => Promise<void>;
-  removeAnime: (anilistId: number) => Promise<void>;
+  isGuest: boolean;
+  loadGraph: (isGuest: boolean) => Promise<void>;
+  addAnime: (anilistId: number, isGuest: boolean) => Promise<void>;
+  removeAnime: (anilistId: number, isGuest: boolean) => Promise<void>;
   updatePosition: (anilistId: number, x: number, y: number) => void;
   persistPosition: (anilistId: number, x: number, y: number) => void;
 }
 
-export const useGraphStore = create<GraphState>((set, get) => ({
-  anime: [], characters: [], seiyuuGroups: [], edges: [], connectedCharIds: new Set(), isLoading: false,
+function applyCharacters(characters: Character[]) {
+  const seiyuuGroups = buildSeiyuuGroups(characters);
+  const { connectedIds, edges } = computeEdges(seiyuuGroups);
+  return { characters, seiyuuGroups, edges, connectedCharIds: connectedIds };
+}
 
-  loadGraph: async () => {
-    set({ isLoading: true });
+export const useGraphStore = create<GraphState>((set, get) => ({
+  anime: [], characters: [], seiyuuGroups: [], edges: [],
+  connectedCharIds: new Set(), isLoading: false, isGuest: false,
+
+  loadGraph: async (isGuest) => {
+    set({ isLoading: true, isGuest });
+    if (isGuest) {
+      // Load from localStorage — no server needed
+      const { anime, characters } = guestLoad();
+      set({ anime, ...applyCharacters(characters), isLoading: false });
+      return;
+    }
+    // Authenticated — load from server
     try {
       const data = await api.getGraph();
-      let anime = data.anime;
-      if (anime.length === 0) anime = await api.getMyAnime();
-      const { connectedIds, edges } = computeEdges(data.seiyuuGroups);
-      set({ anime, characters: data.characters, seiyuuGroups: data.seiyuuGroups, edges, connectedCharIds: connectedIds, isLoading: false });
+      let anime = Array.isArray(data.anime) ? data.anime : [];
+      if (anime.length === 0) anime = await api.getMyAnime().catch(() => []);
+      const characters = Array.isArray(data.characters) ? data.characters : [];
+      const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
+      const { connectedIds, edges } = computeEdges(seiyuuGroups);
+      set({ anime, characters, seiyuuGroups, edges, connectedCharIds: connectedIds, isLoading: false });
     } catch (err) {
       console.error("loadGraph error:", err);
       set({ isLoading: false });
     }
   },
 
-  addAnime: async (anilistId) => {
+  addAnime: async (anilistId, isGuest) => {
+    if (isGuest) {
+      // Fetch directly from AniList — no server call
+      const detail = await getAnimeDetail(anilistId);
+      const guestId = localStorage.getItem("vanode_guest_id") || crypto.randomUUID();
+      const entry: AnimeEntry = {
+        id: crypto.randomUUID(),
+        userId: guestId,
+        anilistId: detail.id,
+        title: detail.title,
+        coverImage: detail.coverImage,
+        positionX: Math.round(Math.random() * 600 + 200),
+        positionY: Math.round(Math.random() * 400 + 150),
+        addedAt: new Date().toISOString(),
+      };
+      const newChars: Character[] = detail.characters.map((c) => ({
+        id: crypto.randomUUID(),
+        anilistAnimeId: detail.id,
+        anilistCharacterId: c.id,
+        characterName: c.name,
+        characterImage: c.image,
+        seiyuuId: c.seiyuuId,
+        seiyuuName: c.seiyuuName,
+        seiyuuImage: c.seiyuuImage,
+      }));
+
+      set((s) => {
+        const anime = [...s.anime, entry];
+        const characters = [...s.characters, ...newChars];
+        guestSave(anime, characters);
+        return { anime, ...applyCharacters(characters) };
+      });
+      return;
+    }
+
+    // Authenticated — use server
     const entry = await api.addAnime(anilistId);
-    // Optimistic: add anime to local list immediately
     set((s) => ({ anime: [...s.anime, entry] }));
-    // Fetch characters + seiyuu connections WITHOUT overwriting the anime list
     api.getGraph().then((data) => {
       if (!data) return;
-      const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
       const characters = Array.isArray(data.characters) ? data.characters : [];
+      const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
       const { connectedIds, edges } = computeEdges(seiyuuGroups);
-      // Merge server characters with local — don't replace anime list
-      set((s) => ({
-        characters,
-        seiyuuGroups,
-        edges,
-        connectedCharIds: connectedIds,
-      }));
+      set({ characters, seiyuuGroups, edges, connectedCharIds: connectedIds });
     }).catch(console.error);
   },
 
-  removeAnime: async (anilistId) => {
+  removeAnime: async (anilistId, isGuest) => {
+    if (isGuest) {
+      set((s) => {
+        const anime = s.anime.filter((a) => a.anilistId !== anilistId);
+        const characters = s.characters.filter((c) => c.anilistAnimeId !== anilistId);
+        guestSave(anime, characters);
+        return { anime, ...applyCharacters(characters) };
+      });
+      return;
+    }
     await api.removeAnime(anilistId);
     set((s) => {
       const anime = s.anime.filter((a) => a.anilistId !== anilistId);
       const characters = s.characters.filter((c) => c.anilistAnimeId !== anilistId);
-      const seiyuuGroups = s.seiyuuGroups
-        .map((g) => ({ ...g, characters: g.characters.filter((c) => c.anilistAnimeId !== anilistId) }))
-        .filter((g) => new Set(g.characters.map((c) => c.anilistAnimeId)).size > 1);
+      const seiyuuGroups = buildSeiyuuGroups(characters);
       const { connectedIds, edges } = computeEdges(seiyuuGroups);
       return { anime, characters, seiyuuGroups, edges, connectedCharIds: connectedIds };
     });
   },
 
   updatePosition: (anilistId, x, y) =>
-    set((s) => ({ anime: s.anime.map((a) => a.anilistId === anilistId ? { ...a, positionX: x, positionY: y } : a) })),
+    set((s) => {
+      const anime = s.anime.map((a) => a.anilistId === anilistId ? { ...a, positionX: x, positionY: y } : a);
+      if (get().isGuest) guestSave(anime, s.characters);
+      return { anime };
+    }),
 
-  persistPosition: (anilistId, x, y) =>
-    api.updateAnimePosition(anilistId, x, y).catch(console.error),
+  persistPosition: (anilistId, x, y) => {
+    if (!get().isGuest) api.updateAnimePosition(anilistId, x, y).catch(console.error);
+  },
 }));

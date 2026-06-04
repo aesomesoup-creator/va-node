@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAnimeCharacters } from "../../api/client";
+import { useGraphStore } from "../../stores/graphStore";
 import type { AnimeEntry, Character } from "../../types";
 import "./AnimeDetailPanel.css";
 
@@ -12,14 +13,21 @@ export default function AnimeDetailPanel({ anime, onClose }: Props) {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { isGuest, characters: storeChars } = useGraphStore();
 
   useEffect(() => {
     setLoading(true);
     setError(null);
+    if (isGuest) {
+      // Guests: read from store (already loaded from localStorage)
+      setCharacters(storeChars.filter((c) => c.anilistAnimeId === anime.anilistId));
+      setLoading(false);
+      return;
+    }
     getAnimeCharacters(anime.anilistId)
-      .then((chars) => { setCharacters(chars); setLoading(false); })
+      .then((chars) => { setCharacters(Array.isArray(chars) ? chars : []); setLoading(false); })
       .catch(() => { setError("Failed to load characters"); setLoading(false); });
-  }, [anime.anilistId]);
+  }, [anime.anilistId, isGuest, storeChars]);
 
   return (
     <div className="detail-overlay" onClick={onClose}>

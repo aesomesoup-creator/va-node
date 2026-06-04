@@ -1,26 +1,8 @@
-import { useState } from "react";
 import { useUiStore } from "../../stores/uiStore";
-import { useAuthStore } from "../../stores/authStore";
 import "./LoginModal.css";
 
 export default function LoginModal() {
   const { closeLogin } = useUiStore();
-  const { loginAsGuest } = useAuthStore();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleGuest = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      await loginAsGuest();
-      closeLogin(); // App.tsx loadGraph() fires automatically when user changes
-    } catch {
-      setError("Cannot reach server — make sure both server and client are running (npm run dev).");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleGoogle = () => {
     window.location.href = "/api/auth/google";
@@ -37,7 +19,7 @@ export default function LoginModal() {
         </div>
 
         <p className="login-desc">
-          Visualize voice actor connections across anime on an interactive graph.
+          Sign in to save your graph across sessions.
         </p>
 
         <div className="login-actions">
@@ -53,16 +35,14 @@ export default function LoginModal() {
 
           <div className="login-divider"><span>or</span></div>
 
-          <button className="btn-guest" onClick={handleGuest} disabled={loading}>
-            {loading ? <><span className="mini-spinner" /> Connecting…</> : "Explore as Guest"}
-            {!loading && <small>No account needed · Data won't be saved</small>}
+          <button className="btn-guest" onClick={closeLogin}>
+            Continue as Guest
+            <small>Already active · Graph saved locally in your browser</small>
           </button>
         </div>
 
-        {error && <p className="login-error">{error}</p>}
-
         <p className="login-note">
-          Guest sessions are temporary. Sign in with Google to save your graph across sessions.
+          Guest data is stored in your browser. Sign in with Google to sync across devices.
         </p>
       </div>
     </div>

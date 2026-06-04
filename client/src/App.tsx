@@ -13,23 +13,13 @@ import "./App.css";
 export default function App() {
   const { user, isLoading, init } = useAuthStore();
   const { loadGraph } = useGraphStore();
-  const { showLogin, openLogin } = useUiStore();
+  const { showLogin } = useUiStore();
 
-  // Init auth on mount
-  useEffect(() => {
-    init();
-  }, []);
+  useEffect(() => { init(); }, []);
 
-  // Load graph once user is known
   useEffect(() => {
-    if (isLoading) return;
-    if (user) {
-      loadGraph();
-    } else {
-      // Show login prompt after a short delay
-      const t = setTimeout(openLogin, 600);
-      return () => clearTimeout(t);
-    }
+    if (isLoading || !user) return;
+    loadGraph(user.isGuest);
   }, [user, isLoading]);
 
   if (isLoading) {
@@ -37,9 +27,7 @@ export default function App() {
       <div className="app-loading">
         <div className="app-loading-logo">
           <span className="app-loading-icon">⬡</span>
-          <span className="app-loading-name">
-            VA<span>node</span>
-          </span>
+          <span className="app-loading-name">VA<span>node</span></span>
         </div>
         <div className="spinner" />
       </div>
@@ -49,12 +37,7 @@ export default function App() {
   return (
     <div className="app">
       <Navbar />
-
-      <main className="app-main">
-        <GraphCanvas />
-      </main>
-
-      {/* Modals */}
+      <main className="app-main"><GraphCanvas /></main>
       <SearchBar />
       <AnimePanel />
       <AdminPanel />

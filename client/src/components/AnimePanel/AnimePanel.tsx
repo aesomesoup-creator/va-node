@@ -1,10 +1,12 @@
 import { useUiStore } from "../../stores/uiStore";
 import { useGraphStore } from "../../stores/graphStore";
+import { useAuthStore } from "../../stores/authStore";
 import "./AnimePanel.css";
 
 export default function AnimePanel() {
   const { showAnimePanel, toggleAnimePanel } = useUiStore();
   const { anime, removeAnime, edges, seiyuuGroups } = useGraphStore();
+  const { user } = useAuthStore();
 
   if (!showAnimePanel) return null;
 
@@ -54,7 +56,7 @@ export default function AnimePanel() {
                   </div>
                   <button
                     className="btn-remove"
-                    onClick={() => removeAnime(a.anilistId)}
+                    onClick={() => removeAnime(a.anilistId, user?.isGuest ?? true)}
                     title="Remove"
                   >
                     ✕

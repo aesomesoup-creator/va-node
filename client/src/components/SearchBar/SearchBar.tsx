@@ -3,6 +3,7 @@ import { searchAnilist, type AnilistResult } from "../../api/anilist";
 import { useGraphStore } from "../../stores/graphStore";
 import { useAuthStore } from "../../stores/authStore";
 import { useUiStore } from "../../stores/uiStore";
+
 import "./SearchBar.css";
 
 function useDebounce<T>(value: T, delay: number): T {
@@ -17,6 +18,7 @@ function useDebounce<T>(value: T, delay: number): T {
 export default function SearchBar() {
   const { showSearch, toggleSearch } = useUiStore();
   const { addAnime, anime: myAnime } = useGraphStore();
+  const { user } = useAuthStore();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<AnilistResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -43,20 +45,14 @@ export default function SearchBar() {
     setAdding(id);
     setError(null);
     try {
-      // Auto-create guest session if the user hasn't logged in yet
-      if (!useAuthStore.getState().user) {
-        await useAuthStore.getState().loginAsGuest();
-      }
-      await addAnime(id);
+      const isGuest = useAuthStore.getState().user?.isGuest ?? true;
+      await addAnime(id, isGuest);
       toggleSearch();
     } catch (err: any) {
-      if (!err.response) {
-        // Network error — server not reachable
-        setError("Cannot reach the server. Make sure you ran: npm run dev (from the va-node-site/ folder, not client/)");
-      } else if (err.response?.status === 401) {
-        setError("Session expired — refresh the page and try again.");
-      } else if (err.response?.status === 409) {
+      if (err.response?.status === 409) {
         setError("This anime is already in your graph.");
+      } else if (!err.response) {
+        setError("Could not fetch anime data. Check your internet connection.");
       } else {
         setError(err?.response?.data?.error || "Failed to add anime. Is the server running?");
       }

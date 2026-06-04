@@ -5,58 +5,26 @@ const BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
   : "/api";
 
-// Guest ID stored in localStorage — avoids cross-origin cookie issues
-const GUEST_KEY = "vanode_guest_id";
-export function getOrCreateGuestId(): string {
-  let id = localStorage.getItem(GUEST_KEY);
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem(GUEST_KEY, id);
-  }
-  return id;
-}
-export function clearGuestId() {
-  localStorage.removeItem(GUEST_KEY);
-}
+const api = axios.create({ baseURL: BASE, withCredentials: true });
 
-const api = axios.create({
-  baseURL: BASE,
-  withCredentials: true,
-});
-
-// Attach guest ID header to every request
-api.interceptors.request.use((config) => {
-  config.headers["x-guest-id"] = getOrCreateGuestId();
-  return config;
-});
-
-// Auth
+// Auth (server only — guests don't need this)
 export const getMe = () =>
-  api.get<{ user: User | null; isGuest?: boolean }>("/auth/me").then((r) => r.data);
-
-export const loginAsGuest = () =>
-  api.post<{ user: User }>("/auth/guest").then((r) => r.data.user);
-
+  api.get<{ user: User | null }>("/auth/me").then((r) => r.data);
 export const logout = () => api.post("/auth/logout");
 
-// Anime
+// Anime — server API for authenticated users only
 export const searchAnime = (q: string) =>
   api.get<AnilistSearchResult[]>("/anime/search", { params: { q } }).then((r) => r.data);
-
 export const getMyAnime = () =>
   api.get<AnimeEntry[]>("/anime").then((r) => r.data);
-
-export const getAnimeCharacters = (anilistId: number) =>
-  api.get<Character[]>(`/anime/${anilistId}/characters`).then((r) => r.data);
-
 export const addAnime = (anilistId: number) =>
   api.post<AnimeEntry>("/anime", { anilistId }).then((r) => r.data);
-
 export const removeAnime = (anilistId: number) =>
   api.delete(`/anime/${anilistId}`);
-
 export const updateAnimePosition = (anilistId: number, x: number, y: number) =>
   api.patch(`/anime/${anilistId}/position`, { x, y });
+export const getAnimeCharacters = (anilistId: number) =>
+  api.get<Character[]>(`/anime/${anilistId}/characters`).then((r) => r.data);
 
 // Graph
 export const getGraph = () =>
@@ -65,9 +33,7 @@ export const getGraph = () =>
 // Admin
 export const adminGetAnime = (page = 1) =>
   api.get("/admin/anime", { params: { page } }).then((r) => r.data);
-
 export const adminGetCharacters = (page = 1) =>
   api.get("/admin/characters", { params: { page } }).then((r) => r.data);
-
 export const adminGetUsers = () =>
   api.get("/admin/users").then((r) => r.data);
