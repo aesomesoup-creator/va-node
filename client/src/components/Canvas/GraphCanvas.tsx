@@ -88,7 +88,7 @@ export default function GraphCanvas() {
 
   const { anime, characters, connectedCharIds, seiyuuGroups, isLoading } = useGraphStore();
   const { updatePosition, persistPosition } = useGraphStore();
-  const { hoveredSeiyuuId, setHoveredSeiyuu, hoveredAnimeId, setHoveredAnime } = useUiStore();
+  const { hoveredAnimeId, setHoveredAnime, hoveredCharId, setHoveredChar, hoveredSeiyuuId, setHoveredSeiyuu } = useUiStore();
 
   // Color map (stable)
   const animeColorMap = useMemo(() => {
@@ -313,7 +313,7 @@ export default function GraphCanvas() {
               });
             })}
 
-            {/* Bundled edges — one arc per anime pair */}
+            {/* ── MODE A: Anime hover → bundled arcs ────────────────── */}
             {bundledEdges.map((bundle) => {
               const a1 = anime.find((a) => a.anilistId === bundle.animeId1);
               const a2 = anime.find((a) => a.anilistId === bundle.animeId2);
@@ -326,85 +326,100 @@ export default function GraphCanvas() {
               const cpy  = (from.y + to.y) / 2 - Math.max(60, dist * 0.25);
               const midX = 0.25 * from.x + 0.5 * cpx + 0.25 * to.x;
               const midY = 0.25 * from.y + 0.5 * cpy + 0.25 * to.y;
+              const badgeR = 18 + Math.min(bundle.count - 1, 3) * 2;
 
-              // Active = one of the two anime is hovered, or a VA in the bundle is hovered
-              const isActive =
-                hoveredAnimeId === bundle.animeId1 ||
-                hoveredAnimeId === bundle.animeId2 ||
-                (hoveredSeiyuuId != null && seiyuuGroups.some(
-                  (g) => g.seiyuuId === hoveredSeiyuuId &&
-                    g.characters.some((c) => c.anilistAnimeId === bundle.animeId1 || c.anilistAnimeId === bundle.animeId2)
-                ));
-
-              const anyHover = hoveredAnimeId != null || hoveredSeiyuuId != null;
-              // C: progressive disclosure — faint when nothing hovered, bright when active
-              const opacity  = isActive ? 1 : anyHover ? 0.04 : 0.18;
-              const stroke   = isActive ? "#00ffcc" : "rgba(0,200,255,0.8)";
-              const strokeW  = isActive ? 2.5 + bundle.count * 0.4 : 1.5 + bundle.count * 0.3;
-              const badgeR   = 18 + Math.min(bundle.count - 1, 3) * 2;
+              // Active only in anime-hover mode (not char-hover mode)
+              const isActive = hoveredCharId == null && (
+                hoveredAnimeId === bundle.animeId1 || hoveredAnimeId === bundle.animeId2
+              );
+              const anyHover = hoveredAnimeId != null || hoveredCharId != null;
+              // In char-hover mode bundles nearly disappear; otherwise faint baseline
+              const opacity = isActive ? 1 : hoveredCharId != null ? 0.03 : anyHover ? 0.04 : 0.18;
+              const stroke  = isActive ? "#00ffcc" : "rgba(0,200,255,0.8)";
+              const strokeW = isActive ? 2.5 + bundle.count * 0.4 : 1.2 + bundle.count * 0.25;
 
               return (
-                <g key={bundle.key} opacity={opacity} style={{ transition: "opacity 0.25s", pointerEvents: "all" }}>
-                  {/* Arc line */}
-                  <path
-                    d={`M ${from.x} ${from.y} Q ${cpx} ${cpy} ${to.x} ${to.y}`}
+                <g key={bundle.key} opacity={opacity} style={{ transition: "opacity 0.2s", pointerEvents: isActive ? "all" : "none" }}>
+                  <path d={`M ${from.x} ${from.y} Q ${cpx} ${cpy} ${to.x} ${to.y}`}
                     fill="none" stroke={stroke} strokeWidth={strokeW}
                     filter={isActive ? "url(#edge-glow)" : undefined}
-                    style={{ transition: "stroke 0.2s, stroke-width 0.2s" }}
-                    onMouseEnter={() => { /* handled by badge */ }}
-                  />
-
-                  {/* Badge circle with count */}
+                    style={{ transition: "stroke 0.2s" }} />
                   <circle cx={midX} cy={midY} r={badgeR + 2}
                     fill={isActive ? "rgba(0,255,204,0.12)" : "rgba(0,10,28,0.75)"}
                     stroke={stroke} strokeWidth={isActive ? 2 : 1.5}
-                    filter={isActive ? "url(#edge-glow)" : undefined}
-                    style={{ transition: "all 0.2s" }}
-                  />
+                    filter={isActive ? "url(#edge-glow)" : undefined} style={{ transition: "all 0.2s" }} />
                   <text x={midX} y={midY - 3} textAnchor="middle"
                     fill={isActive ? "#00ffcc" : "rgba(0,200,255,0.9)"}
-                    fontSize={11} fontWeight="800" style={{ pointerEvents: "none" }}>
-                    ×{bundle.count}
-                  </text>
+                    fontSize={11} fontWeight="800" style={{ pointerEvents: "none" }}>×{bundle.count}</text>
                   <text x={midX} y={midY + 9} textAnchor="middle"
                     fill={isActive ? "rgba(0,255,204,0.7)" : "rgba(0,200,255,0.5)"}
-                    fontSize={7.5} fontWeight="600" style={{ pointerEvents: "none" }}>
-                    VA
-                  </text>
-
-                  {/* VA names list — visible when active */}
+                    fontSize={7.5} fontWeight="600" style={{ pointerEvents: "none" }}>VA</text>
                   {isActive && bundle.vaNames.length > 0 && (
                     <>
-                      <rect
-                        x={midX - 70} y={midY + badgeR + 6}
-                        width={140} height={bundle.vaNames.slice(0, 4).length * 13 + 8}
-                        rx={8}
-                        fill="rgba(3,10,28,0.92)"
-                        stroke="rgba(0,255,204,0.4)"
-                        strokeWidth={1}
-                      />
+                      <rect x={midX - 70} y={midY + badgeR + 6} width={140}
+                        height={Math.min(bundle.vaNames.length, 4) * 13 + 8} rx={8}
+                        fill="rgba(3,10,28,0.92)" stroke="rgba(0,255,204,0.4)" strokeWidth={1} />
                       {bundle.vaNames.slice(0, 4).map((name, i) => (
-                        <text key={i}
-                          x={midX} y={midY + badgeR + 18 + i * 13}
-                          textAnchor="middle"
-                          fill="rgba(226,244,255,0.85)"
-                          fontSize={9.5} fontWeight="500"
-                          style={{ pointerEvents: "none" }}>
+                        <text key={i} x={midX} y={midY + badgeR + 18 + i * 13}
+                          textAnchor="middle" fill="rgba(226,244,255,0.85)"
+                          fontSize={9.5} fontWeight="500" style={{ pointerEvents: "none" }}>
                           {name.length > 20 ? name.slice(0, 19) + "…" : name}
                         </text>
                       ))}
                       {bundle.vaNames.length > 4 && (
                         <text x={midX} y={midY + badgeR + 18 + 4 * 13}
                           textAnchor="middle" fill="rgba(0,200,255,0.5)" fontSize={9}
-                          style={{ pointerEvents: "none" }}>
-                          +{bundle.vaNames.length - 4} more
-                        </text>
+                          style={{ pointerEvents: "none" }}>+{bundle.vaNames.length - 4} more</text>
                       )}
                     </>
                   )}
                 </g>
               );
             })}
+
+            {/* ── MODE B: Character hover → direct char-to-char edges ── */}
+            {(() => {
+              if (hoveredCharId == null) return null;
+              const hoveredChar = characters.find((c) => c.anilistCharacterId === hoveredCharId);
+              if (!hoveredChar?.seiyuuId) return null;
+              const fromPos = charAbsPos.get(hoveredCharId);
+              if (!fromPos) return null;
+
+              // All other connected characters that share the exact same VA
+              const targets = characters.filter(
+                (c) => c.seiyuuId === hoveredChar.seiyuuId &&
+                       c.anilistCharacterId !== hoveredCharId &&
+                       charAbsPos.has(c.anilistCharacterId)
+              );
+
+              return targets.map((char) => {
+                const toPos = charAbsPos.get(char.anilistCharacterId)!;
+                const cpx = (fromPos.x + toPos.x) / 2;
+                const dist = Math.hypot(toPos.x - fromPos.x, toPos.y - fromPos.y);
+                const cpy = (fromPos.y + toPos.y) / 2 - Math.max(40, dist * 0.2);
+                const midX = 0.25 * fromPos.x + 0.5 * cpx + 0.25 * toPos.x;
+                const midY = 0.25 * fromPos.y + 0.5 * cpy + 0.25 * toPos.y;
+
+                return (
+                  <g key={`direct-${char.anilistCharacterId}`}>
+                    {/* Direct arc */}
+                    <path
+                      d={`M ${fromPos.x} ${fromPos.y} Q ${cpx} ${cpy} ${toPos.x} ${toPos.y}`}
+                      fill="none" stroke="#00ffcc" strokeWidth={2.5}
+                      filter="url(#edge-glow)"
+                    />
+                    {/* VA name label at midpoint */}
+                    <rect x={midX - 58} y={midY - 10} width={116} height={18} rx={9}
+                      fill="rgba(3,10,28,0.92)" stroke="rgba(0,255,204,0.5)" strokeWidth={1} />
+                    <text x={midX} y={midY + 3} textAnchor="middle"
+                      fill="#00ffcc" fontSize={10} fontWeight="700"
+                      style={{ pointerEvents: "none" }}>
+                      {(hoveredChar.seiyuuName ?? "Unknown VA").slice(0, 22)}
+                    </text>
+                  </g>
+                );
+              });
+            })()}
           </svg>
 
           {/* Anime center nodes (draggable) */}
@@ -422,21 +437,25 @@ export default function GraphCanvas() {
             const ci = animeColorMap.get(a.anilistId) ?? 0;
             const color = getAnimeColor(ci);
             const chars = charsByAnime.get(a.anilistId) ?? [];
-            return chars.map((char, i) => {
+            return chars.map((char) => {
               const pos = charAbsPos.get(char.anilistCharacterId);
               if (!pos) return null;
-              const seiyuuId = seiyuuGroups.find((g) => g.characters.some((c) => c.anilistCharacterId === char.anilistCharacterId))?.seiyuuId;
-              const highlighted = hoveredSeiyuuId != null && seiyuuGroups.some(
-                (g) => g.seiyuuId === hoveredSeiyuuId && g.characters.some((c) => c.anilistCharacterId === char.anilistCharacterId)
+              // Highlighted = this char shares the VA of the hovered char
+              const isHovered = hoveredCharId === char.anilistCharacterId;
+              const highlighted = hoveredCharId != null && (
+                isHovered || (
+                  char.seiyuuId != null &&
+                  characters.find((c) => c.anilistCharacterId === hoveredCharId)?.seiyuuId === char.seiyuuId
+                )
               );
-              const dimmed = hoveredSeiyuuId != null && !highlighted;
+              const dimmed = hoveredCharId != null && !highlighted;
               return (
                 <CharNode key={char.anilistCharacterId} char={char}
                   absX={pos.x} absY={pos.y}
                   colorBorder={color.border} colorGlow={color.glow}
                   highlighted={highlighted} dimmed={dimmed}
-                  onHoverIn={() => seiyuuId && setHoveredSeiyuu(seiyuuId)}
-                  onHoverOut={() => setHoveredSeiyuu(null)} />
+                  onHoverIn={() => setHoveredChar(char.anilistCharacterId)}
+                  onHoverOut={() => setHoveredChar(null)} />
               );
             });
           })}

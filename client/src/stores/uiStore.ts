@@ -5,15 +5,18 @@ interface UiState {
   showSearch: boolean;
   showAdmin: boolean;
   showLogin: boolean;
-  hoveredSeiyuuId: number | null;
   hoveredAnimeId: number | null;
+  hoveredCharId: number | null;        // specific character being hovered
   toggleAnimePanel: () => void;
   toggleSearch: () => void;
   toggleAdmin: () => void;
   openLogin: () => void;
   closeLogin: () => void;
-  setHoveredSeiyuu: (id: number | null) => void;
   setHoveredAnime: (id: number | null) => void;
+  setHoveredChar: (charId: number | null) => void;
+  // legacy (CharNode still uses this for orbit highlighting)
+  hoveredSeiyuuId: number | null;
+  setHoveredSeiyuu: (id: number | null) => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -21,14 +24,16 @@ export const useUiStore = create<UiState>((set) => ({
   showSearch: false,
   showAdmin: false,
   showLogin: false,
-  hoveredSeiyuuId: null,
   hoveredAnimeId: null,
+  hoveredCharId: null,
+  hoveredSeiyuuId: null,
 
   toggleAnimePanel: () => set((s) => ({ showAnimePanel: !s.showAnimePanel })),
-  toggleSearch: () => set((s) => ({ showSearch: !s.showSearch })),
-  toggleAdmin: () => set((s) => ({ showAdmin: !s.showAdmin })),
-  openLogin: () => set({ showLogin: true }),
-  closeLogin: () => set({ showLogin: false }),
+  toggleSearch:     () => set((s) => ({ showSearch: !s.showSearch })),
+  toggleAdmin:      () => set((s) => ({ showAdmin: !s.showAdmin })),
+  openLogin:        () => set({ showLogin: true }),
+  closeLogin:       () => set({ showLogin: false }),
+  setHoveredAnime:  (id) => set({ hoveredAnimeId: id, hoveredCharId: null }),
+  setHoveredChar:   (charId) => set({ hoveredCharId: charId, hoveredAnimeId: null }),
   setHoveredSeiyuu: (id) => set({ hoveredSeiyuuId: id }),
-  setHoveredAnime: (id) => set({ hoveredAnimeId: id }),
 }));
