@@ -43,18 +43,26 @@ router.get("/", requireAuth, async (req: any, res) => {
 });
 
 router.get("/:anilistId/characters", requireAuth, async (req: any, res) => {
-  const anilistId = Number(req.params.anilistId);
-  const userId = getUserId(req);
+  try {
+    const anilistId = Number(req.params.anilistId);
+    const userId = getUserId(req);
 
-  if (isGuest(req) && userId) {
-    const chars = getGuestData(userId).characters.filter((c: any) => c.anilistAnimeId === anilistId);
-    return res.json(chars);
+    if (isGuest(req) && userId) {
+      const data = getGuestData(userId);
+      const chars = Array.isArray(data.characters)
+        ? data.characters.filter((c: any) => c.anilistAnimeId === anilistId)
+        : [];
+      return res.json(chars);
+    }
+
+    if (!isDbAvailable()) return res.json([]);
+    const db = getDb();
+    const chars = await db.select().from(schema.animeCharacters).where(eq(schema.animeCharacters.anilistAnimeId, anilistId));
+    res.json(Array.isArray(chars) ? chars : []);
+  } catch (err) {
+    console.error("characters route error:", err);
+    res.json([]);
   }
-
-  if (!isDbAvailable()) return res.json([]);
-  const db = getDb();
-  const chars = await db.select().from(schema.animeCharacters).where(eq(schema.animeCharacters.anilistAnimeId, anilistId));
-  res.json(chars);
 });
 
 router.post("/", requireAuth, async (req: any, res) => {

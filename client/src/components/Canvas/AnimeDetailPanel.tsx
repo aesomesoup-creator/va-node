@@ -17,7 +17,10 @@ export default function AnimeDetailPanel({ anime, onClose }: Props) {
     setLoading(true);
     setError(null);
     getAnimeCharacters(anime.anilistId)
-      .then((chars) => { setCharacters(chars); setLoading(false); })
+      .then((chars) => {
+        setCharacters(Array.isArray(chars) ? chars : []);
+        setLoading(false);
+      })
       .catch(() => { setError("Failed to load characters"); setLoading(false); });
   }, [anime.anilistId]);
 

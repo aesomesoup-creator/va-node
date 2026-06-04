@@ -68,10 +68,19 @@ export const useGraphStore = create<GraphState>((set, get) => ({
     set({ isLoading: true });
     try {
       const data = await api.getGraph();
-      let anime = data.anime;
-      if (anime.length === 0) anime = await api.getMyAnime();
-      const { connectedIds, edges } = computeEdges(data.seiyuuGroups);
-      set({ anime, characters: data.characters, seiyuuGroups: data.seiyuuGroups, edges, connectedCharIds: connectedIds, isLoading: false });
+      const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
+      let anime = Array.isArray(data.anime) ? data.anime : [];
+      if (anime.length === 0) {
+        const fallback = await api.getMyAnime().catch(() => [] as typeof anime);
+        anime = Array.isArray(fallback) ? fallback : [];
+      }
+      // Don't wipe local optimistic state if server returns empty (in-memory guest data lost on restart)
+      if (anime.length === 0 && useGraphStore.getState().anime.length > 0) {
+        set({ isLoading: false });
+        return;
+      }
+      const { connectedIds, edges } = computeEdges(seiyuuGroups);
+      set({ anime, characters: Array.isArray(data.characters) ? data.characters : [], seiyuuGroups, edges, connectedCharIds: connectedIds, isLoading: false });
     } catch (err) {
       console.error("loadGraph error:", err);
       set({ isLoading: false });
