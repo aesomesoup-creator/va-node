@@ -95,6 +95,11 @@ export function setupPassport() {
 
 const router = Router();
 
+// Lets the client check if Google OAuth is configured before redirecting
+router.get("/google/available", (_req, res) => {
+  res.json({ available: Boolean(process.env.GOOGLE_CLIENT_ID) });
+});
+
 router.get("/me", (req, res) => {
   if (req.isAuthenticated() && req.user) {
     return res.json({ user: req.user, isGuest: false });

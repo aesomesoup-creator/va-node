@@ -18,6 +18,13 @@ export default function App() {
 
   useEffect(() => { init(); }, []);
 
+  // Auto-open login modal if redirected back from a failed Google OAuth
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("auth") === "error") {
+      useUiStore.getState().openLogin();
+    }
+  }, []);
+
   useEffect(() => {
     if (isLoading || !user) return;
     loadGraph(user.isGuest);
