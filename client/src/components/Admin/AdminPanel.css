@@ -1,0 +1,121 @@
+.admin-panel {
+  width: 100%;
+  max-width: 800px;
+  max-height: 85vh;
+  background: rgba(5, 15, 40, 0.95);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  border-radius: 24px;
+  backdrop-filter: blur(24px);
+  box-shadow: 0 0 60px rgba(0, 200, 255, 0.08), 0 40px 80px rgba(0, 0, 0, 0.6);
+  animation: slideUp 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.admin-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.admin-tab {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(226, 244, 255, 0.5);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: capitalize;
+}
+
+.admin-tab:hover { color: #e2f4ff; background: rgba(0, 200, 255, 0.04); }
+.admin-tab.active {
+  color: #00c8ff;
+  border-bottom-color: #00c8ff;
+}
+
+.admin-error {
+  margin: 16px;
+  padding: 12px 16px;
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  border-radius: 12px;
+  color: #ff6b7a;
+  font-size: 13px;
+}
+
+.admin-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.admin-table-wrap {
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 200, 255, 0.2) transparent;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.admin-table th {
+  padding: 12px 16px;
+  text-align: left;
+  color: rgba(226, 244, 255, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+  position: sticky;
+  top: 0;
+  background: rgba(5, 15, 40, 0.95);
+}
+
+.admin-table td {
+  padding: 10px 16px;
+  color: rgba(226, 244, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-table tr:hover td { background: rgba(0, 200, 255, 0.04); }
+
+.mono { font-family: monospace; font-size: 12px; color: rgba(0, 200, 255, 0.7); }
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-auth { background: rgba(0, 200, 255, 0.12); color: #00c8ff; }
+.badge-guest { background: rgba(255, 184, 0, 0.12); color: #ffb800; }
+
+.admin-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px;
+  border-top: 1px solid rgba(0, 200, 255, 0.08);
+  font-size: 13px;
+  color: rgba(226, 244, 255, 0.5);
+  flex-shrink: 0;
+}

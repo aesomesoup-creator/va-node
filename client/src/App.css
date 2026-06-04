@@ -1,0 +1,56 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.app-main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  margin-top: 56px; /* navbar height */
+}
+
+/* ─── App loading screen ─── */
+.app-loading {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: var(--bg-deep);
+}
+
+.app-loading-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.app-loading-icon {
+  font-size: 48px;
+  color: #00c8ff;
+  filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.6));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.app-loading-name {
+  font-size: 36px;
+  font-weight: 900;
+  color: #e2f4ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-loading-name span {
+  color: #00ff88;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5));
+}
+
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.6)); }
+  50% { filter: drop-shadow(0 0 40px rgba(0, 200, 255, 1)); }
+}

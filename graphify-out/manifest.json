@@ -1,0 +1,197 @@
+{
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\.claude\\settings.json": {
+    "mtime": 1780571794.4497793,
+    "ast_hash": "5ef2d683437c469b36d3b515f1a053a0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\.claude\\settings.local.json": {
+    "mtime": 1780515610.1901557,
+    "ast_hash": "f63da4ab62c5a9ca5e36a96d84a83dc1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\package.json": {
+    "mtime": 1780515906.8199801,
+    "ast_hash": "8506811ce1e40cb19adaddd2e769c054",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\App.tsx": {
+    "mtime": 1780516438.4951005,
+    "ast_hash": "b6cbc9bd21c1c9c3d851ec8ce431c789",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\api\\client.ts": {
+    "mtime": 1780535903.7619958,
+    "ast_hash": "8b827e8cc8e3a0705981c3953292a8e9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Admin\\AdminPanel.tsx": {
+    "mtime": 1780516360.0193696,
+    "ast_hash": "ff096c84862aab97a0fa8cc6bc71a3ca",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\AnimePanel\\AnimePanel.tsx": {
+    "mtime": 1780516310.93108,
+    "ast_hash": "4d5c14d2ec8210bf3f9e95aff85d03a2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Auth\\LoginModal.tsx": {
+    "mtime": 1780534434.466251,
+    "ast_hash": "7a01544bc147c8bef33170b30b4d5578",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\AnimeBubble.tsx": {
+    "mtime": 1780536680.4631796,
+    "ast_hash": "50e81e09488e3a11122bfa73e71da32e",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\GraphCanvas.tsx": {
+    "mtime": 1780536817.7395084,
+    "ast_hash": "59391f8456aaba9b6434003f85844b5d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Layout\\Navbar.tsx": {
+    "mtime": 1780516177.7426963,
+    "ast_hash": "006f093736a051f72c0b1393c230362f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\SearchBar\\SearchBar.tsx": {
+    "mtime": 1780535306.7778847,
+    "ast_hash": "fe5d4913592d8a0122000bcb4bb36dcd",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\main.tsx": {
+    "mtime": 1780516459.8899567,
+    "ast_hash": "7e4d4ac7db86150f85a6d008da04882b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\authStore.ts": {
+    "mtime": 1780515998.930487,
+    "ast_hash": "9e9d4a5dc7d50d468a4adac0a5202d91",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\graphStore.ts": {
+    "mtime": 1780516816.6523614,
+    "ast_hash": "25f5b010b07e273fda48cae551529f0d",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\uiStore.ts": {
+    "mtime": 1780516035.4625108,
+    "ast_hash": "533db15af32bcb7c93beb7538899bbc8",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\types\\index.ts": {
+    "mtime": 1780515964.9983099,
+    "ast_hash": "5ae5793de0e9d663a615e2e4b6f5f065",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\tsconfig.app.json": {
+    "mtime": 1780515924.2344213,
+    "ast_hash": "e463301c586ce323389b34acc486fa26",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\tsconfig.json": {
+    "mtime": 1780515915.1308708,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\tsconfig.node.json": {
+    "mtime": 1780515932.55544,
+    "ast_hash": "b84a00cad3da1546ce9db508961f650b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\vite.config.ts": {
+    "mtime": 1780515941.3387709,
+    "ast_hash": "aaaed90a36fd931b5335dc31b717abb9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\package.json": {
+    "mtime": 1780515635.8083427,
+    "ast_hash": "f5d23a92c64352079b3ac67f15036edf",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\drizzle.config.ts": {
+    "mtime": 1780515708.547654,
+    "ast_hash": "6d50f8f8f412289184b98015881a3ce2",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\package.json": {
+    "mtime": 1780535483.465419,
+    "ast_hash": "327fce8a5c19c0fef5f942e6558b12b1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\db\\index.ts": {
+    "mtime": 1780515732.8067477,
+    "ast_hash": "2d44c94c1e356b3f054e77c02f3a370c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\db\\schema.ts": {
+    "mtime": 1780515723.7040775,
+    "ast_hash": "7ef96c8f2a35a0314ce29415d821b9ba",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\index.ts": {
+    "mtime": 1780535492.5547152,
+    "ast_hash": "c01b404e60c9bc16ddf50c3c3da3e7a1",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\middleware\\auth.ts": {
+    "mtime": 1780515779.2046561,
+    "ast_hash": "8301034cf00b66fceb2bdd20369bed50",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\admin.ts": {
+    "mtime": 1780515867.6759925,
+    "ast_hash": "0434ab9035ebaad21cc5ffcad50e7529",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\anime.ts": {
+    "mtime": 1780535863.8289516,
+    "ast_hash": "4f1570ea7f7614688a774a9fabe8d1fa",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\auth.ts": {
+    "mtime": 1780515801.9584892,
+    "ast_hash": "13252b54fbc63ae6e4c511a0ef9a7a0f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\graph.ts": {
+    "mtime": 1780535881.7112894,
+    "ast_hash": "bc02f23d251e59273fda36dca8e815a7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\services\\anilist.ts": {
+    "mtime": 1780515767.1215134,
+    "ast_hash": "c56a3fc23756cf0bd51ca28aae91d6b5",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\tsconfig.json": {
+    "mtime": 1780515699.8844683,
+    "ast_hash": "fdc36c1efe72122c999d9cd4827123ee",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\index.html": {
+    "mtime": 1780515950.568428,
+    "ast_hash": "f86792ebdf513ff605c7aaea99d2f65c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\public\\favicon.svg": {
+    "mtime": 1780516469.6356742,
+    "ast_hash": "784a5ca141b05116a91d3ee7b3975968",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\api\\anilist.ts": {
+    "mtime": 1780534929.6534164,
+    "ast_hash": "0af41b1c434781daba7722a073c1c6c7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\AnimeDetailPanel.tsx": {
+    "mtime": 1780535920.8301156,
+    "ast_hash": "b3eef0c24069d64e015294f6a027824b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\stores\\guestStore.ts": {
+    "mtime": 1780535826.6297283,
+    "ast_hash": "319f1a4cb0dac4cbd33d043ad66bb226",
+    "semantic_hash": ""
+  }
+}

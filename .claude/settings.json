@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\prosd\\AppData\\Local\\Programs\\VSCodeWorkers\\resources\\assets\\claude-hook.ps1\" -EventType PreToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\prosd\\AppData\\Local\\Programs\\VSCodeWorkers\\resources\\assets\\claude-hook.ps1\" -EventType PostToolUse"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\prosd\\AppData\\Local\\Programs\\VSCodeWorkers\\resources\\assets\\claude-hook.ps1\" -EventType Stop"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\prosd\\AppData\\Local\\Programs\\VSCodeWorkers\\resources\\assets\\claude-hook.ps1\" -EventType Notification"
+          }
+        ]
+      }
+    ]
+  }
+}

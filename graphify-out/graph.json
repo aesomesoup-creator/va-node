@@ -1,0 +1,5882 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L1",
+      "id": "claude_settings",
+      "community": 11,
+      "norm_label": "settings.json"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2",
+      "id": "claude_settings_hooks",
+      "community": 11,
+      "norm_label": "hooks"
+    },
+    {
+      "label": "PreToolUse",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3",
+      "id": "claude_settings_hooks_pretooluse",
+      "community": 11,
+      "norm_label": "pretooluse"
+    },
+    {
+      "label": "PostToolUse",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L14",
+      "id": "claude_settings_hooks_posttooluse",
+      "community": 11,
+      "norm_label": "posttooluse"
+    },
+    {
+      "label": "Stop",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L25",
+      "id": "claude_settings_hooks_stop",
+      "community": 11,
+      "norm_label": "stop"
+    },
+    {
+      "label": "Notification",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L36",
+      "id": "claude_settings_hooks_notification",
+      "community": 11,
+      "norm_label": "notification"
+    },
+    {
+      "label": "settings.local.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L1",
+      "id": "claude_settings_local",
+      "community": 12,
+      "norm_label": "settings.local.json"
+    },
+    {
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "id": "claude_settings_local_permissions",
+      "community": 12,
+      "norm_label": "permissions"
+    },
+    {
+      "label": "allow",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "id": "claude_settings_local_permissions_allow",
+      "community": 12,
+      "norm_label": "allow"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L1",
+      "id": "client_package",
+      "community": 3,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L2",
+      "id": "client_package_name",
+      "community": 3,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L3",
+      "id": "client_package_version",
+      "community": 3,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L4",
+      "id": "client_package_private",
+      "community": 3,
+      "norm_label": "private"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L5",
+      "id": "client_package_type",
+      "community": 3,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "id": "client_package_scripts",
+      "community": 3,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L7",
+      "id": "client_package_scripts_dev",
+      "community": 3,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L8",
+      "id": "client_package_scripts_build",
+      "community": 3,
+      "norm_label": "build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L9",
+      "id": "client_package_scripts_preview",
+      "community": 3,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L11",
+      "id": "client_package_dependencies",
+      "community": 3,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "axios",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "id": "client_package_dependencies_axios",
+      "community": 3,
+      "norm_label": "axios"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "id": "client_package_dependencies_react",
+      "community": 3,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "id": "client_package_dependencies_react_dom",
+      "community": 3,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "zustand",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "id": "client_package_dependencies_zustand",
+      "community": 3,
+      "norm_label": "zustand"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L17",
+      "id": "client_package_devdependencies",
+      "community": 3,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "id": "client_package_devdependencies_types_react",
+      "community": 3,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "id": "client_package_devdependencies_types_react_dom",
+      "community": 3,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "id": "client_package_devdependencies_vitejs_plugin_react",
+      "community": 3,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "id": "client_package_devdependencies_typescript",
+      "community": 3,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "id": "client_package_devdependencies_vite",
+      "community": 3,
+      "norm_label": "vite"
+    },
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L1",
+      "id": "src_app",
+      "community": 2,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L13",
+      "id": "src_app_app",
+      "community": 2,
+      "norm_label": "app()"
+    },
+    {
+      "label": "anilist.ts",
+      "file_type": "code",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L1",
+      "id": "api_anilist",
+      "community": 2,
+      "norm_label": "anilist.ts"
+    },
+    {
+      "label": "gql()",
+      "file_type": "code",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L6",
+      "id": "api_anilist_gql",
+      "community": 2,
+      "norm_label": "gql()"
+    },
+    {
+      "label": "AnilistResult",
+      "file_type": "code",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L34",
+      "id": "api_anilist_anilistresult",
+      "community": 2,
+      "norm_label": "anilistresult"
+    },
+    {
+      "label": "searchAnilist()",
+      "file_type": "code",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L44",
+      "id": "api_anilist_searchanilist",
+      "community": 2,
+      "norm_label": "searchanilist()"
+    },
+    {
+      "label": "client.ts",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L1",
+      "id": "api_client",
+      "community": 4,
+      "norm_label": "client.ts"
+    },
+    {
+      "label": "api",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L4",
+      "id": "api_client_api",
+      "community": 4,
+      "norm_label": "api"
+    },
+    {
+      "label": "getMe()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L10",
+      "id": "api_client_getme",
+      "community": 4,
+      "norm_label": "getme()"
+    },
+    {
+      "label": "loginAsGuest()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L13",
+      "id": "api_client_loginasguest",
+      "community": 4,
+      "norm_label": "loginasguest()"
+    },
+    {
+      "label": "logout()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L16",
+      "id": "api_client_logout",
+      "community": 4,
+      "norm_label": "logout()"
+    },
+    {
+      "label": "searchAnime()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L19",
+      "id": "api_client_searchanime",
+      "community": 4,
+      "norm_label": "searchanime()"
+    },
+    {
+      "label": "getMyAnime()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L22",
+      "id": "api_client_getmyanime",
+      "community": 4,
+      "norm_label": "getmyanime()"
+    },
+    {
+      "label": "getAnimeCharacters()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L25",
+      "id": "api_client_getanimecharacters",
+      "community": 5,
+      "norm_label": "getanimecharacters()"
+    },
+    {
+      "label": "addAnime()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L28",
+      "id": "api_client_addanime",
+      "community": 4,
+      "norm_label": "addanime()"
+    },
+    {
+      "label": "removeAnime()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L31",
+      "id": "api_client_removeanime",
+      "community": 4,
+      "norm_label": "removeanime()"
+    },
+    {
+      "label": "updateAnimePosition()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L34",
+      "id": "api_client_updateanimeposition",
+      "community": 4,
+      "norm_label": "updateanimeposition()"
+    },
+    {
+      "label": "getGraph()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L38",
+      "id": "api_client_getgraph",
+      "community": 4,
+      "norm_label": "getgraph()"
+    },
+    {
+      "label": "adminGetAnime()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L42",
+      "id": "api_client_admingetanime",
+      "community": 4,
+      "norm_label": "admingetanime()"
+    },
+    {
+      "label": "adminGetCharacters()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L45",
+      "id": "api_client_admingetcharacters",
+      "community": 4,
+      "norm_label": "admingetcharacters()"
+    },
+    {
+      "label": "adminGetUsers()",
+      "file_type": "code",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L48",
+      "id": "api_client_admingetusers",
+      "community": 4,
+      "norm_label": "admingetusers()"
+    },
+    {
+      "label": "AdminPanel.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L1",
+      "id": "admin_adminpanel",
+      "community": 4,
+      "norm_label": "adminpanel.tsx"
+    },
+    {
+      "label": "Tab",
+      "file_type": "code",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L6",
+      "id": "admin_adminpanel_tab",
+      "community": 4,
+      "norm_label": "tab"
+    },
+    {
+      "label": "AdminPanel()",
+      "file_type": "code",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L8",
+      "id": "admin_adminpanel_adminpanel",
+      "community": 4,
+      "norm_label": "adminpanel()"
+    },
+    {
+      "label": "AnimePanel.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L1",
+      "id": "animepanel_animepanel",
+      "community": 2,
+      "norm_label": "animepanel.tsx"
+    },
+    {
+      "label": "AnimePanel()",
+      "file_type": "code",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L5",
+      "id": "animepanel_animepanel_animepanel",
+      "community": 2,
+      "norm_label": "animepanel()"
+    },
+    {
+      "label": "LoginModal.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L1",
+      "id": "auth_loginmodal",
+      "community": 2,
+      "norm_label": "loginmodal.tsx"
+    },
+    {
+      "label": "LoginModal()",
+      "file_type": "code",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L6",
+      "id": "auth_loginmodal_loginmodal",
+      "community": 2,
+      "norm_label": "loginmodal()"
+    },
+    {
+      "label": "AnimeBubble.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L1",
+      "id": "canvas_animebubble",
+      "community": 5,
+      "norm_label": "animebubble.tsx"
+    },
+    {
+      "label": "BUBBLE_COLORS",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L15",
+      "id": "canvas_animebubble_bubble_colors",
+      "community": 5,
+      "norm_label": "bubble_colors"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L26",
+      "id": "canvas_animebubble_props",
+      "community": 5,
+      "norm_label": "props"
+    },
+    {
+      "label": "AnimeBubble()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L35",
+      "id": "canvas_animebubble_animebubble",
+      "community": 2,
+      "norm_label": "animebubble()"
+    },
+    {
+      "label": "AnimeDetailPanel.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L1",
+      "id": "canvas_animedetailpanel",
+      "community": 5,
+      "norm_label": "animedetailpanel.tsx"
+    },
+    {
+      "label": "Props",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L6",
+      "id": "canvas_animedetailpanel_props",
+      "community": 5,
+      "norm_label": "props"
+    },
+    {
+      "label": "AnimeDetailPanel()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L11",
+      "id": "canvas_animedetailpanel_animedetailpanel",
+      "community": 5,
+      "norm_label": "animedetailpanel()"
+    },
+    {
+      "label": "GraphCanvas.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L1",
+      "id": "canvas_graphcanvas",
+      "community": 5,
+      "norm_label": "graphcanvas.tsx"
+    },
+    {
+      "label": "EmptyState()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L12",
+      "id": "canvas_graphcanvas_emptystate",
+      "community": 5,
+      "norm_label": "emptystate()"
+    },
+    {
+      "label": "EdgeTooltip()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L24",
+      "id": "canvas_graphcanvas_edgetooltip",
+      "community": 5,
+      "norm_label": "edgetooltip()"
+    },
+    {
+      "label": "GraphCanvas()",
+      "file_type": "code",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L33",
+      "id": "canvas_graphcanvas_graphcanvas",
+      "community": 2,
+      "norm_label": "graphcanvas()"
+    },
+    {
+      "label": "Navbar.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L1",
+      "id": "layout_navbar",
+      "community": 2,
+      "norm_label": "navbar.tsx"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L5",
+      "id": "layout_navbar_navbar",
+      "community": 2,
+      "norm_label": "navbar()"
+    },
+    {
+      "label": "SearchBar.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L1",
+      "id": "searchbar_searchbar",
+      "community": 2,
+      "norm_label": "searchbar.tsx"
+    },
+    {
+      "label": "useDebounce()",
+      "file_type": "code",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L8",
+      "id": "searchbar_searchbar_usedebounce",
+      "community": 2,
+      "norm_label": "usedebounce()"
+    },
+    {
+      "label": "SearchBar()",
+      "file_type": "code",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L17",
+      "id": "searchbar_searchbar_searchbar",
+      "community": 2,
+      "norm_label": "searchbar()"
+    },
+    {
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L1",
+      "id": "src_main",
+      "community": 2,
+      "norm_label": "main.tsx"
+    },
+    {
+      "label": "authStore.ts",
+      "file_type": "code",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L1",
+      "id": "stores_authstore",
+      "community": 2,
+      "norm_label": "authstore.ts"
+    },
+    {
+      "label": "AuthState",
+      "file_type": "code",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L5",
+      "id": "stores_authstore_authstate",
+      "community": 2,
+      "norm_label": "authstate"
+    },
+    {
+      "label": "useAuthStore",
+      "file_type": "code",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L13",
+      "id": "stores_authstore_useauthstore",
+      "community": 2,
+      "norm_label": "useauthstore"
+    },
+    {
+      "label": "graphStore.ts",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L1",
+      "id": "stores_graphstore",
+      "community": 5,
+      "norm_label": "graphstore.ts"
+    },
+    {
+      "label": "charRelativePos()",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L13",
+      "id": "stores_graphstore_charrelativepos",
+      "community": 5,
+      "norm_label": "charrelativepos()"
+    },
+    {
+      "label": "computeEdges()",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L23",
+      "id": "stores_graphstore_computeedges",
+      "community": 5,
+      "norm_label": "computeedges()"
+    },
+    {
+      "label": "GraphState",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L59",
+      "id": "stores_graphstore_graphstate",
+      "community": 5,
+      "norm_label": "graphstate"
+    },
+    {
+      "label": "useGraphStore",
+      "file_type": "code",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L74",
+      "id": "stores_graphstore_usegraphstore",
+      "community": 2,
+      "norm_label": "usegraphstore"
+    },
+    {
+      "label": "uiStore.ts",
+      "file_type": "code",
+      "source_file": "client/src/stores/uiStore.ts",
+      "source_location": "L1",
+      "id": "stores_uistore",
+      "community": 2,
+      "norm_label": "uistore.ts"
+    },
+    {
+      "label": "UiState",
+      "file_type": "code",
+      "source_file": "client/src/stores/uiStore.ts",
+      "source_location": "L3",
+      "id": "stores_uistore_uistate",
+      "community": 2,
+      "norm_label": "uistate"
+    },
+    {
+      "label": "useUiStore",
+      "file_type": "code",
+      "source_file": "client/src/stores/uiStore.ts",
+      "source_location": "L17",
+      "id": "stores_uistore_useuistore",
+      "community": 2,
+      "norm_label": "useuistore"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L1",
+      "id": "types_index",
+      "community": 5,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "User",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L1",
+      "id": "types_index_user",
+      "community": 2,
+      "norm_label": "user"
+    },
+    {
+      "label": "AnimeEntry",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L9",
+      "id": "types_index_animeentry",
+      "community": 5,
+      "norm_label": "animeentry"
+    },
+    {
+      "label": "Character",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L20",
+      "id": "types_index_character",
+      "community": 5,
+      "norm_label": "character"
+    },
+    {
+      "label": "SeiyuuGroup",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L31",
+      "id": "types_index_seiyuugroup",
+      "community": 5,
+      "norm_label": "seiyuugroup"
+    },
+    {
+      "label": "GraphData",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L38",
+      "id": "types_index_graphdata",
+      "community": 5,
+      "norm_label": "graphdata"
+    },
+    {
+      "label": "AnilistSearchResult",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L44",
+      "id": "types_index_anilistsearchresult",
+      "community": 5,
+      "norm_label": "anilistsearchresult"
+    },
+    {
+      "label": "Vec2",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L55",
+      "id": "types_index_vec2",
+      "community": 5,
+      "norm_label": "vec2"
+    },
+    {
+      "label": "Transform",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L60",
+      "id": "types_index_transform",
+      "community": 5,
+      "norm_label": "transform"
+    },
+    {
+      "label": "CharNodePosition",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L67",
+      "id": "types_index_charnodeposition",
+      "community": 5,
+      "norm_label": "charnodeposition"
+    },
+    {
+      "label": "SeiyuuEdge",
+      "file_type": "code",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L75",
+      "id": "types_index_seiyuuedge",
+      "community": 5,
+      "norm_label": "seiyuuedge"
+    },
+    {
+      "label": "tsconfig.app.json",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L1",
+      "id": "client_tsconfig_app",
+      "community": 6,
+      "norm_label": "tsconfig.app.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L2",
+      "id": "client_tsconfig_app_compileroptions",
+      "community": 6,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L3",
+      "id": "client_tsconfig_app_compileroptions_target",
+      "community": 6,
+      "norm_label": "target"
+    },
+    {
+      "label": "useDefineForClassFields",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L4",
+      "id": "client_tsconfig_app_compileroptions_usedefineforclassfields",
+      "community": 6,
+      "norm_label": "usedefineforclassfields"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L5",
+      "id": "client_tsconfig_app_compileroptions_lib",
+      "community": 6,
+      "norm_label": "lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L6",
+      "id": "client_tsconfig_app_compileroptions_module",
+      "community": 6,
+      "norm_label": "module"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L7",
+      "id": "client_tsconfig_app_compileroptions_skiplibcheck",
+      "community": 6,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L8",
+      "id": "client_tsconfig_app_compileroptions_moduleresolution",
+      "community": 6,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L9",
+      "id": "client_tsconfig_app_compileroptions_allowimportingtsextensions",
+      "community": 6,
+      "norm_label": "allowimportingtsextensions"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L10",
+      "id": "client_tsconfig_app_compileroptions_isolatedmodules",
+      "community": 6,
+      "norm_label": "isolatedmodules"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L11",
+      "id": "client_tsconfig_app_compileroptions_moduledetection",
+      "community": 6,
+      "norm_label": "moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L12",
+      "id": "client_tsconfig_app_compileroptions_noemit",
+      "community": 6,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L13",
+      "id": "client_tsconfig_app_compileroptions_jsx",
+      "community": 6,
+      "norm_label": "jsx"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L14",
+      "id": "client_tsconfig_app_compileroptions_strict",
+      "community": 6,
+      "norm_label": "strict"
+    },
+    {
+      "label": "noUnusedLocals",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L15",
+      "id": "client_tsconfig_app_compileroptions_nounusedlocals",
+      "community": 6,
+      "norm_label": "nounusedlocals"
+    },
+    {
+      "label": "noUnusedParameters",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L16",
+      "id": "client_tsconfig_app_compileroptions_nounusedparameters",
+      "community": 6,
+      "norm_label": "nounusedparameters"
+    },
+    {
+      "label": "noFallthroughCasesInSwitch",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L17",
+      "id": "client_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "community": 6,
+      "norm_label": "nofallthroughcasesinswitch"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L19",
+      "id": "client_tsconfig_app_include",
+      "community": 6,
+      "norm_label": "include"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "client/tsconfig.json",
+      "source_location": "L1",
+      "id": "client_tsconfig",
+      "community": 13,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "files",
+      "file_type": "code",
+      "source_file": "client/tsconfig.json",
+      "source_location": "L2",
+      "id": "client_tsconfig_files",
+      "community": 13,
+      "norm_label": "files"
+    },
+    {
+      "label": "references",
+      "file_type": "code",
+      "source_file": "client/tsconfig.json",
+      "source_location": "L3",
+      "id": "client_tsconfig_references",
+      "community": 13,
+      "norm_label": "references"
+    },
+    {
+      "label": "tsconfig.node.json",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L1",
+      "id": "client_tsconfig_node",
+      "community": 8,
+      "norm_label": "tsconfig.node.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L2",
+      "id": "client_tsconfig_node_compileroptions",
+      "community": 8,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L3",
+      "id": "client_tsconfig_node_compileroptions_target",
+      "community": 8,
+      "norm_label": "target"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L4",
+      "id": "client_tsconfig_node_compileroptions_lib",
+      "community": 8,
+      "norm_label": "lib"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L5",
+      "id": "client_tsconfig_node_compileroptions_module",
+      "community": 8,
+      "norm_label": "module"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L6",
+      "id": "client_tsconfig_node_compileroptions_skiplibcheck",
+      "community": 8,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L7",
+      "id": "client_tsconfig_node_compileroptions_moduleresolution",
+      "community": 8,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "allowImportingTsExtensions",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L8",
+      "id": "client_tsconfig_node_compileroptions_allowimportingtsextensions",
+      "community": 8,
+      "norm_label": "allowimportingtsextensions"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L9",
+      "id": "client_tsconfig_node_compileroptions_isolatedmodules",
+      "community": 8,
+      "norm_label": "isolatedmodules"
+    },
+    {
+      "label": "moduleDetection",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L10",
+      "id": "client_tsconfig_node_compileroptions_moduledetection",
+      "community": 8,
+      "norm_label": "moduledetection"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L11",
+      "id": "client_tsconfig_node_compileroptions_noemit",
+      "community": 8,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L12",
+      "id": "client_tsconfig_node_compileroptions_strict",
+      "community": 8,
+      "norm_label": "strict"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L14",
+      "id": "client_tsconfig_node_include",
+      "community": 8,
+      "norm_label": "include"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "client/vite.config.ts",
+      "source_location": "L1",
+      "id": "client_vite_config",
+      "community": 14,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package",
+      "community": 9,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "package_name",
+      "community": 9,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "package_version",
+      "community": 9,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "package_private",
+      "community": 9,
+      "norm_label": "private"
+    },
+    {
+      "label": "workspaces",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "package_workspaces",
+      "community": 9,
+      "norm_label": "workspaces"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "package_scripts",
+      "community": 9,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "package_scripts_dev",
+      "community": 9,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "package_scripts_build",
+      "community": 9,
+      "norm_label": "build"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "package_scripts_start",
+      "community": 9,
+      "norm_label": "start"
+    },
+    {
+      "label": "db:push",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "id": "package_scripts_db_push",
+      "community": 9,
+      "norm_label": "db:push"
+    },
+    {
+      "label": "db:studio",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "package_scripts_db_studio",
+      "community": 9,
+      "norm_label": "db:studio"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "package_devdependencies",
+      "community": 9,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "concurrently",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "package_devdependencies_concurrently",
+      "community": 9,
+      "norm_label": "concurrently"
+    },
+    {
+      "label": "drizzle.config.ts",
+      "file_type": "code",
+      "source_file": "server/drizzle.config.ts",
+      "source_location": "L1",
+      "id": "server_drizzle_config",
+      "community": 15,
+      "norm_label": "drizzle.config.ts"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L1",
+      "id": "server_package",
+      "community": 10,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L2",
+      "id": "server_package_name",
+      "community": 10,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L3",
+      "id": "server_package_version",
+      "community": 10,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L4",
+      "id": "server_package_private",
+      "community": 10,
+      "norm_label": "private"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L5",
+      "id": "server_package_type",
+      "community": 10,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L6",
+      "id": "server_package_scripts",
+      "community": 10,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L7",
+      "id": "server_package_scripts_dev",
+      "community": 10,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L8",
+      "id": "server_package_scripts_build",
+      "community": 10,
+      "norm_label": "build"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L9",
+      "id": "server_package_scripts_start",
+      "community": 10,
+      "norm_label": "start"
+    },
+    {
+      "label": "db:push",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L10",
+      "id": "server_package_scripts_db_push",
+      "community": 10,
+      "norm_label": "db:push"
+    },
+    {
+      "label": "db:studio",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "id": "server_package_scripts_db_studio",
+      "community": 10,
+      "norm_label": "db:studio"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "id": "server_package_dependencies",
+      "community": 10,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "connect-pg-simple",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "id": "server_package_dependencies_connect_pg_simple",
+      "community": 10,
+      "norm_label": "connect-pg-simple"
+    },
+    {
+      "label": "cors",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "id": "server_package_dependencies_cors",
+      "community": 10,
+      "norm_label": "cors"
+    },
+    {
+      "label": "dotenv",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L16",
+      "id": "server_package_dependencies_dotenv",
+      "community": 10,
+      "norm_label": "dotenv"
+    },
+    {
+      "label": "drizzle-orm",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L17",
+      "id": "server_package_dependencies_drizzle_orm",
+      "community": 10,
+      "norm_label": "drizzle-orm"
+    },
+    {
+      "label": "express",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "id": "server_package_dependencies_express",
+      "community": 10,
+      "norm_label": "express"
+    },
+    {
+      "label": "express-session",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L19",
+      "id": "server_package_dependencies_express_session",
+      "community": 10,
+      "norm_label": "express-session"
+    },
+    {
+      "label": "helmet",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L20",
+      "id": "server_package_dependencies_helmet",
+      "community": 10,
+      "norm_label": "helmet"
+    },
+    {
+      "label": "node-fetch",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L21",
+      "id": "server_package_dependencies_node_fetch",
+      "community": 10,
+      "norm_label": "node-fetch"
+    },
+    {
+      "label": "passport",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L22",
+      "id": "server_package_dependencies_passport",
+      "community": 10,
+      "norm_label": "passport"
+    },
+    {
+      "label": "passport-google-oauth20",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L23",
+      "id": "server_package_dependencies_passport_google_oauth20",
+      "community": 10,
+      "norm_label": "passport-google-oauth20"
+    },
+    {
+      "label": "uuid",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L24",
+      "id": "server_package_dependencies_uuid",
+      "community": 10,
+      "norm_label": "uuid"
+    },
+    {
+      "label": "@neondatabase/serverless",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L25",
+      "id": "server_package_dependencies_neondatabase_serverless",
+      "community": 10,
+      "norm_label": "@neondatabase/serverless"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L27",
+      "id": "server_package_devdependencies",
+      "community": 1,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@types/connect-pg-simple",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L28",
+      "id": "server_package_devdependencies_types_connect_pg_simple",
+      "community": 1,
+      "norm_label": "@types/connect-pg-simple"
+    },
+    {
+      "label": "@types/cors",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L29",
+      "id": "server_package_devdependencies_types_cors",
+      "community": 1,
+      "norm_label": "@types/cors"
+    },
+    {
+      "label": "@types/express",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L30",
+      "id": "server_package_devdependencies_types_express",
+      "community": 1,
+      "norm_label": "@types/express"
+    },
+    {
+      "label": "@types/express-session",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L31",
+      "id": "server_package_devdependencies_types_express_session",
+      "community": 1,
+      "norm_label": "@types/express-session"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L32",
+      "id": "server_package_devdependencies_types_node",
+      "community": 1,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/passport",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L33",
+      "id": "server_package_devdependencies_types_passport",
+      "community": 1,
+      "norm_label": "@types/passport"
+    },
+    {
+      "label": "@types/passport-google-oauth20",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L34",
+      "id": "server_package_devdependencies_types_passport_google_oauth20",
+      "community": 1,
+      "norm_label": "@types/passport-google-oauth20"
+    },
+    {
+      "label": "@types/uuid",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L35",
+      "id": "server_package_devdependencies_types_uuid",
+      "community": 1,
+      "norm_label": "@types/uuid"
+    },
+    {
+      "label": "drizzle-kit",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L36",
+      "id": "server_package_devdependencies_drizzle_kit",
+      "community": 1,
+      "norm_label": "drizzle-kit"
+    },
+    {
+      "label": "tsx",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L37",
+      "id": "server_package_devdependencies_tsx",
+      "community": 1,
+      "norm_label": "tsx"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "server/package.json",
+      "source_location": "L38",
+      "id": "server_package_devdependencies_typescript",
+      "community": 1,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L1",
+      "id": "db_index",
+      "community": 0,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "getDb()",
+      "file_type": "code",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L7",
+      "id": "db_index_getdb",
+      "community": 0,
+      "norm_label": "getdb()"
+    },
+    {
+      "label": "isDbAvailable()",
+      "file_type": "code",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L18",
+      "id": "db_index_isdbavailable",
+      "community": 0,
+      "norm_label": "isdbavailable()"
+    },
+    {
+      "label": "schema.ts",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L1",
+      "id": "db_schema",
+      "community": 0,
+      "norm_label": "schema.ts"
+    },
+    {
+      "label": "users",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L12",
+      "id": "db_schema_users",
+      "community": 0,
+      "norm_label": "users"
+    },
+    {
+      "label": "UserAnime",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L66",
+      "id": "db_schema_useranime",
+      "community": 0,
+      "norm_label": "useranime"
+    },
+    {
+      "label": "animeCharacters",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L44",
+      "id": "db_schema_animecharacters",
+      "community": 0,
+      "norm_label": "animecharacters"
+    },
+    {
+      "label": "User",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L64",
+      "id": "db_schema_user",
+      "community": 0,
+      "norm_label": "user"
+    },
+    {
+      "label": "NewUser",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L65",
+      "id": "db_schema_newuser",
+      "community": 0,
+      "norm_label": "newuser"
+    },
+    {
+      "label": "NewUserAnime",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L67",
+      "id": "db_schema_newuseranime",
+      "community": 0,
+      "norm_label": "newuseranime"
+    },
+    {
+      "label": "AnimeCharacter",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L68",
+      "id": "db_schema_animecharacter",
+      "community": 0,
+      "norm_label": "animecharacter"
+    },
+    {
+      "label": "NewAnimeCharacter",
+      "file_type": "code",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L69",
+      "id": "db_schema_newanimecharacter",
+      "community": 0,
+      "norm_label": "newanimecharacter"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "server/src/index.ts",
+      "source_location": "L1",
+      "id": "src_index",
+      "community": 0,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "server/src/index.ts",
+      "source_location": "L5",
+      "id": "src_index_dirname",
+      "community": 0,
+      "norm_label": "__dirname"
+    },
+    {
+      "label": "app",
+      "file_type": "code",
+      "source_file": "server/src/index.ts",
+      "source_location": "L19",
+      "id": "src_index_app",
+      "community": 0,
+      "norm_label": "app"
+    },
+    {
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L1",
+      "id": "middleware_auth",
+      "community": 0,
+      "norm_label": "auth.ts"
+    },
+    {
+      "label": "requireAuth()",
+      "file_type": "code",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L3",
+      "id": "middleware_auth_requireauth",
+      "community": 0,
+      "norm_label": "requireauth()"
+    },
+    {
+      "label": "requireAdmin()",
+      "file_type": "code",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L10",
+      "id": "middleware_auth_requireadmin",
+      "community": 0,
+      "norm_label": "requireadmin()"
+    },
+    {
+      "label": "admin.ts",
+      "file_type": "code",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L1",
+      "id": "routes_admin",
+      "community": 0,
+      "norm_label": "admin.ts"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L6",
+      "id": "routes_admin_router",
+      "community": 0,
+      "norm_label": "router"
+    },
+    {
+      "label": "anime.ts",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L1",
+      "id": "routes_anime",
+      "community": 0,
+      "norm_label": "anime.ts"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L8",
+      "id": "routes_anime_router",
+      "community": 0,
+      "norm_label": "router"
+    },
+    {
+      "label": "getUserId()",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L10",
+      "id": "routes_anime_getuserid",
+      "community": 0,
+      "norm_label": "getuserid()"
+    },
+    {
+      "label": "auth.ts",
+      "file_type": "code",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L1",
+      "id": "routes_auth",
+      "community": 0,
+      "norm_label": "auth.ts"
+    },
+    {
+      "label": "SessionData",
+      "file_type": "code",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L10",
+      "id": "routes_auth_sessiondata",
+      "community": 0,
+      "norm_label": "sessiondata"
+    },
+    {
+      "label": "User",
+      "file_type": "code",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L18",
+      "id": "routes_auth_user",
+      "community": 0,
+      "norm_label": "user"
+    },
+    {
+      "label": "setupPassport()",
+      "file_type": "code",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L29",
+      "id": "routes_auth_setuppassport",
+      "community": 0,
+      "norm_label": "setuppassport()"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L96",
+      "id": "routes_auth_router",
+      "community": 0,
+      "norm_label": "router"
+    },
+    {
+      "label": "graph.ts",
+      "file_type": "code",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L1",
+      "id": "routes_graph",
+      "community": 0,
+      "norm_label": "graph.ts"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L7",
+      "id": "routes_graph_router",
+      "community": 0,
+      "norm_label": "router"
+    },
+    {
+      "label": "buildSeiyuuGroups()",
+      "file_type": "code",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L9",
+      "id": "routes_graph_buildseiyuugroups",
+      "community": 0,
+      "norm_label": "buildseiyuugroups()"
+    },
+    {
+      "label": "anilist.ts",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L1",
+      "id": "services_anilist",
+      "community": 0,
+      "norm_label": "anilist.ts"
+    },
+    {
+      "label": "query()",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L3",
+      "id": "services_anilist_query",
+      "community": 0,
+      "norm_label": "query()"
+    },
+    {
+      "label": "AnilistAnime",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L56",
+      "id": "services_anilist_anilistanime",
+      "community": 0,
+      "norm_label": "anilistanime"
+    },
+    {
+      "label": "AnilistCharacter",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L66",
+      "id": "services_anilist_anilistcharacter",
+      "community": 0,
+      "norm_label": "anilistcharacter"
+    },
+    {
+      "label": "AnilistAnimeDetail",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L75",
+      "id": "services_anilist_anilistanimedetail",
+      "community": 0,
+      "norm_label": "anilistanimedetail"
+    },
+    {
+      "label": "searchAnime()",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L82",
+      "id": "services_anilist_searchanime",
+      "community": 0,
+      "norm_label": "searchanime()"
+    },
+    {
+      "label": "getAnimeWithCharacters()",
+      "file_type": "code",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L87",
+      "id": "services_anilist_getanimewithcharacters",
+      "community": 0,
+      "norm_label": "getanimewithcharacters()"
+    },
+    {
+      "label": "guestStore.ts",
+      "file_type": "code",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L1",
+      "id": "stores_gueststore",
+      "community": 0,
+      "norm_label": "gueststore.ts"
+    },
+    {
+      "label": "GuestData",
+      "file_type": "code",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L4",
+      "id": "stores_gueststore_guestdata",
+      "community": 0,
+      "norm_label": "guestdata"
+    },
+    {
+      "label": "store",
+      "file_type": "code",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L9",
+      "id": "stores_gueststore_store",
+      "community": 0,
+      "norm_label": "store"
+    },
+    {
+      "label": "getGuestData()",
+      "file_type": "code",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L11",
+      "id": "stores_gueststore_getguestdata",
+      "community": 0,
+      "norm_label": "getguestdata()"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L1",
+      "id": "server_tsconfig",
+      "community": 7,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L2",
+      "id": "server_tsconfig_compileroptions",
+      "community": 7,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L3",
+      "id": "server_tsconfig_compileroptions_target",
+      "community": 7,
+      "norm_label": "target"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L4",
+      "id": "server_tsconfig_compileroptions_module",
+      "community": 7,
+      "norm_label": "module"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L5",
+      "id": "server_tsconfig_compileroptions_moduleresolution",
+      "community": 7,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L6",
+      "id": "server_tsconfig_compileroptions_lib",
+      "community": 7,
+      "norm_label": "lib"
+    },
+    {
+      "label": "outDir",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L7",
+      "id": "server_tsconfig_compileroptions_outdir",
+      "community": 7,
+      "norm_label": "outdir"
+    },
+    {
+      "label": "rootDir",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L8",
+      "id": "server_tsconfig_compileroptions_rootdir",
+      "community": 7,
+      "norm_label": "rootdir"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L9",
+      "id": "server_tsconfig_compileroptions_strict",
+      "community": 7,
+      "norm_label": "strict"
+    },
+    {
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L10",
+      "id": "server_tsconfig_compileroptions_esmoduleinterop",
+      "community": 7,
+      "norm_label": "esmoduleinterop"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L11",
+      "id": "server_tsconfig_compileroptions_skiplibcheck",
+      "community": 7,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L12",
+      "id": "server_tsconfig_compileroptions_resolvejsonmodule",
+      "community": 7,
+      "norm_label": "resolvejsonmodule"
+    },
+    {
+      "label": "declaration",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L13",
+      "id": "server_tsconfig_compileroptions_declaration",
+      "community": 7,
+      "norm_label": "declaration"
+    },
+    {
+      "label": "declarationMap",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L14",
+      "id": "server_tsconfig_compileroptions_declarationmap",
+      "community": 7,
+      "norm_label": "declarationmap"
+    },
+    {
+      "label": "sourceMap",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L15",
+      "id": "server_tsconfig_compileroptions_sourcemap",
+      "community": 7,
+      "norm_label": "sourcemap"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L17",
+      "id": "server_tsconfig_include",
+      "community": 7,
+      "norm_label": "include"
+    },
+    {
+      "label": "exclude",
+      "file_type": "code",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L18",
+      "id": "server_tsconfig_exclude",
+      "community": 7,
+      "norm_label": "exclude"
+    },
+    {
+      "label": "guestStore",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L10",
+      "community": 0,
+      "norm_label": "gueststore",
+      "id": "routes_anime_gueststore"
+    },
+    {
+      "label": "getGuestData()",
+      "file_type": "code",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L12",
+      "community": 0,
+      "norm_label": "getguestdata()",
+      "id": "routes_anime_getguestdata"
+    },
+    {
+      "label": "guestDataMap",
+      "file_type": "code",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L10",
+      "community": 0,
+      "norm_label": "guestdatamap",
+      "id": "routes_graph_guestdatamap"
+    },
+    {
+      "label": "registerGuestStore()",
+      "file_type": "code",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L12",
+      "community": 0,
+      "norm_label": "registergueststore()",
+      "id": "routes_graph_registergueststore"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings",
+      "target": "claude_settings_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_notification"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_posttooluse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_pretooluse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_stop"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_local",
+      "target": "claude_settings_local_permissions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "claude_settings_local_permissions",
+      "target": "claude_settings_local_permissions_allow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_scripts",
+      "target": "client_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_axios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_dependencies",
+      "target": "client_package_dependencies_zustand"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_typescript"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package_devdependencies",
+      "target": "client_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "admin_adminpanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "animepanel_animepanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "auth_loginmodal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "canvas_graphcanvas"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "layout_navbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "searchbar_searchbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_authstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main",
+      "target": "src_app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/App.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/App.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/App.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "api_anilist",
+      "target": "api_anilist_anilistresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "api_anilist",
+      "target": "api_anilist_gql",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/anilist.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "api_anilist",
+      "target": "api_anilist_searchanilist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "api_anilist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "api_anilist_anilistresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "api_anilist_searchanilist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "api_client"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_addanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_admingetanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_admingetcharacters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_admingetusers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "api_client",
+      "target": "api_client_getanimecharacters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_getgraph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_getme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_getmyanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_loginasguest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_logout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_removeanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_searchanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "api_client_updateanimeposition"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "types_index_anilistsearchresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "api_client",
+      "target": "types_index_character",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "types_index_graphdata"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api/client.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_client",
+      "target": "types_index_user"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "api_client",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "api_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore",
+      "target": "api_client"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "api_client"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "api_client_searchanime"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "api_client_getanimecharacters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "api_client_admingetanime"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "api_client_admingetcharacters"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "api_client_admingetusers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "admin_adminpanel_adminpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "admin_adminpanel_tab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "admin_adminpanel",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Admin/AdminPanel.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "admin_adminpanel_adminpanel",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animepanel_animepanel",
+      "target": "animepanel_animepanel_animepanel"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animepanel_animepanel",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animepanel_animepanel",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animepanel_animepanel",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "animepanel_animepanel",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "animepanel_animepanel_animepanel",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/AnimePanel/AnimePanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "animepanel_animepanel_animepanel",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "auth_loginmodal_loginmodal"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_authstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "auth_loginmodal",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "auth_loginmodal_loginmodal",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "auth_loginmodal_loginmodal",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Auth/LoginModal.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "auth_loginmodal_loginmodal",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "canvas_animebubble_animebubble"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "canvas_animebubble_bubble_colors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "canvas_animebubble_props"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "stores_graphstore_charrelativepos"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble",
+      "target": "types_index_character"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_animebubble"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble_props",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_animebubble_props",
+      "target": "types_index_character"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "canvas_animebubble_animebubble",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Canvas/AnimeBubble.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "canvas_animebubble_animebubble",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "canvas_animedetailpanel_animedetailpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "canvas_animedetailpanel_props",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "types_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "types_index_animeentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel",
+      "target": "types_index_character",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_animedetailpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/AnimeDetailPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "canvas_animedetailpanel_props",
+      "target": "types_index_animeentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_graphcanvas_edgetooltip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_graphcanvas_emptystate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "canvas_graphcanvas_graphcanvas"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_graphstore_charrelativepos"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas",
+      "target": "types_index_transform"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "canvas_graphcanvas_emptystate",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas_graphcanvas",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Canvas/GraphCanvas.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "canvas_graphcanvas_graphcanvas",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_navbar",
+      "target": "layout_navbar_navbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_navbar",
+      "target": "stores_authstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_navbar",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_navbar",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_navbar",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "layout_navbar_navbar",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/Layout/Navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "layout_navbar_navbar",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "searchbar_searchbar_searchbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "searchbar_searchbar_usedebounce"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_authstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_authstore_useauthstore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_graphstore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_uistore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar",
+      "target": "types_index_anilistsearchresult"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "searchbar_searchbar_searchbar",
+      "target": "searchbar_searchbar_usedebounce"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "searchbar_searchbar_searchbar",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/components/SearchBar/SearchBar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "searchbar_searchbar_searchbar",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore",
+      "target": "stores_authstore_authstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore",
+      "target": "stores_authstore_useauthstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore",
+      "target": "types_index_user"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/authStore.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_authstore_authstate",
+      "target": "types_index_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "stores_graphstore_charrelativepos"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "stores_graphstore_computeedges"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "stores_graphstore_graphstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "stores_graphstore_usegraphstore"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "types_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "types_index_character"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "types_index_seiyuuedge"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore",
+      "target": "types_index_seiyuugroup"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore_graphstate",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore_graphstate",
+      "target": "types_index_character"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore_graphstate",
+      "target": "types_index_seiyuuedge"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/graphStore.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_graphstore_graphstate",
+      "target": "types_index_seiyuugroup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/uiStore.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_uistore",
+      "target": "stores_uistore_uistate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/stores/uiStore.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "stores_uistore",
+      "target": "stores_uistore_useuistore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_anilistsearchresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_animeentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_character"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_charnodeposition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_graphdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_seiyuuedge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_seiyuugroup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_transform"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types/index.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_index",
+      "target": "types_index_vec2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app",
+      "target": "client_tsconfig_app_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app",
+      "target": "client_tsconfig_app_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_isolatedmodules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_nofallthroughcasesinswitch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_nounusedlocals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_nounusedparameters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_strict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.app.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_app_compileroptions",
+      "target": "client_tsconfig_app_compileroptions_usedefineforclassfields"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig",
+      "target": "client_tsconfig_files"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig",
+      "target": "client_tsconfig_references"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node",
+      "target": "client_tsconfig_node_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node",
+      "target": "client_tsconfig_node_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_allowimportingtsextensions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_isolatedmodules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_moduledetection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_noemit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_strict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/tsconfig.node.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_tsconfig_node_compileroptions",
+      "target": "client_tsconfig_node_compileroptions_target"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package",
+      "target": "package_workspaces"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_db_push"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_db_studio"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_start"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_concurrently"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package",
+      "target": "server_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_db_push"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_db_studio"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_scripts",
+      "target": "server_package_scripts_start"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_connect_pg_simple"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_cors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_dotenv"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_drizzle_orm"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_express"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_express_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_helmet"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_neondatabase_serverless"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_node_fetch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_passport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_passport_google_oauth20"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_dependencies",
+      "target": "server_package_dependencies_uuid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_drizzle_kit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_tsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_connect_pg_simple"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_cors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_express"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_express_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_passport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_passport_google_oauth20"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_types_uuid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_package_devdependencies",
+      "target": "server_package_devdependencies_typescript"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_index",
+      "target": "db_index_getdb"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_index",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/index.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_index",
+      "target": "db_schema"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "db_index"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "db_index"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "db_index"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "db_index"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "db_index"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "db_index_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "db_index_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "db_index_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "db_index_getdb"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "db_index_isdbavailable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_animecharacter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_animecharacters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_newanimecharacter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_newuser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_newuseranime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_useranime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/db/schema.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "db_schema",
+      "target": "db_schema_users"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "db_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "db_schema_user"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "routes_admin"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "routes_anime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "routes_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "routes_auth_setuppassport"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "routes_graph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_index",
+      "target": "src_index_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/index.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_index",
+      "target": "src_index_dirname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "middleware_auth",
+      "target": "middleware_auth_requireadmin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/middleware/auth.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "middleware_auth",
+      "target": "middleware_auth_requireauth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "middleware_auth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "middleware_auth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "middleware_auth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "middleware_auth_requireauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "middleware_auth_requireauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "middleware_auth_requireauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "middleware_auth_requireadmin"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/admin.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_admin",
+      "target": "routes_admin_router"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "routes_anime_getguestdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "routes_anime_getuserid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "routes_anime_gueststore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "routes_anime_router"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "services_anilist"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "services_anilist_getanimewithcharacters"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_anime",
+      "target": "services_anilist_searchanime"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_anime",
+      "target": "stores_gueststore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/anime.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_anime",
+      "target": "stores_gueststore_getguestdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "routes_auth_router"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "routes_auth_sessiondata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "routes_auth_setuppassport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/auth.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_auth",
+      "target": "routes_auth_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "routes_graph",
+      "target": "routes_graph_buildseiyuugroups",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "routes_graph_guestdatamap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "routes_graph_registergueststore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "routes_graph",
+      "target": "routes_graph_router"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_graph",
+      "target": "stores_gueststore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/routes/graph.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_graph",
+      "target": "stores_gueststore_getguestdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_anilistanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_anilistanimedetail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_anilistcharacter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_getanimewithcharacters"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_query"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/services/anilist.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_anilist",
+      "target": "services_anilist_searchanime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "stores_gueststore",
+      "target": "stores_gueststore_getguestdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "stores_gueststore",
+      "target": "stores_gueststore_guestdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/src/stores/guestStore.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "stores_gueststore",
+      "target": "stores_gueststore_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig",
+      "target": "server_tsconfig_compileroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig",
+      "target": "server_tsconfig_exclude"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig",
+      "target": "server_tsconfig_include"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_declaration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_declarationmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_esmoduleinterop"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_module"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_moduleresolution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_outdir"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_resolvejsonmodule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_rootdir"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_skiplibcheck"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_sourcemap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_strict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_tsconfig_compileroptions",
+      "target": "server_tsconfig_compileroptions_target"
+    }
+  ],
+  "hyperedges": []
+}
