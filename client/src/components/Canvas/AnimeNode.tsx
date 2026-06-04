@@ -64,10 +64,10 @@ export default function AnimeNode({ anime, colorIndex, onDragStart, onNodeClick 
       onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}
     >
       {anime.coverImage
-        ? <img src={anime.coverImage} alt={anime.title} className="anime-node-img" />
-        : <div className="anime-node-placeholder">{anime.title[0]}</div>}
+        ? <img src={anime.coverImage} alt={anime.title ?? ""} className="anime-node-img" />
+        : <div className="anime-node-placeholder">{(anime.title ?? "?")[0] ?? "?"}</div>}
       <div className="anime-node-label">
-        <span>{anime.title}</span>
+        <span>{anime.title ?? "Unknown"}</span>
       </div>
     </div>
   );
