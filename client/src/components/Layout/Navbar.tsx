@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const { user, logout } = useAuthStore();
-  const { toggleSearch, toggleAnimePanel, toggleAdmin, openLogin } = useUiStore();
+  const { toggleSearch, openSearchForQuiz, toggleAnimePanel, toggleAdmin, openLogin } = useUiStore();
 
   return (
     <nav className="navbar">
@@ -18,6 +18,10 @@ export default function Navbar() {
       <div className="navbar-actions">
         <button className="nav-btn" onClick={toggleSearch} title="Add anime">
           <span>＋</span> Add Anime
+        </button>
+
+        <button className="nav-btn nav-btn-quiz" onClick={openSearchForQuiz} title="Add anime by quiz">
+          🎯 Quiz
         </button>
 
         <button className="nav-btn nav-btn-ghost" onClick={toggleAnimePanel} title="My anime">

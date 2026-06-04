@@ -47,6 +47,27 @@
   flex-shrink: 0;
 }
 
+.search-quiz-banner {
+  padding: 8px 16px;
+  background: rgba(123, 97, 255, 0.1);
+  border-bottom: 1px solid rgba(123, 97, 255, 0.25);
+  color: #a78bff;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-quiz-start {
+  border-color: rgba(123, 97, 255, 0.5);
+  background: rgba(123, 97, 255, 0.12);
+  color: #a78bff;
+}
+
+.btn-quiz-start:hover {
+  background: rgba(123, 97, 255, 0.22);
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.2);
+}
+
 .search-results {
   flex: 1;
   overflow-y: auto;

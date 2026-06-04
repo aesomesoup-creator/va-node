@@ -71,6 +71,18 @@
   transform: translateY(-1px);
 }
 
+.nav-btn-quiz {
+  background: rgba(123, 97, 255, 0.12);
+  border-color: rgba(123, 97, 255, 0.4);
+  color: #a78bff;
+}
+
+.nav-btn-quiz:hover {
+  background: rgba(123, 97, 255, 0.22);
+  border-color: rgba(123, 97, 255, 0.7);
+  box-shadow: 0 0 12px rgba(123, 97, 255, 0.25);
+}
+
 .nav-btn-accent {
   background: rgba(0, 255, 136, 0.12);
   border-color: rgba(0, 255, 136, 0.4);
