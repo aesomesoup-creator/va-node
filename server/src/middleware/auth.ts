@@ -1,7 +1,14 @@
 import type { Request, Response, NextFunction } from "express";
 
+export function getGuestId(req: Request): string | undefined {
+  // Prefer header-based guest ID (works cross-origin without cookies)
+  const header = req.headers["x-guest-id"];
+  if (typeof header === "string" && header.length > 0) return header;
+  return req.session?.guestId;
+}
+
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
-  if (req.isAuthenticated() || req.session?.guestId) {
+  if (req.isAuthenticated() || getGuestId(req)) {
     return next();
   }
   res.status(401).json({ error: "Not authenticated" });

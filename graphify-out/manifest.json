@@ -1,6 +1,6 @@
 {
   "C:\\Users\\prosd\\Desktop\\va-node-site\\.claude\\settings.json": {
-    "mtime": 1780578994.845268,
+    "mtime": 1780581155.05313,
     "ast_hash": "5ef2d683437c469b36d3b515f1a053a0",
     "semantic_hash": ""
   },
@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\package.json": {
-    "mtime": 1780572894.1237645,
-    "ast_hash": "ecffdcfdd09b5384ff293012a92d8aa5",
+    "mtime": 1780515906.8199801,
+    "ast_hash": "8506811ce1e40cb19adaddd2e769c054",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\App.tsx": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\api\\client.ts": {
-    "mtime": 1780575477.9096017,
-    "ast_hash": "9e8d38112d997d81a81bf2cf8fc839d8",
+    "mtime": 1780535903.7619958,
+    "ast_hash": "8b827e8cc8e3a0705981c3953292a8e9",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Admin\\AdminPanel.tsx": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\GraphCanvas.tsx": {
-    "mtime": 1780573680.2661345,
-    "ast_hash": "3d0d1915e8883adac1807aa1aa002b63",
+    "mtime": 1780536039.8203735,
+    "ast_hash": "8129c4d2f093057f39344ad444b88fa9",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Layout\\Navbar.tsx": {
@@ -60,13 +60,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\authStore.ts": {
-    "mtime": 1780575491.317202,
-    "ast_hash": "d8100bb252e4537c09d2e16c41c064bd",
+    "mtime": 1780515998.930487,
+    "ast_hash": "9e9d4a5dc7d50d468a4adac0a5202d91",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\graphStore.ts": {
-    "mtime": 1780573797.1429262,
-    "ast_hash": "739546ae49bb958b09d8385896a4cf47",
+    "mtime": 1780516816.6523614,
+    "ast_hash": "25f5b010b07e273fda48cae551529f0d",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\stores\\uiStore.ts": {
@@ -125,13 +125,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\index.ts": {
-    "mtime": 1780574923.2509239,
-    "ast_hash": "8941456028f7cfb6dad8ca220c042680",
+    "mtime": 1780535492.5547152,
+    "ast_hash": "c01b404e60c9bc16ddf50c3c3da3e7a1",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\middleware\\auth.ts": {
-    "mtime": 1780575503.648394,
-    "ast_hash": "5f82f9240101987319249ef7010d02b3",
+    "mtime": 1780515779.2046561,
+    "ast_hash": "8301034cf00b66fceb2bdd20369bed50",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\admin.ts": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\anime.ts": {
-    "mtime": 1780575531.1714547,
-    "ast_hash": "d329f705f38d6d7231b556ce68fd0112",
+    "mtime": 1780535863.8289516,
+    "ast_hash": "4f1570ea7f7614688a774a9fabe8d1fa",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\auth.ts": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\routes\\graph.ts": {
-    "mtime": 1780575551.3405366,
-    "ast_hash": "80c890ec9638486c9cdd96b16a01e9c0",
+    "mtime": 1780535881.7112894,
+    "ast_hash": "bc02f23d251e59273fda36dca8e815a7",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\server\\src\\services\\anilist.ts": {
@@ -190,13 +190,23 @@
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\AnimeNode.tsx": {
-    "mtime": 1780573817.5084772,
-    "ast_hash": "6e1dd06c01824901f50c8be0cd324b7e",
+    "mtime": 1780581092.4697227,
+    "ast_hash": "385074b4e1b9bfb4faf95ea4a66ae6c6",
     "semantic_hash": ""
   },
   "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\vite-env.d.ts": {
-    "mtime": 1780573771.1598976,
-    "ast_hash": "0352474ba2918efe13895edbc3780d94",
+    "mtime": 1780581092.4734836,
+    "ast_hash": "8f68c27c3fc38817b2726b20e2d4f1ee",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\Canvas\\AnimeBubble.tsx": {
+    "mtime": 1780535982.6735148,
+    "ast_hash": "b782ed29fdea50df0b93dec6b298e7a6",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\prosd\\Desktop\\va-node-site\\client\\src\\components\\ErrorBoundary.tsx": {
+    "mtime": 1780581092.4724448,
+    "ast_hash": "162f7bfd112061024371cfe67dc0f177",
     "semantic_hash": ""
   }
 }

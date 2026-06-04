@@ -88,7 +88,7 @@ export async function getAnimeWithCharacters(id: number): Promise<AnilistAnimeDe
   const data = await query<{
     Media: {
       id: number;
-      title: { romaji: string; english?: string };
+      title: { romaji: string | null; english?: string | null; native?: string | null };
       coverImage: { large: string };
       characters: {
         edges: {
@@ -117,7 +117,7 @@ export async function getAnimeWithCharacters(id: number): Promise<AnilistAnimeDe
 
   return {
     id: media.id,
-    title: media.title.english || media.title.romaji,
+    title: media.title.english || media.title.romaji || media.title.native || "Unknown Anime",
     coverImage: media.coverImage.large,
     characters,
   };
