@@ -97,16 +97,17 @@ export default function GraphCanvas() {
     return m;
   }, [anime.map((a) => a.anilistId).join(",")]);
 
-  // ALL characters per anime (show everyone in orbit)
+  // Only characters with at least one cross-anime VA link
   const charsByAnime = useMemo(() => {
     const m = new Map<number, Character[]>();
     for (const char of characters) {
+      if (!connectedCharIds.has(char.anilistCharacterId)) continue;
       const list = m.get(char.anilistAnimeId) ?? [];
       list.push(char);
       m.set(char.anilistAnimeId, list);
     }
     return m;
-  }, [characters]);
+  }, [characters, connectedCharIds]);
 
   // Absolute positions of each character in the orbit
   const charAbsPos = useMemo(() => {
