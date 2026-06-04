@@ -49,7 +49,7 @@ export default function GraphCanvas() {
     active: false, startDist: 0, startScale: 1, midX: 0, midY: 0,
   });
 
-  const { anime, characters, edges, connectedCharIds, seiyuuGroups, isLoading } = useGraphStore();
+  const { anime, characters, edges, connectedCharIds, isLoading } = useGraphStore();
   const { updatePosition, persistPosition } = useGraphStore();
   const { hoveredSeiyuuId } = useUiStore();
 
@@ -249,8 +249,8 @@ export default function GraphCanvas() {
             style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none", overflow: "visible" }}
           >
             <defs>
-              <filter id="edge-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
+              <filter id="edge-glow">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
                 <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
               </filter>
             </defs>
@@ -258,32 +258,21 @@ export default function GraphCanvas() {
               const from = charAbsPos.get(edge.fromChar.anilistCharacterId);
               const to = charAbsPos.get(edge.toChar.anilistCharacterId);
               if (!from || !to) return null;
-
-              // Bezier control point — arch upward
-              const cpx = (from.x + to.x) / 2;
-              const cpy = Math.min(from.y, to.y) - 90;
-
-              // Bezier midpoint at t=0.5 (where VA avatar will sit)
-              const midX = 0.25 * from.x + 0.5 * cpx + 0.25 * to.x;
-              const midY = 0.25 * from.y + 0.5 * cpy + 0.25 * to.y;
-
-              const hovered = hoveredSeiyuuId != null &&
-                seiyuuGroups.find((g) =>
-                  g.characters.some((c) => c.anilistCharacterId === edge.fromChar.anilistCharacterId)
-                )?.seiyuuId === hoveredSeiyuuId;
-
-              const VA_R = 20; // VA avatar radius
-              const clipId = `clip-${edge.id.replace(/[^a-z0-9]/gi, "")}`;
-              const edgeColor = hovered ? "#00ffcc" : "rgba(0,200,255,0.55)";
-
+              const hovered = hoveredSeiyuuId != null && (
+                useGraphStore.getState().seiyuuGroups.find(g =>
+                  g.characters.some(c => c.anilistCharacterId === edge.fromChar.anilistCharacterId)
+                )?.seiyuuId === hoveredSeiyuuId
+              );
+              const mx = (from.x + to.x) / 2;
+              const cy1 = Math.min(from.y, to.y) - 80;
               return (
                 <g key={edge.id} style={{ pointerEvents: "all" }}>
-                  {/* Arc line */}
                   <path
-                    d={`M ${from.x} ${from.y} Q ${cpx} ${cpy} ${to.x} ${to.y}`}
+                    d={`M ${from.x} ${from.y} Q ${mx} ${cy1} ${to.x} ${to.y}`}
                     fill="none"
-                    stroke={edgeColor}
+                    stroke={hovered ? "#00ffcc" : "rgba(0,200,255,0.35)"}
                     strokeWidth={hovered ? 2.5 : 1.5}
+                    strokeDasharray={hovered ? "none" : "6 4"}
                     filter={hovered ? "url(#edge-glow)" : undefined}
                     style={{ transition: "stroke 0.2s, stroke-width 0.2s" }}
                     onMouseEnter={(e) => {
@@ -292,59 +281,10 @@ export default function GraphCanvas() {
                     }}
                     onMouseLeave={() => setTooltip(null)}
                   />
-
-                  {/* VA avatar circle at bezier midpoint */}
-                  <defs>
-                    <clipPath id={clipId}>
-                      <circle cx={midX} cy={midY} r={VA_R} />
-                    </clipPath>
-                  </defs>
-
-                  {/* Outer ring */}
-                  <circle
-                    cx={midX} cy={midY} r={VA_R + 3}
-                    fill={hovered ? "rgba(0,255,204,0.15)" : "rgba(0,200,255,0.08)"}
-                    stroke={edgeColor}
-                    strokeWidth={hovered ? 2 : 1.5}
-                    filter={hovered ? "url(#edge-glow)" : undefined}
-                    style={{ transition: "all 0.2s" }}
+                  <circle cx={mx} cy={(from.y + to.y) / 2 - 20} r={hovered ? 5 : 3}
+                    fill={hovered ? "#00ffcc" : "rgba(0,200,255,0.5)"}
+                    style={{ transition: "r 0.2s" }}
                   />
-
-                  {/* VA photo or letter */}
-                  {edge.seiyuuImage ? (
-                    <image
-                      href={edge.seiyuuImage}
-                      x={midX - VA_R} y={midY - VA_R}
-                      width={VA_R * 2} height={VA_R * 2}
-                      clipPath={`url(#${clipId})`}
-                      preserveAspectRatio="xMidYMid slice"
-                      style={{ pointerEvents: "none" }}
-                    />
-                  ) : (
-                    <text x={midX} y={midY + 5} textAnchor="middle"
-                      fill="#00c8ff" fontSize={15} fontWeight="700"
-                      style={{ pointerEvents: "none" }}>
-                      {edge.seiyuuName?.[0] ?? "?"}
-                    </text>
-                  )}
-
-                  {/* VA name tag — always visible, below avatar */}
-                  <rect
-                    x={midX - 52} y={midY + VA_R + 5}
-                    width={104} height={18} rx={9}
-                    fill="rgba(3,10,28,0.88)"
-                    stroke={edgeColor}
-                    strokeWidth={hovered ? 1.5 : 1}
-                  />
-                  <text
-                    x={midX} y={midY + VA_R + 18}
-                    textAnchor="middle"
-                    fill={hovered ? "#00ffcc" : "rgba(226,244,255,0.75)"}
-                    fontSize={10} fontWeight="600"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    {(edge.seiyuuName ?? "Unknown VA").slice(0, 18)}
-                  </text>
                 </g>
               );
             })}
