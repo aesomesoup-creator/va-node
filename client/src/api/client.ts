@@ -1,33 +1,9 @@
 import axios from "axios";
 import type { AnimeEntry, AnilistSearchResult, GraphData, User, Character } from "../types";
 
-const BASE = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL}/api`
-  : "/api";
-
-// Guest ID stored in localStorage — avoids cross-origin cookie issues
-const GUEST_KEY = "vanode_guest_id";
-export function getOrCreateGuestId(): string {
-  let id = localStorage.getItem(GUEST_KEY);
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem(GUEST_KEY, id);
-  }
-  return id;
-}
-export function clearGuestId() {
-  localStorage.removeItem(GUEST_KEY);
-}
-
 const api = axios.create({
-  baseURL: BASE,
+  baseURL: "/api",
   withCredentials: true,
-});
-
-// Attach guest ID header to every request
-api.interceptors.request.use((config) => {
-  config.headers["x-guest-id"] = getOrCreateGuestId();
-  return config;
 });
 
 // Auth

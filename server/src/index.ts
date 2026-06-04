@@ -21,12 +21,7 @@ const PORT = Number(process.env.PORT) || 3001;
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 
 app.use(helmet({ contentSecurityPolicy: false }));
-app.use(cors({
-  origin: CLIENT_URL,
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization", "x-guest-id"],
-  exposedHeaders: ["set-cookie"],
-}));
+app.use(cors({ origin: CLIENT_URL, credentials: true }));
 app.use(express.json());
 
 // Session store — use pg if DB available, else in-memory
@@ -57,7 +52,6 @@ app.use(
     cookie: {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
     },
   })
