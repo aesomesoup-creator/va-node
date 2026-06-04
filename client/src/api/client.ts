@@ -1,8 +1,12 @@
 import axios from "axios";
 import type { AnimeEntry, AnilistSearchResult, GraphData, User, Character } from "../types";
 
+const BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "/api";
+
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: BASE,
   withCredentials: true,
 });
 
