@@ -12,6 +12,10 @@
   margin-top: 56px; /* navbar height */
 }
 
+@media (max-width: 640px) {
+  .app-main { margin-top: 52px; }
+}
+
 /* ─── App loading screen ─── */
 .app-loading {
   position: fixed;

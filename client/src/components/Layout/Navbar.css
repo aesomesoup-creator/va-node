@@ -140,3 +140,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* ─── Mobile ─── */
+@media (max-width: 640px) {
+  .navbar { padding: 0 12px; height: 52px; }
+
+  .brand-name { font-size: 16px; }
+  .brand-icon { font-size: 20px; }
+
+  .navbar-actions { gap: 4px; }
+
+  /* Hide text labels, keep icons/emoji */
+  .nav-btn .btn-label { display: none; }
+  .nav-btn { padding: 7px 10px; font-size: 16px; gap: 0; min-width: 38px; justify-content: center; }
+
+  .nav-username { display: none; }
+  .nav-user { padding: 4px 6px; gap: 6px; }
+
+  /* Hide logout on mobile to save space — use menu later */
+  .nav-user .nav-btn-sm { display: none; }
+}

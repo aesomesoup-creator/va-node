@@ -5,7 +5,9 @@ export default function LoginModal() {
   const { closeLogin } = useUiStore();
 
   const handleGoogle = () => {
-    window.location.href = "/api/auth/google";
+    // Use the backend origin when the API is on a separate domain
+    const apiBase = import.meta.env.VITE_API_URL ?? "";
+    window.location.href = `${apiBase}/api/auth/google`;
   };
 
   return (

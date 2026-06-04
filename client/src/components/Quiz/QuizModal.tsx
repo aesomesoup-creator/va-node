@@ -89,6 +89,18 @@ export default function QuizModal() {
 
   const currentQ = questions[current];
 
+  const handleSkip = useCallback(() => {
+    if (feedback !== "idle") return;
+    if (current + 1 >= questions.length) {
+      setDone(true);
+    } else {
+      setCurrent((c) => c + 1);
+      setSelected(null);
+      setFeedback("idle");
+      setDisabledIds(new Set());
+    }
+  }, [feedback, current, questions.length]);
+
   const handleConfirm = useCallback(() => {
     if (selected == null || feedback !== "idle" || !currentQ) return;
 
@@ -255,13 +267,18 @@ export default function QuizModal() {
           </div>
         </div>
 
-        <button
-          className="btn-confirm-quiz"
-          disabled={selected == null || feedback !== "idle"}
-          onClick={handleConfirm}
-        >
-          Confirm
-        </button>
+        <div className="quiz-actions">
+          <button
+            className="btn-confirm-quiz"
+            disabled={selected == null || feedback !== "idle"}
+            onClick={handleConfirm}
+          >
+            Confirm
+          </button>
+          <button className="btn-skip-quiz" onClick={handleSkip} disabled={feedback !== "idle"}>
+            Skip →
+          </button>
+        </div>
       </div>
     </div>
   );

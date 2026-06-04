@@ -74,6 +74,9 @@ function CharNode({
 export default function GraphCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState<Transform>({ x: 0, y: 0, scale: 1 });
+  // Ref keeps handlers stable — avoids re-registering touch listeners on every pan frame
+  const transformRef = useRef(transform);
+  transformRef.current = transform;
   const [tooltip, setTooltip] = useState<{ name: string | null; image: string | null; x: number; y: number } | null>(null);
   const [detailAnimeId, setDetailAnimeId] = useState<number | null>(null);
 
@@ -155,8 +158,8 @@ export default function GraphCanvas() {
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (e.button !== 0) return;
     dragState.current = { isPanning: true, isDraggingBubble: false, anilistId: null,
-      startMouse: { x: e.clientX, y: e.clientY }, startPos: { x: transform.x, y: transform.y } };
-  }, [transform.x, transform.y]);
+      startMouse: { x: e.clientX, y: e.clientY }, startPos: { x: transformRef.current.x, y: transformRef.current.y } };
+  }, []);
 
   const handleBubbleDragStart = useCallback((anilistId: number, e: React.MouseEvent | React.TouchEvent) => {
     const cx = "touches" in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
@@ -175,9 +178,9 @@ export default function GraphCanvas() {
     if (ds.isPanning) {
       setTransform((t) => ({ ...t, x: ds.startPos.x + dx, y: ds.startPos.y + dy }));
     } else if (ds.isDraggingBubble && ds.anilistId !== null) {
-      updatePosition(ds.anilistId, ds.startPos.x + dx / transform.scale, ds.startPos.y + dy / transform.scale);
+      updatePosition(ds.anilistId, ds.startPos.x + dx / transformRef.current.scale, ds.startPos.y + dy / transformRef.current.scale);
     }
-  }, [transform.scale, updatePosition]);
+  }, [updatePosition]);
 
   const handleMouseUp = useCallback(() => {
     const ds = dragState.current;
@@ -210,16 +213,16 @@ export default function GraphCanvas() {
       dragState.current.isDraggingBubble = false;
       const rect = containerRef.current!.getBoundingClientRect();
       pinchState.current = {
-        active: true, startDist: getTouchDist(e.touches), startScale: transform.scale,
+        active: true, startDist: getTouchDist(e.touches), startScale: transformRef.current.scale,
         midX: (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left,
         midY: (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top,
       };
     } else if (e.touches.length === 1 && !dragState.current.isDraggingBubble) {
       dragState.current = { isPanning: true, isDraggingBubble: false, anilistId: null,
         startMouse: { x: e.touches[0].clientX, y: e.touches[0].clientY },
-        startPos: { x: transform.x, y: transform.y } };
+        startPos: { x: transformRef.current.x, y: transformRef.current.y } };
     }
-  }, [transform.scale, transform.x, transform.y]);
+  }, []);
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
     e.preventDefault();
@@ -235,9 +238,9 @@ export default function GraphCanvas() {
       const dx = e.touches[0].clientX - ds.startMouse.x, dy = e.touches[0].clientY - ds.startMouse.y;
       if (ds.isPanning) setTransform((t) => ({ ...t, x: ds.startPos.x + dx, y: ds.startPos.y + dy }));
       else if (ds.isDraggingBubble && ds.anilistId)
-        updatePosition(ds.anilistId, ds.startPos.x + dx / transform.scale, ds.startPos.y + dy / transform.scale);
+        updatePosition(ds.anilistId, ds.startPos.x + dx / transformRef.current.scale, ds.startPos.y + dy / transformRef.current.scale);
     }
-  }, [transform.scale, updatePosition]);
+  }, [updatePosition]);
 
   const handleTouchEnd = useCallback((e: TouchEvent) => {
     if (e.touches.length < 2) pinchState.current.active = false;
@@ -462,7 +465,8 @@ export default function GraphCanvas() {
         </div>
 
         {tooltip && <EdgeTooltip {...tooltip} />}
-        <div className="canvas-hint">Scroll/pinch to zoom · Drag anime to move · Hover edge to highlight VA · Click anime for cast</div>
+        <div className="canvas-hint canvas-hint-desktop">Scroll/pinch to zoom · Drag anime to move · Hover edge to highlight VA · Click anime for cast</div>
+        <div className="canvas-hint canvas-hint-mobile">Pinch to zoom · Drag to pan · Tap anime to see cast</div>
       </div>
 
       {detailAnime && <AnimeDetailPanel anime={detailAnime} onClose={() => setDetailAnimeId(null)} />}

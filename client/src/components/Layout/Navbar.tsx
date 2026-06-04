@@ -17,15 +17,15 @@ export default function Navbar() {
 
       <div className="navbar-actions">
         <button className="nav-btn" onClick={toggleSearch} title="Add anime">
-          <span>＋</span> Add Anime
+          <span>＋</span><span className="btn-label"> Add Anime</span>
         </button>
 
         <button className="nav-btn nav-btn-quiz" onClick={openSearchForQuiz} title="Add anime by quiz">
-          🎯 Quiz
+          🎯<span className="btn-label"> Quiz</span>
         </button>
 
         <button className="nav-btn nav-btn-ghost" onClick={toggleAnimePanel} title="My anime">
-          <span>◈</span> My Anime
+          <span>◈</span><span className="btn-label"> My Anime</span>
         </button>
 
         {user?.isGuest === false && (
