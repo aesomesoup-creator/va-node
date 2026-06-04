@@ -1,0 +1,36 @@
+.anime-node {
+  border-radius: 50%;
+  border: 2.5px solid;
+  overflow: hidden;
+  cursor: grab;
+  z-index: 20;
+  transition: box-shadow 0.25s;
+}
+.anime-node:active { cursor: grabbing; }
+.anime-node:hover { z-index: 30; }
+
+.anime-node-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block; pointer-events: none;
+}
+
+.anime-node-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 900; color: #fff;
+}
+
+.anime-node-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 16px 6px 6px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85) 60%);
+  display: flex; align-items: flex-end; justify-content: center;
+  pointer-events: none;
+}
+
+.anime-node-label span {
+  font-size: 9px; font-weight: 700; color: #fff; text-align: center;
+  line-height: 1.3; display: -webkit-box;
+  -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
