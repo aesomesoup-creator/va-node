@@ -6,12 +6,14 @@ interface UiState {
   showAdmin: boolean;
   showLogin: boolean;
   hoveredSeiyuuId: number | null;
+  hoveredAnimeId: number | null;
   toggleAnimePanel: () => void;
   toggleSearch: () => void;
   toggleAdmin: () => void;
   openLogin: () => void;
   closeLogin: () => void;
   setHoveredSeiyuu: (id: number | null) => void;
+  setHoveredAnime: (id: number | null) => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -20,6 +22,7 @@ export const useUiStore = create<UiState>((set) => ({
   showAdmin: false,
   showLogin: false,
   hoveredSeiyuuId: null,
+  hoveredAnimeId: null,
 
   toggleAnimePanel: () => set((s) => ({ showAnimePanel: !s.showAnimePanel })),
   toggleSearch: () => set((s) => ({ showSearch: !s.showSearch })),
@@ -27,4 +30,5 @@ export const useUiStore = create<UiState>((set) => ({
   openLogin: () => set({ showLogin: true }),
   closeLogin: () => set({ showLogin: false }),
   setHoveredSeiyuu: (id) => set({ hoveredSeiyuuId: id }),
+  setHoveredAnime: (id) => set({ hoveredAnimeId: id }),
 }));

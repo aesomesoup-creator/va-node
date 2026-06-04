@@ -23,9 +23,11 @@ interface Props {
   colorIndex: number;
   onDragStart: (anilistId: number, e: React.MouseEvent | React.TouchEvent) => void;
   onNodeClick: (anilistId: number) => void;
+  onHoverIn: (anilistId: number) => void;
+  onHoverOut: () => void;
 }
 
-export default function AnimeNode({ anime, colorIndex, onDragStart, onNodeClick }: Props) {
+export default function AnimeNode({ anime, colorIndex, onDragStart, onNodeClick, onHoverIn, onHoverOut }: Props) {
   const color = getAnimeColor(colorIndex);
   const clickStart = useRef<{ x: number; y: number } | null>(null);
   const D = ANIME_RADIUS * 2;
@@ -57,15 +59,24 @@ export default function AnimeNode({ anime, colorIndex, onDragStart, onNodeClick 
   return (
     <div
       className="anime-node"
-      style={{ position: "absolute", left: anime.positionX - ANIME_RADIUS, top: anime.positionY - ANIME_RADIUS,
-        width: D, height: D, borderColor: color.border,
-        boxShadow: `0 0 20px ${color.glow}, 0 0 40px ${color.glow}` }}
-      onMouseDown={onMouseDown} onMouseUp={onMouseUp}
-      onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}
+      style={{
+        position: "absolute",
+        left: anime.positionX - ANIME_RADIUS,
+        top: anime.positionY - ANIME_RADIUS,
+        width: D, height: D,
+        borderColor: color.border,
+        boxShadow: `0 0 20px ${color.glow}, 0 0 40px ${color.glow}`,
+      }}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onMouseEnter={() => onHoverIn(anime.anilistId)}
+      onMouseLeave={onHoverOut}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       {anime.coverImage
         ? <img src={anime.coverImage} alt={anime.title ?? ""} className="anime-node-img" />
-        : <div className="anime-node-placeholder">{(anime.title ?? "?")[0] ?? "?"}</div>}
+        : <div className="anime-node-placeholder">{(anime.title ?? "?")[0]}</div>}
       <div className="anime-node-label">
         <span>{anime.title ?? "Unknown"}</span>
       </div>
