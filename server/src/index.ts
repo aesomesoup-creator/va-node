@@ -77,9 +77,9 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, db: isDbAvailable(), ts: Date.now() });
 });
 
-app.listen(PORT, async () => {
+app.listen(PORT, () => {
   console.log(`\n🟢 VAnode server running on http://localhost:${PORT}`);
   console.log(`   DB available: ${isDbAvailable()}`);
   console.log(`   Google OAuth: ${Boolean(process.env.GOOGLE_CLIENT_ID)}\n`);
-  await initDb();
+  initDb().catch((err) => console.error("⚠ initDb failed (server keeps running):", err));
 });
