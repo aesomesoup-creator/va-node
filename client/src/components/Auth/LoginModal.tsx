@@ -4,7 +4,6 @@ import "./LoginModal.css";
 
 export default function LoginModal() {
   const { closeLogin } = useUiStore();
-  const { init } = useAuthStore();
   const [error, setError] = useState<string | null>(null);
 
   // Detect ?auth=error redirect from failed Google OAuth
