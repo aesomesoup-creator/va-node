@@ -14,7 +14,7 @@ import authRouter from "./routes/auth.js";
 import animeRouter from "./routes/anime.js";
 import graphRouter from "./routes/graph.js";
 import adminRouter from "./routes/admin.js";
-import { isDbAvailable } from "./db/index.js";
+import { isDbAvailable, initDb } from "./db/index.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
@@ -77,8 +77,9 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, db: isDbAvailable(), ts: Date.now() });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`\n🟢 VAnode server running on http://localhost:${PORT}`);
   console.log(`   DB available: ${isDbAvailable()}`);
   console.log(`   Google OAuth: ${Boolean(process.env.GOOGLE_CLIENT_ID)}\n`);
+  await initDb();
 });
