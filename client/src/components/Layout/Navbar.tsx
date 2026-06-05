@@ -34,12 +34,12 @@ export default function Navbar() {
           </button>
         )}
 
-        {user ? (
+        {user && !user.isGuest ? (
           <div className="nav-user">
             {user.avatarUrl && (
               <img src={user.avatarUrl} alt={user.name} className="nav-avatar" />
             )}
-            <span className="nav-username">{user.isGuest ? "Guest" : user.name}</span>
+            <span className="nav-username">{user.name}</span>
             <button className="nav-btn nav-btn-sm nav-btn-ghost" onClick={logout}>
               Logout
             </button>
