@@ -70,7 +70,16 @@ export function setupPassport() {
               .where(eq(schema.users.googleId, profile.id));
 
             if (existing) {
-              return done(null, existing);
+              const [updated] = await db
+                .update(schema.users)
+                .set({
+                  name: profile.displayName,
+                  avatarUrl: profile.photos?.[0]?.value ?? existing.avatarUrl,
+                  email: profile.emails?.[0]?.value ?? existing.email,
+                })
+                .where(eq(schema.users.id, existing.id))
+                .returning();
+              return done(null, updated);
             }
 
             const [newUser] = await db

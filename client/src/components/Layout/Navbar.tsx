@@ -36,10 +36,15 @@ export default function Navbar() {
 
         {user && !user.isGuest ? (
           <div className="nav-user">
-            {user.avatarUrl && (
+            {user.avatarUrl ? (
               <img src={user.avatarUrl} alt={user.name} className="nav-avatar" />
+            ) : (
+              <div className="nav-avatar-fallback">{user.name[0]?.toUpperCase()}</div>
             )}
-            <span className="nav-username">{user.name}</span>
+            <div className="nav-user-info">
+              <span className="nav-username">{user.name}</span>
+              {user.email && <span className="nav-email">{user.email}</span>}
+            </div>
             <button className="nav-btn nav-btn-sm nav-btn-ghost" onClick={logout}>
               Logout
             </button>

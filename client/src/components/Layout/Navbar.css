@@ -131,14 +131,43 @@
   object-fit: cover;
 }
 
+.nav-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-width: 140px;
+}
+
 .nav-username {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(226, 244, 255, 0.8);
-  max-width: 120px;
+  color: rgba(226, 244, 255, 0.9);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.nav-email {
+  font-size: 10px;
+  color: rgba(0, 200, 255, 0.6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-avatar-fallback {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 200, 255, 0.5);
+  background: rgba(0, 200, 255, 0.15);
+  color: #00c8ff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* ─── Mobile ─── */
@@ -154,7 +183,7 @@
   .nav-btn .btn-label { display: none; }
   .nav-btn { padding: 7px 10px; font-size: 16px; gap: 0; min-width: 38px; justify-content: center; }
 
-  .nav-username { display: none; }
+  .nav-user-info { display: none; }
   .nav-user { padding: 4px 6px; gap: 6px; }
 
   /* Hide logout on mobile to save space — use menu later */
