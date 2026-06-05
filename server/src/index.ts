@@ -60,7 +60,7 @@ app.use(
     cookie: {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      sameSite: "lax",
       maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
     },
   })
@@ -78,6 +78,13 @@ app.use("/api/admin", adminRouter);
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true, db: isDbAvailable(), ts: Date.now() });
+});
+
+// Serve built client (same-origin — no cross-site cookie issues)
+const clientDist = resolve(__dirname, "../../client/dist");
+app.use(express.static(clientDist));
+app.get("*", (_req, res) => {
+  res.sendFile(resolve(clientDist, "index.html"));
 });
 
 app.listen(PORT, () => {
