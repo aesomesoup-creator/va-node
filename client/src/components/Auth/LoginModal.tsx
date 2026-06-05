@@ -6,7 +6,6 @@ export default function LoginModal() {
   const { closeLogin } = useUiStore();
   const [error, setError] = useState<string | null>(null);
 
-  // Detect ?auth=error redirect from failed Google OAuth
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get("auth") === "error") {
@@ -26,8 +25,7 @@ export default function LoginModal() {
         <button className="modal-close" onClick={closeLogin}>✕</button>
 
         <div className="login-logo">
-          <span className="login-icon">⬡</span>
-          <h1 className="login-title">VA<span>node</span></h1>
+          <h1 className="login-title">VA<span>NODE</span></h1>
         </div>
 
         <p className="login-desc">

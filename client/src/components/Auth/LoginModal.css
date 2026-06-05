@@ -13,10 +13,10 @@
 .modal-box {
   position: relative;
   background: rgba(5, 15, 40, 0.92);
-  border: 1px solid rgba(0, 200, 255, 0.2);
+  border: 1px solid rgba(51, 212, 255, 0.2);
   border-radius: 24px;
   padding: 40px;
-  box-shadow: 0 0 60px rgba(0, 200, 255, 0.12), 0 40px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 60px rgba(51, 212, 255, 0.12), 0 40px 80px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(24px);
   animation: slideUp 0.25s ease;
 }
@@ -33,7 +33,7 @@
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  color: rgba(226, 244, 255, 0.5);
+  color: rgba(220, 238, 255, 0.5);
   font-size: 14px;
   width: 32px;
   height: 32px;
@@ -46,38 +46,30 @@
 
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.12);
-  color: #e2f4ff;
+  color: #dceeff;
 }
 
 .login-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin-bottom: 12px;
-}
-
-.login-icon {
-  font-size: 36px;
-  color: #00c8ff;
-  filter: drop-shadow(0 0 12px rgba(0, 200, 255, 0.6));
 }
 
 .login-title {
   font-size: 28px;
-  font-weight: 800;
-  color: #e2f4ff;
+  font-weight: 900;
+  color: #33d4ff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0;
+  filter: drop-shadow(0 0 8px rgba(51, 212, 255, 0.4));
 }
 
 .login-title span {
-  color: #00ff88;
-  filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.5));
+  color: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
 }
 
 .login-desc {
-  color: rgba(226, 244, 255, 0.55);
+  color: rgba(220, 238, 255, 0.55);
   font-size: 14px;
   line-height: 1.6;
   margin: 0 0 28px;
@@ -98,7 +90,7 @@
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.06);
-  color: #e2f4ff;
+  color: #dceeff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -116,7 +108,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgba(226, 244, 255, 0.25);
+  color: rgba(220, 238, 255, 0.25);
   font-size: 12px;
 }
 
@@ -135,9 +127,9 @@
   gap: 4px;
   padding: 14px 20px;
   border-radius: 14px;
-  border: 1px solid rgba(0, 255, 136, 0.25);
-  background: rgba(0, 255, 136, 0.06);
-  color: #00ff88;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(220, 238, 255, 0.8);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -146,15 +138,15 @@
 
 .btn-guest small {
   font-size: 11px;
-  color: rgba(0, 255, 136, 0.5);
+  color: rgba(220, 238, 255, 0.4);
   font-weight: 400;
 }
 
 .btn-guest:hover {
-  background: rgba(0, 255, 136, 0.12);
-  border-color: rgba(0, 255, 136, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .login-error {
@@ -173,8 +165,8 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(0, 255, 136, 0.2);
-  border-top-color: #00ff88;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   vertical-align: middle;
@@ -183,10 +175,11 @@
 .login-note {
   margin: 20px 0 0;
   font-size: 11px;
-  color: rgba(226, 244, 255, 0.3);
+  color: rgba(220, 238, 255, 0.3);
   text-align: center;
   line-height: 1.5;
 }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }

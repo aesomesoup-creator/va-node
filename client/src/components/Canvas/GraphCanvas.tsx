@@ -13,7 +13,7 @@ function EmptyState() {
   const { toggleSearch } = useUiStore();
   return (
     <div className="canvas-empty">
-      <div className="canvas-empty-icon">⬡</div>
+      <div className="canvas-empty-icon">◇</div>
       <h2>Your graph is empty</h2>
       <p>Search for an anime to start building your voice actor connection graph.</p>
       <button className="btn-primary" onClick={toggleSearch}>+ Add Anime</button>

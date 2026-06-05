@@ -159,7 +159,7 @@
 .panel-section-title {
   font-size: 11px;
   font-weight: 700;
-  color: #00ff88;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0 0 12px;
@@ -175,7 +175,7 @@
   margin-bottom: 4px;
 }
 
-.seiyuu-item:hover { background: rgba(0, 255, 136, 0.05); }
+.seiyuu-item:hover { background: rgba(255, 255, 255, 0.04); }
 
 .seiyuu-img {
   width: 36px;
@@ -183,7 +183,7 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: 1.5px solid rgba(0, 255, 136, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
 }
 
 .seiyuu-info { flex: 1; min-width: 0; }

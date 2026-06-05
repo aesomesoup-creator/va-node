@@ -18,7 +18,6 @@ export default function App() {
 
   useEffect(() => { init(); }, []);
 
-  // Auto-open login modal if redirected back from a failed Google OAuth
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("auth") === "error") {
       useUiStore.getState().openLogin();
@@ -34,8 +33,7 @@ export default function App() {
     return (
       <div className="app-loading">
         <div className="app-loading-logo">
-          <span className="app-loading-icon">⬡</span>
-          <span className="app-loading-name">VA<span>node</span></span>
+          <span className="app-loading-name">VA<span>NODE</span></span>
         </div>
         <div className="spinner" />
       </div>

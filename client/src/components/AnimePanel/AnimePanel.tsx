@@ -17,7 +17,7 @@ export default function AnimePanel() {
     <div className="modal-overlay" onClick={toggleAnimePanel}>
       <div className="anime-panel" onClick={(e) => e.stopPropagation()}>
         <div className="panel-header">
-          <h2 className="panel-title">◈ My Anime</h2>
+          <h2 className="panel-title">My Anime</h2>
           <button className="modal-close" onClick={toggleAnimePanel}>✕</button>
         </div>
 
