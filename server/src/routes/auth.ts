@@ -153,7 +153,11 @@ router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: `${process.env.CLIENT_URL || "http://localhost:5173"}?auth=error` }),
   (req, res) => {
-    res.redirect(process.env.CLIENT_URL || "http://localhost:5173");
+    const clientUrl = process.env.CLIENT_URL || "http://localhost:5173";
+    req.session.save((err) => {
+      if (err) console.error("Session save error:", err);
+      res.redirect(clientUrl);
+    });
   }
 );
 

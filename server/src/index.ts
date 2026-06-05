@@ -14,7 +14,7 @@ import authRouter from "./routes/auth.js";
 import animeRouter from "./routes/anime.js";
 import graphRouter from "./routes/graph.js";
 import adminRouter from "./routes/admin.js";
-import { isDbAvailable, initDb } from "./db/index.js";
+import { isDbAvailable, initDb, getPool } from "./db/index.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
@@ -40,7 +40,7 @@ if (isDbAvailable()) {
     const { default: pgSession } = await import("connect-pg-simple");
     const PgStore = pgSession(session);
     sessionStore = new PgStore({
-      conString: process.env.DATABASE_URL!,
+      pool: getPool(),
       createTableIfMissing: true,
     });
     console.log("✓ Session store: PostgreSQL");
