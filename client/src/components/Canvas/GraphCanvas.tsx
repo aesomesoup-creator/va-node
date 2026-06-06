@@ -381,16 +381,17 @@ export default function GraphCanvas() {
             });
           })}
 
-          {/* Ghost bubbles — duplicates placed close to the pinned char, pointing toward each target */}
-          {pinnedCharId != null && fromPos && vaTargets.map((char) => {
-            const toPos = charAbsPos.get(char.anilistCharacterId)!;
-            const dx = toPos.x - fromPos.x;
-            const dy = toPos.y - fromPos.y;
-            const dist = Math.hypot(dx, dy) || 1;
-            const nx = dx / dist, ny = dy / dist;
-            // Place ghost just outside the source char bubble (almost touching)
-            const ghostX = fromPos.x + nx * (CHAR_RADIUS * 2 + 4);
-            const ghostY = fromPos.y + ny * (CHAR_RADIUS * 2 + 4);
+          {/* Ghost bubbles — orbit around the pinned char like chars orbit their anime node */}
+          {pinnedCharId != null && fromPos && (() => {
+            const N = vaTargets.length;
+            const orbitR = Math.max(
+              CHAR_RADIUS + CHAR_RADIUS + 14,
+              ((CHAR_RADIUS * 2 + 10) * N) / (2 * Math.PI)
+            );
+            return vaTargets.map((char, index) => {
+            const angle = (2 * Math.PI / N) * index - Math.PI / 2;
+            const ghostX = fromPos.x + Math.cos(angle) * orbitR;
+            const ghostY = fromPos.y + Math.sin(angle) * orbitR;
             const D = CHAR_RADIUS * 2;
             const animeTitle = anime.find((a) => a.anilistId === char.anilistAnimeId)?.title ?? "";
             const isGhostHovered = hoveredGhostId === char.anilistCharacterId;
@@ -418,7 +419,8 @@ export default function GraphCanvas() {
                 </div>
               </div>
             );
-          })}
+          });
+          })()}
         </div>
 
         <div className="canvas-hint canvas-hint-desktop">Scroll to zoom · Drag to pan · Hover character → VA links · Click character → pin</div>
