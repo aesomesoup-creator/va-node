@@ -65,6 +65,7 @@
 .char-ghost-bubble.ghost-hovered {
   border-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+  z-index: 200;
 }
 
 .char-ghost-tooltip {
