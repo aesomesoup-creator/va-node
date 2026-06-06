@@ -10,6 +10,7 @@ interface UiState {
   quizAnime: AnimeDetailRaw | null;
   showQuiz: boolean;
   showVaQuiz: boolean;
+  showAnilistImport: boolean;
   hoveredAnimeId: number | null;
   hoveredCharId: number | null;
   hoveredSeiyuuId: number | null;
@@ -27,6 +28,8 @@ interface UiState {
   closeQuiz: () => void;
   openVaQuiz: () => void;
   closeVaQuiz: () => void;
+  openAnilistImport: () => void;
+  closeAnilistImport: () => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -38,6 +41,7 @@ export const useUiStore = create<UiState>((set) => ({
   quizAnime: null,
   showQuiz: false,
   showVaQuiz: false,
+  showAnilistImport: false,
   hoveredAnimeId: null,
   hoveredCharId: null,
   hoveredSeiyuuId: null,
@@ -55,4 +59,6 @@ export const useUiStore = create<UiState>((set) => ({
   closeQuiz:          () => set({ quizAnime: null, showQuiz: false, isQuizMode: false }),
   openVaQuiz:         () => set({ showVaQuiz: true }),
   closeVaQuiz:        () => set({ showVaQuiz: false }),
+  openAnilistImport:  () => set({ showAnilistImport: true }),
+  closeAnilistImport: () => set({ showAnilistImport: false }),
 }));

@@ -44,6 +44,60 @@ export async function searchAnilist(search: string): Promise<AnilistResult[]> {
   return data.Page.media;
 }
 
+// ── User completed list ──────────────────────────────────────────────────────
+
+const USER_LIST_QUERY = `
+  query ($username: String) {
+    MediaListCollection(userName: $username, type: ANIME, status: COMPLETED, forceSingleCompletedList: true) {
+      lists {
+        entries {
+          media {
+            id
+            title { romaji english }
+            coverImage { medium large }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export interface AnilistUserAnime {
+  id: number;
+  title: string;
+  coverImage: string;
+}
+
+export async function getUserCompletedAnime(username: string): Promise<AnilistUserAnime[]> {
+  const data = await gql<{
+    MediaListCollection: {
+      lists: Array<{
+        entries: Array<{
+          media: {
+            id: number;
+            title: { romaji: string; english?: string | null };
+            coverImage: { medium: string; large: string };
+          };
+        }>;
+      }>;
+    };
+  }>(USER_LIST_QUERY, { username });
+
+  const seen = new Set<number>();
+  return data.MediaListCollection.lists
+    .flatMap((l) => l.entries)
+    .filter((e) => {
+      if (seen.has(e.media.id)) return false;
+      seen.add(e.media.id);
+      return true;
+    })
+    .map((e) => ({
+      id: e.media.id,
+      title: e.media.title.english || e.media.title.romaji,
+      coverImage: e.media.coverImage.medium || e.media.coverImage.large,
+    }));
+}
+
 // ── Anime detail with characters + VA ───────────────────────────────────────
 
 const DETAIL_QUERY = `

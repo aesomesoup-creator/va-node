@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const { user, logout } = useAuthStore();
-  const { toggleSearch, openSearchForQuiz, openLogin, openVaQuiz } = useUiStore();
+  const { toggleSearch, openSearchForQuiz, openLogin, openVaQuiz, openAnilistImport } = useUiStore();
 
   return (
     <nav className="navbar">
@@ -23,6 +23,10 @@ export default function Navbar() {
 
         <button className="nav-btn nav-btn-quiz" onClick={openVaQuiz} title="VA Quiz">
           <span className="btn-label">QUIZ</span>
+        </button>
+
+        <button className="nav-btn nav-btn-anilist" onClick={openAnilistImport} title="Import AniList">
+          <span className="btn-label">Import AniList</span>
         </button>
 
         {user && !user.isGuest ? (
