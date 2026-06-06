@@ -1,17 +1,10 @@
-import { useState, useEffect } from "react";
 import { useAuthStore } from "../../stores/authStore";
 import { useUiStore } from "../../stores/uiStore";
 import "./Navbar.css";
 
 export default function Navbar() {
   const { user, logout } = useAuthStore();
-  const { toggleSearch, openSearchForQuiz, toggleAnimePanel, toggleAdmin, openLogin } = useUiStore();
-  const [dark, setDark] = useState(() => localStorage.getItem("vanode-dark") === "1");
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("vanode-dark", dark ? "1" : "0");
-  }, [dark]);
+  const { toggleSearch, openSearchForQuiz, openLogin, openVaQuiz } = useUiStore();
 
   return (
     <nav className="navbar">
@@ -24,26 +17,12 @@ export default function Navbar() {
           <span className="btn-label">+ Add Anime</span>
         </button>
 
-        <button className="nav-btn nav-btn-quiz" onClick={openSearchForQuiz} title="Add anime by quiz">
-          <span className="btn-label">Add Anime by Quiz</span>
+        <button className="nav-btn nav-btn-yellow" onClick={openSearchForQuiz} title="Add anime by quiz">
+          <span className="btn-label">+ Add Anime by Quiz</span>
         </button>
 
-        <button className="nav-btn nav-btn-ghost" onClick={toggleAnimePanel} title="My anime">
-          <span className="btn-label">My Anime</span>
-        </button>
-
-        {user?.isGuest === false && (
-          <button className="nav-btn nav-btn-ghost" onClick={toggleAdmin} title="Admin">
-            <span className="btn-label">Admin</span>
-          </button>
-        )}
-
-        <button
-          className="nav-btn nav-btn-ghost theme-toggle"
-          onClick={() => setDark((d) => !d)}
-          title={dark ? "Light mode" : "Dark mode"}
-        >
-          {dark ? "Light" : "Dark"}
+        <button className="nav-btn nav-btn-quiz" onClick={openVaQuiz} title="VA Quiz">
+          <span className="btn-label">QUIZ</span>
         </button>
 
         {user && !user.isGuest ? (

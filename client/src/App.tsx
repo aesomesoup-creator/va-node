@@ -9,12 +9,13 @@ import AnimePanel from "./components/AnimePanel/AnimePanel";
 import AdminPanel from "./components/Admin/AdminPanel";
 import LoginModal from "./components/Auth/LoginModal";
 import QuizModal from "./components/Quiz/QuizModal";
+import VaQuizModal from "./components/Quiz/VaQuizModal";
 import "./App.css";
 
 export default function App() {
   const { user, isLoading, init } = useAuthStore();
   const { loadGraph } = useGraphStore();
-  const { showLogin, showQuiz } = useUiStore();
+  const { showLogin, showQuiz, showVaQuiz } = useUiStore();
 
   useEffect(() => { init(); }, []);
 
@@ -49,6 +50,7 @@ export default function App() {
       <AdminPanel />
       {showLogin && <LoginModal />}
       {showQuiz && <QuizModal />}
+      {showVaQuiz && <VaQuizModal />}
     </div>
   );
 }

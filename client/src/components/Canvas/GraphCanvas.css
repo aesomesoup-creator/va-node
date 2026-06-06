@@ -36,6 +36,45 @@
 .char-orbit-node:hover { transform: scale(1.2); z-index: 35; }
 .char-orbit-node.highlighted { transform: scale(1.15); z-index: 30; }
 .char-orbit-node.dimmed { opacity: 0.2; }
+.char-orbit-node.pinned { transform: scale(1.2); z-index: 40; animation: pulse-ring 1.4s ease-in-out infinite; }
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 16px var(--c, #4dd9ff), 0 0 4px var(--c, #4dd9ff); }
+  50% { box-shadow: 0 0 28px var(--c, #4dd9ff), 0 0 10px var(--c, #4dd9ff), 0 0 50px rgba(77,217,255,0.2); }
+}
+
+/* ─── Ghost bubble (duplicate along VA arc when pinned) ─── */
+.char-ghost-bubble {
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  background: rgba(5, 15, 35, 0.7);
+  z-index: 28;
+  pointer-events: none;
+  animation: ghost-pop 0.25s ease;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.15);
+}
+
+.char-ghost-label {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+@keyframes ghost-pop {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* tooltip also shows on orbit nodes */
+.char-orbit-node:hover .char-tooltip { opacity: 1; }
 
 /* ─── Anime Bubble (legacy, kept for CSS selectors) ─── */
 .anime-bubble {

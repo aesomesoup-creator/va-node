@@ -6,12 +6,13 @@ interface UiState {
   showSearch: boolean;
   showAdmin: boolean;
   showLogin: boolean;
-  isQuizMode: boolean;      // search opened in quiz mode
-  quizAnime: AnimeDetailRaw | null;  // anime selected for quiz
+  isQuizMode: boolean;
+  quizAnime: AnimeDetailRaw | null;
   showQuiz: boolean;
+  showVaQuiz: boolean;
   hoveredAnimeId: number | null;
   hoveredCharId: number | null;
-  hoveredSeiyuuId: number | null;   // legacy
+  hoveredSeiyuuId: number | null;
 
   toggleAnimePanel: () => void;
   toggleSearch: () => void;
@@ -24,6 +25,8 @@ interface UiState {
   setHoveredSeiyuu: (id: number | null) => void;
   openQuiz: (anime: AnimeDetailRaw) => void;
   closeQuiz: () => void;
+  openVaQuiz: () => void;
+  closeVaQuiz: () => void;
 }
 
 export const useUiStore = create<UiState>((set) => ({
@@ -34,6 +37,7 @@ export const useUiStore = create<UiState>((set) => ({
   isQuizMode: false,
   quizAnime: null,
   showQuiz: false,
+  showVaQuiz: false,
   hoveredAnimeId: null,
   hoveredCharId: null,
   hoveredSeiyuuId: null,
@@ -49,4 +53,6 @@ export const useUiStore = create<UiState>((set) => ({
   setHoveredSeiyuu:   (id) => set({ hoveredSeiyuuId: id }),
   openQuiz:           (anime) => set({ quizAnime: anime, showQuiz: true, showSearch: false }),
   closeQuiz:          () => set({ quizAnime: null, showQuiz: false, isQuizMode: false }),
+  openVaQuiz:         () => set({ showVaQuiz: true }),
+  closeVaQuiz:        () => set({ showVaQuiz: false }),
 }));

@@ -17,6 +17,49 @@ export function charOrbitPos(index: number, total: number): { x: number; y: numb
   return { x: Math.cos(angle) * minOrbit, y: Math.sin(angle) * minOrbit };
 }
 
+// Effective radius of an anime cluster (center bubble + orbit + char bubbles + padding)
+function clusterRadius(numChars: number): number {
+  const orbit = Math.max(
+    ANIME_RADIUS + CHAR_RADIUS + 24,
+    ((CHAR_RADIUS * 2 + 14) * Math.max(numChars, 1)) / (2 * Math.PI)
+  );
+  return orbit + CHAR_RADIUS + 36;
+}
+
+// Push overlapping anime clusters apart; returns new positions
+function resolvePositions(
+  anime: AnimeEntry[],
+  charCounts: Map<number, number>
+): Array<{ anilistId: number; x: number; y: number }> {
+  if (anime.length < 2) return anime.map(a => ({ anilistId: a.anilistId, x: a.positionX, y: a.positionY }));
+
+  const pos = anime.map(a => ({ anilistId: a.anilistId, x: a.positionX, y: a.positionY }));
+  const radii = anime.map(a => clusterRadius(charCounts.get(a.anilistId) ?? 0));
+
+  for (let iter = 0; iter < 80; iter++) {
+    let moved = false;
+    for (let i = 0; i < pos.length; i++) {
+      for (let j = i + 1; j < pos.length; j++) {
+        const minDist = radii[i] + radii[j];
+        const dx = pos[j].x - pos[i].x;
+        const dy = pos[j].y - pos[i].y;
+        const dist = Math.hypot(dx, dy) || 0.01;
+        if (dist < minDist) {
+          const push = (minDist - dist) * 0.52;
+          const nx = dx / dist, ny = dy / dist;
+          pos[i].x -= nx * push;
+          pos[i].y -= ny * push;
+          pos[j].x += nx * push;
+          pos[j].y += ny * push;
+          moved = true;
+        }
+      }
+    }
+    if (!moved) break;
+  }
+  return pos;
+}
+
 // ── Guest localStorage persistence ──────────────────────────────────────────
 const LS_ANIME = "vanode_anime";
 const LS_CHARS = "vanode_chars";
@@ -98,6 +141,7 @@ interface GraphState {
   removeAnime: (anilistId: number, isGuest: boolean) => Promise<void>;
   updatePosition: (anilistId: number, x: number, y: number) => void;
   persistPosition: (anilistId: number, x: number, y: number) => void;
+  resolveCollisions: () => void;
 }
 
 function applyCharacters(characters: Character[]) {
@@ -113,12 +157,10 @@ export const useGraphStore = create<GraphState>((set, get) => ({
   loadGraph: async (isGuest) => {
     set({ isLoading: true, isGuest });
     if (isGuest) {
-      // Load from localStorage — no server needed
       const { anime, characters } = guestLoad();
       set({ anime, ...applyCharacters(characters), isLoading: false });
       return;
     }
-    // Authenticated — load from server
     try {
       const data = await api.getGraph();
       let anime = Array.isArray(data.anime) ? data.anime : [];
@@ -135,7 +177,6 @@ export const useGraphStore = create<GraphState>((set, get) => ({
 
   addAnime: async (anilistId, isGuest) => {
     if (isGuest) {
-      // Fetch directly from AniList — no server call
       const detail = await getAnimeDetail(anilistId);
       const guestId = localStorage.getItem("vanode_guest_id") || crypto.randomUUID();
       const entry: AnimeEntry = {
@@ -165,10 +206,12 @@ export const useGraphStore = create<GraphState>((set, get) => ({
         guestSave(anime, characters);
         return { anime, ...applyCharacters(characters) };
       });
+
+      // Resolve collisions after state update
+      setTimeout(() => get().resolveCollisions(), 50);
       return;
     }
 
-    // Authenticated — use server
     const entry = await api.addAnime(anilistId);
     set((s) => ({ anime: [...s.anime, entry] }));
     api.getGraph().then((data) => {
@@ -177,6 +220,7 @@ export const useGraphStore = create<GraphState>((set, get) => ({
       const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
       const { connectedIds, edges } = computeEdges(seiyuuGroups);
       set({ characters, seiyuuGroups, edges, connectedCharIds: connectedIds });
+      setTimeout(() => get().resolveCollisions(), 50);
     }).catch(console.error);
   },
 
@@ -209,5 +253,39 @@ export const useGraphStore = create<GraphState>((set, get) => ({
 
   persistPosition: (anilistId, x, y) => {
     if (!get().isGuest) api.updateAnimePosition(anilistId, x, y).catch(console.error);
+  },
+
+  resolveCollisions: () => {
+    const { anime, characters } = get();
+    if (anime.length < 2) return;
+
+    const charCounts = new Map<number, number>();
+    for (const c of characters) {
+      charCounts.set(c.anilistAnimeId, (charCounts.get(c.anilistAnimeId) ?? 0) + 1);
+    }
+
+    const resolved = resolvePositions(anime, charCounts);
+    const moved = resolved.filter(r => {
+      const orig = anime.find(a => a.anilistId === r.anilistId);
+      return orig && (Math.abs(orig.positionX - r.x) > 1 || Math.abs(orig.positionY - r.y) > 1);
+    });
+    if (moved.length === 0) return;
+
+    set(s => ({
+      anime: s.anime.map(a => {
+        const r = resolved.find(p => p.anilistId === a.anilistId);
+        return r ? { ...a, positionX: r.x, positionY: r.y } : a;
+      })
+    }));
+
+    // Persist new positions for auth users
+    if (!get().isGuest) {
+      for (const r of moved) {
+        api.updateAnimePosition(r.anilistId, r.x, r.y).catch(() => {});
+      }
+    } else {
+      const { anime: newAnime, characters: chars } = get();
+      guestSave(newAnime, chars);
+    }
   },
 }));

@@ -22,29 +22,40 @@ function EmptyState() {
 }
 
 function CharNode({
-  char, absX, absY, colorBorder, colorGlow, highlighted, dimmed,
-  onHoverIn, onHoverOut,
+  char, absX, absY, colorBorder, highlighted, dimmed, pinned,
+  onHoverIn, onHoverOut, onClick,
 }: {
   char: Character; absX: number; absY: number;
-  colorBorder: string; colorGlow: string;
-  highlighted: boolean; dimmed: boolean;
-  onHoverIn: () => void; onHoverOut: () => void;
+  colorBorder: string;
+  highlighted: boolean; dimmed: boolean; pinned: boolean;
+  onHoverIn: () => void; onHoverOut: () => void; onClick: () => void;
 }) {
   const D = CHAR_RADIUS * 2;
   return (
     <div
-      className={`char-orbit-node${highlighted ? " highlighted" : ""}${dimmed ? " dimmed" : ""}`}
+      className={[
+        "char-orbit-node",
+        highlighted ? "highlighted" : "",
+        dimmed ? "dimmed" : "",
+        pinned ? "pinned" : "",
+      ].filter(Boolean).join(" ")}
       style={{
         position: "absolute",
         left: absX - CHAR_RADIUS,
         top: absY - CHAR_RADIUS,
         width: D, height: D,
-        borderColor: highlighted ? colorBorder : "rgba(255,255,255,0.18)",
-        boxShadow: highlighted ? `0 0 14px ${colorBorder}, 0 0 4px ${colorBorder}` : "none",
+        borderColor: highlighted || pinned ? colorBorder : "rgba(255,255,255,0.18)",
+        boxShadow: pinned
+          ? `0 0 18px ${colorBorder}, 0 0 6px ${colorBorder}, 0 0 36px ${colorBorder}55`
+          : highlighted
+          ? `0 0 14px ${colorBorder}, 0 0 4px ${colorBorder}`
+          : "none",
+        cursor: "pointer",
       }}
       onMouseEnter={onHoverIn}
       onMouseLeave={onHoverOut}
       onMouseDown={(e) => e.stopPropagation()}
+      onClick={(e) => { e.stopPropagation(); onClick(); }}
       title={`${char.characterName}\nCV: ${char.seiyuuName || "—"}`}
     >
       {char.characterImage ? (
@@ -67,6 +78,7 @@ export default function GraphCanvas() {
   const transformRef = useRef(transform);
   transformRef.current = transform;
   const [detailAnimeId, setDetailAnimeId] = useState<number | null>(null);
+  const [pinnedCharId, setPinnedCharId] = useState<number | null>(null);
 
   const dragState = useRef<{
     isPanning: boolean; isDraggingBubble: boolean; anilistId: number | null;
@@ -77,9 +89,12 @@ export default function GraphCanvas() {
     active: false, startDist: 0, startScale: 1, midX: 0, midY: 0,
   });
 
-  const { anime, characters, connectedCharIds, seiyuuGroups, isLoading } = useGraphStore();
+  const { anime, characters, connectedCharIds, isLoading } = useGraphStore();
   const { updatePosition, persistPosition } = useGraphStore();
   const { hoveredAnimeId, setHoveredAnime, hoveredCharId, setHoveredChar } = useUiStore();
+
+  // Pinned char overrides hovered char for VA line display
+  const activeCharId = pinnedCharId ?? hoveredCharId;
 
   const animeColorMap = useMemo(() => {
     const m = new Map<number, number>();
@@ -110,10 +125,25 @@ export default function GraphCanvas() {
     return m;
   }, [anime, charsByAnime]);
 
+  const activeChar = activeCharId != null ? characters.find((c) => c.anilistCharacterId === activeCharId) : null;
+
+  const vaTargets = useMemo(() => {
+    if (!activeChar?.seiyuuId) return [];
+    return characters.filter(
+      (c) => c.seiyuuId === activeChar.seiyuuId &&
+             c.anilistCharacterId !== activeCharId &&
+             charAbsPos.has(c.anilistCharacterId)
+    );
+  }, [activeChar, activeCharId, characters, charAbsPos]);
+
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (e.button !== 0) return;
     dragState.current = { isPanning: true, isDraggingBubble: false, anilistId: null,
       startMouse: { x: e.clientX, y: e.clientY }, startPos: { x: transformRef.current.x, y: transformRef.current.y } };
+  }, []);
+
+  const handleCanvasClick = useCallback(() => {
+    setPinnedCharId(null);
   }, []);
 
   const handleBubbleDragStart = useCallback((anilistId: number, e: React.MouseEvent | React.TouchEvent) => {
@@ -234,10 +264,12 @@ export default function GraphCanvas() {
   if (anime.length === 0) return <EmptyState />;
 
   const W = 5000, H = 4000;
+  const fromPos = activeCharId != null ? charAbsPos.get(activeCharId) : null;
 
   return (
     <>
-      <div ref={containerRef} className="graph-canvas-container" onMouseDown={handleMouseDown} onWheel={handleWheel}>
+      <div ref={containerRef} className="graph-canvas-container"
+        onMouseDown={handleMouseDown} onWheel={handleWheel} onClick={handleCanvasClick}>
         <div className="canvas-world"
           style={{ transform: `translate(${transform.x}px,${transform.y}px) scale(${transform.scale})`, width: W, height: H }}>
 
@@ -249,7 +281,7 @@ export default function GraphCanvas() {
               </filter>
             </defs>
 
-            {/* Orbit arms — subtle dashes from anime center to character */}
+            {/* Orbit arms */}
             {anime.map((a) => {
               const color = getAnimeColor(animeColorMap.get(a.anilistId) ?? 0);
               return (charsByAnime.get(a.anilistId) ?? []).map((char) => {
@@ -269,46 +301,34 @@ export default function GraphCanvas() {
               });
             })}
 
-            {/* Character hover — direct arc to all chars sharing the same VA */}
-            {(() => {
-              if (hoveredCharId == null) return null;
-              const hoveredChar = characters.find((c) => c.anilistCharacterId === hoveredCharId);
-              if (!hoveredChar?.seiyuuId) return null;
-              const fromPos = charAbsPos.get(hoveredCharId);
-              if (!fromPos) return null;
+            {/* VA arcs (hover or pinned) */}
+            {activeCharId != null && fromPos && vaTargets.map((char) => {
+              const toPos = charAbsPos.get(char.anilistCharacterId)!;
+              const cpx = (fromPos.x + toPos.x) / 2;
+              const dist = Math.hypot(toPos.x - fromPos.x, toPos.y - fromPos.y);
+              const cpy = (fromPos.y + toPos.y) / 2 - Math.max(40, dist * 0.2);
+              const midX = 0.25 * fromPos.x + 0.5 * cpx + 0.25 * toPos.x;
+              const midY = 0.25 * fromPos.y + 0.5 * cpy + 0.25 * toPos.y;
 
-              const targets = characters.filter(
-                (c) => c.seiyuuId === hoveredChar.seiyuuId &&
-                       c.anilistCharacterId !== hoveredCharId &&
-                       charAbsPos.has(c.anilistCharacterId)
+              return (
+                <g key={`va-${char.anilistCharacterId}`}>
+                  <path
+                    d={`M ${fromPos.x} ${fromPos.y} Q ${cpx} ${cpy} ${toPos.x} ${toPos.y}`}
+                    fill="none"
+                    stroke={pinnedCharId != null ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.7)"}
+                    strokeWidth={pinnedCharId != null ? 2.5 : 2}
+                    filter="url(#edge-glow)"
+                  />
+                  <rect x={midX - 58} y={midY - 10} width={116} height={18} rx={9}
+                    fill="rgba(3,10,28,0.92)" stroke="rgba(255,255,255,0.3)" strokeWidth={1} />
+                  <text x={midX} y={midY + 3} textAnchor="middle"
+                    fill="rgba(255,255,255,0.9)" fontSize={10} fontWeight="700"
+                    style={{ pointerEvents: "none" }}>
+                    {(activeChar?.seiyuuName ?? "Unknown VA").slice(0, 22)}
+                  </text>
+                </g>
               );
-
-              return targets.map((char) => {
-                const toPos = charAbsPos.get(char.anilistCharacterId)!;
-                const cpx = (fromPos.x + toPos.x) / 2;
-                const dist = Math.hypot(toPos.x - fromPos.x, toPos.y - fromPos.y);
-                const cpy = (fromPos.y + toPos.y) / 2 - Math.max(40, dist * 0.2);
-                const midX = 0.25 * fromPos.x + 0.5 * cpx + 0.25 * toPos.x;
-                const midY = 0.25 * fromPos.y + 0.5 * cpy + 0.25 * toPos.y;
-
-                return (
-                  <g key={`direct-${char.anilistCharacterId}`}>
-                    <path
-                      d={`M ${fromPos.x} ${fromPos.y} Q ${cpx} ${cpy} ${toPos.x} ${toPos.y}`}
-                      fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth={2}
-                      filter="url(#edge-glow)"
-                    />
-                    <rect x={midX - 58} y={midY - 10} width={116} height={18} rx={9}
-                      fill="rgba(3,10,28,0.92)" stroke="rgba(255,255,255,0.3)" strokeWidth={1} />
-                    <text x={midX} y={midY + 3} textAnchor="middle"
-                      fill="rgba(255,255,255,0.9)" fontSize={10} fontWeight="700"
-                      style={{ pointerEvents: "none" }}>
-                      {(hoveredChar.seiyuuName ?? "Unknown VA").slice(0, 22)}
-                    </text>
-                  </g>
-                );
-              });
-            })()}
+            })}
           </svg>
 
           {/* Anime center nodes */}
@@ -329,27 +349,63 @@ export default function GraphCanvas() {
             return chars.map((char) => {
               const pos = charAbsPos.get(char.anilistCharacterId);
               if (!pos) return null;
-              const isHovered = hoveredCharId === char.anilistCharacterId;
-              const highlighted = hoveredCharId != null && (
-                isHovered || (
-                  char.seiyuuId != null &&
-                  characters.find((c) => c.anilistCharacterId === hoveredCharId)?.seiyuuId === char.seiyuuId
-                )
-              );
-              const dimmed = hoveredCharId != null && !highlighted;
+              const isPinned = pinnedCharId === char.anilistCharacterId;
+              const isVaTarget = activeChar?.seiyuuId != null &&
+                char.seiyuuId === activeChar.seiyuuId &&
+                char.anilistCharacterId !== activeCharId;
+              const highlighted = activeCharId != null &&
+                (char.anilistCharacterId === activeCharId || isVaTarget);
+              const dimmed = activeCharId != null && !highlighted;
               return (
                 <CharNode key={char.anilistCharacterId} char={char}
                   absX={pos.x} absY={pos.y}
-                  colorBorder={color.border} colorGlow={color.glow}
-                  highlighted={highlighted} dimmed={dimmed}
+                  colorBorder={color.border}
+                  highlighted={highlighted} dimmed={dimmed} pinned={isPinned}
                   onHoverIn={() => setHoveredChar(char.anilistCharacterId)}
-                  onHoverOut={() => setHoveredChar(null)} />
+                  onHoverOut={() => { if (pinnedCharId == null) setHoveredChar(null); }}
+                  onClick={() => {
+                    if (connectedCharIds.has(char.anilistCharacterId)) {
+                      setPinnedCharId((prev) =>
+                        prev === char.anilistCharacterId ? null : char.anilistCharacterId
+                      );
+                    }
+                  }}
+                />
               );
             });
           })}
+
+          {/* Ghost bubbles — duplicates at arc midpoints when a char is pinned */}
+          {pinnedCharId != null && fromPos && vaTargets.map((char) => {
+            const toPos = charAbsPos.get(char.anilistCharacterId)!;
+            const cpx = (fromPos.x + toPos.x) / 2;
+            const dist = Math.hypot(toPos.x - fromPos.x, toPos.y - fromPos.y);
+            const cpy = (fromPos.y + toPos.y) / 2 - Math.max(40, dist * 0.2);
+            const midX = 0.25 * fromPos.x + 0.5 * cpx + 0.25 * toPos.x;
+            const midY = 0.25 * fromPos.y + 0.5 * cpy + 0.25 * toPos.y;
+            const D = CHAR_RADIUS * 2;
+            return (
+              <div key={`ghost-${char.anilistCharacterId}`}
+                className="char-ghost-bubble"
+                style={{
+                  position: "absolute",
+                  left: midX - CHAR_RADIUS,
+                  top: midY - CHAR_RADIUS,
+                  width: D, height: D,
+                }}>
+                {char.characterImage ? (
+                  <img src={char.characterImage} alt={char.characterName} className="char-img"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+                ) : (
+                  <div className="char-letter">{char.characterName[0]}</div>
+                )}
+                <div className="char-ghost-label">{char.characterName}</div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="canvas-hint canvas-hint-desktop">Scroll to zoom · Drag anime to move · Hover a character to reveal VA links · Click anime for cast</div>
+        <div className="canvas-hint canvas-hint-desktop">Scroll to zoom · Drag to pan · Hover character → VA links · Click character → pin</div>
         <div className="canvas-hint canvas-hint-mobile">Pinch to zoom · Drag to pan · Tap anime to see cast</div>
       </div>
 

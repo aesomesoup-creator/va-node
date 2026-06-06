@@ -65,10 +65,25 @@
   transform: translateY(-1px);
 }
 
+.nav-btn-yellow {
+  background: rgba(255, 210, 0, 0.1);
+  border-color: rgba(255, 210, 0, 0.45);
+  color: #ffd700;
+}
+
+.nav-btn-yellow:hover {
+  background: rgba(255, 210, 0, 0.2);
+  border-color: rgba(255, 210, 0, 0.75);
+  box-shadow: 0 0 12px rgba(255, 210, 0, 0.22);
+  transform: translateY(-1px);
+}
+
 .nav-btn-quiz {
   background: rgba(123, 97, 255, 0.12);
   border-color: rgba(123, 97, 255, 0.4);
   color: #a78bff;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .nav-btn-quiz:hover {
