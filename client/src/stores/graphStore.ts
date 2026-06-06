@@ -169,6 +169,7 @@ export const useGraphStore = create<GraphState>((set, get) => ({
       const seiyuuGroups = Array.isArray(data.seiyuuGroups) ? data.seiyuuGroups : [];
       const { connectedIds, edges } = computeEdges(seiyuuGroups);
       set({ anime, characters, seiyuuGroups, edges, connectedCharIds: connectedIds, isLoading: false });
+      setTimeout(() => get().resolveCollisions(), 100);
     } catch (err) {
       console.error("loadGraph error:", err);
       set({ isLoading: false });

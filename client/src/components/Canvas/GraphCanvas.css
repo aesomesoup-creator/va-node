@@ -43,33 +43,67 @@
   50% { box-shadow: 0 0 28px var(--c, #4dd9ff), 0 0 10px var(--c, #4dd9ff), 0 0 50px rgba(77,217,255,0.2); }
 }
 
-/* ─── Ghost bubble (duplicate along VA arc when pinned) ─── */
+/* ─── Ghost bubble (duplicate near source char when pinned) ─── */
 .char-ghost-bubble {
   border-radius: 50%;
-  border: 2px dashed rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  background: rgba(5, 15, 35, 0.7);
+  border: 2px dashed rgba(255, 255, 255, 0.55);
+  overflow: visible;
+  background: rgba(5, 15, 35, 0.75);
   z-index: 28;
-  pointer-events: none;
-  animation: ghost-pop 0.25s ease;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.15);
+  pointer-events: all;
+  animation: ghost-pop 0.2s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.12);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  cursor: default;
 }
 
-.char-ghost-label {
+.char-ghost-bubble > img, .char-ghost-bubble > .char-letter {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.char-ghost-bubble.ghost-hovered {
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+}
+
+.char-ghost-tooltip {
   position: absolute;
-  top: calc(100% + 4px);
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  font-size: 9px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.7);
+  background: rgba(3, 10, 28, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 7px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   white-space: nowrap;
   pointer-events: none;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  min-width: 110px;
+  text-align: center;
+}
+
+.char-ghost-bubble.ghost-hovered .char-ghost-tooltip { opacity: 1; }
+
+.char-ghost-tooltip strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e8f4ff;
+}
+
+.char-ghost-tooltip span {
+  font-size: 10px;
+  color: rgba(232, 244, 255, 0.55);
 }
 
 @keyframes ghost-pop {
-  from { opacity: 0; transform: scale(0.6); }
+  from { opacity: 0; transform: scale(0.5); }
   to { opacity: 1; transform: scale(1); }
 }
 

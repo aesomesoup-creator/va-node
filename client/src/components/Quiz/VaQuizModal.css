@@ -212,9 +212,9 @@
 }
 
 .vaquiz-feedback.correct {
-  background: rgba(77, 217, 255, 0.08);
-  border: 1px solid rgba(77, 217, 255, 0.3);
-  color: #4dd9ff;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #22c55e;
 }
 
 .vaquiz-feedback.wrong {
@@ -257,9 +257,9 @@
 }
 
 .vaquiz-choice.correct {
-  border-color: #4dd9ff;
-  background: rgba(77, 217, 255, 0.1);
-  box-shadow: 0 0 14px rgba(77, 217, 255, 0.2);
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.25);
 }
 
 .vaquiz-choice.wrong {
@@ -319,25 +319,25 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid rgba(77, 217, 255, 0.5);
-  background: rgba(77, 217, 255, 0.06);
+  border: 4px solid rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(77, 217, 255, 0.15);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
 }
 
 .vaquiz-score-num {
   font-size: 44px;
   font-weight: 900;
-  color: #4dd9ff;
+  color: #22c55e;
   line-height: 1;
 }
 
 .vaquiz-score-total {
   font-size: 18px;
   font-weight: 700;
-  color: rgba(77, 217, 255, 0.6);
+  color: rgba(34, 197, 94, 0.6);
   align-self: flex-end;
   margin-bottom: 8px;
 }

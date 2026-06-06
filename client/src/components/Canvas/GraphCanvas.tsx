@@ -79,6 +79,7 @@ export default function GraphCanvas() {
   transformRef.current = transform;
   const [detailAnimeId, setDetailAnimeId] = useState<number | null>(null);
   const [pinnedCharId, setPinnedCharId] = useState<number | null>(null);
+  const [hoveredGhostId, setHoveredGhostId] = useState<number | null>(null);
 
   const dragState = useRef<{
     isPanning: boolean; isDraggingBubble: boolean; anilistId: number | null;
@@ -89,8 +90,13 @@ export default function GraphCanvas() {
     active: false, startDist: 0, startScale: 1, midX: 0, midY: 0,
   });
 
-  const { anime, characters, connectedCharIds, isLoading } = useGraphStore();
+  const { anime, characters, connectedCharIds, isLoading, resolveCollisions } = useGraphStore();
   const { updatePosition, persistPosition } = useGraphStore();
+
+  // Re-run collision when anime count changes (new add or remove)
+  useEffect(() => {
+    if (anime.length >= 2) resolveCollisions();
+  }, [anime.length]);
   const { hoveredAnimeId, setHoveredAnime, hoveredCharId, setHoveredChar } = useUiStore();
 
   // Pinned char overrides hovered char for VA line display
@@ -375,31 +381,41 @@ export default function GraphCanvas() {
             });
           })}
 
-          {/* Ghost bubbles — duplicates at arc midpoints when a char is pinned */}
+          {/* Ghost bubbles — duplicates placed close to the pinned char, pointing toward each target */}
           {pinnedCharId != null && fromPos && vaTargets.map((char) => {
             const toPos = charAbsPos.get(char.anilistCharacterId)!;
-            const cpx = (fromPos.x + toPos.x) / 2;
-            const dist = Math.hypot(toPos.x - fromPos.x, toPos.y - fromPos.y);
-            const cpy = (fromPos.y + toPos.y) / 2 - Math.max(40, dist * 0.2);
-            const midX = 0.25 * fromPos.x + 0.5 * cpx + 0.25 * toPos.x;
-            const midY = 0.25 * fromPos.y + 0.5 * cpy + 0.25 * toPos.y;
+            const dx = toPos.x - fromPos.x;
+            const dy = toPos.y - fromPos.y;
+            const dist = Math.hypot(dx, dy) || 1;
+            const nx = dx / dist, ny = dy / dist;
+            // Place ghost just outside the source char bubble (almost touching)
+            const ghostX = fromPos.x + nx * (CHAR_RADIUS * 2 + 4);
+            const ghostY = fromPos.y + ny * (CHAR_RADIUS * 2 + 4);
             const D = CHAR_RADIUS * 2;
+            const animeTitle = anime.find((a) => a.anilistId === char.anilistAnimeId)?.title ?? "";
+            const isGhostHovered = hoveredGhostId === char.anilistCharacterId;
             return (
               <div key={`ghost-${char.anilistCharacterId}`}
-                className="char-ghost-bubble"
+                className={`char-ghost-bubble${isGhostHovered ? " ghost-hovered" : ""}`}
                 style={{
                   position: "absolute",
-                  left: midX - CHAR_RADIUS,
-                  top: midY - CHAR_RADIUS,
+                  left: ghostX - CHAR_RADIUS,
+                  top: ghostY - CHAR_RADIUS,
                   width: D, height: D,
-                }}>
+                }}
+                onMouseEnter={() => setHoveredGhostId(char.anilistCharacterId)}
+                onMouseLeave={() => setHoveredGhostId(null)}
+                onMouseDown={(e) => e.stopPropagation()}>
                 {char.characterImage ? (
                   <img src={char.characterImage} alt={char.characterName} className="char-img"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                 ) : (
                   <div className="char-letter">{char.characterName[0]}</div>
                 )}
-                <div className="char-ghost-label">{char.characterName}</div>
+                <div className="char-ghost-tooltip">
+                  <strong>{char.characterName}</strong>
+                  {animeTitle && <span>{animeTitle}</span>}
+                </div>
               </div>
             );
           })}
