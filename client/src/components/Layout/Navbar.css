@@ -9,11 +9,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: rgba(3, 10, 25, 0.85);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(51, 212, 255, 0.12);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
@@ -25,10 +25,10 @@
 .brand-name {
   font-size: 20px;
   font-weight: 900;
-  color: #33d4ff;
+  color: #4dd9ff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  filter: drop-shadow(0 0 8px rgba(51, 212, 255, 0.4));
+  filter: drop-shadow(0 0 8px rgba(77, 217, 255, 0.5));
 }
 
 .brand-node {
@@ -48,9 +48,9 @@
   gap: 6px;
   padding: 7px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(51, 212, 255, 0.3);
-  background: rgba(51, 212, 255, 0.08);
-  color: #33d4ff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: #99eaff;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -59,9 +59,9 @@
 }
 
 .nav-btn:hover {
-  background: rgba(51, 212, 255, 0.18);
-  border-color: rgba(51, 212, 255, 0.6);
-  box-shadow: 0 0 12px rgba(51, 212, 255, 0.2);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 12px rgba(77, 217, 255, 0.18);
   transform: translateY(-1px);
 }
 
@@ -131,7 +131,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1.5px solid rgba(51, 212, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
   object-fit: cover;
 }
 
@@ -139,9 +139,9 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1.5px solid rgba(51, 212, 255, 0.5);
-  background: rgba(51, 212, 255, 0.15);
-  color: #33d4ff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: rgba(77, 217, 255, 0.18);
+  color: #4dd9ff;
   font-size: 13px;
   font-weight: 700;
   display: flex;
